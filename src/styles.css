@@ -655,6 +655,16 @@ button {
   text-align: center;
 }
 
+.shop-section .ant-btn-primary {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.shop-section .ant-btn-primary:hover {
+  background: var(--green-soft) !important;
+  border-color: var(--green-soft) !important;
+}
+
 .market-flow {
   padding: 74px 0 28px;
 }
@@ -811,7 +821,7 @@ button {
   color: var(--green);
   background: var(--sage);
   border-radius: 50%;
-  font-family: 'Cormorant', Georgia, serif;
+  font-family: var(--body-font);
   font-size: 27px;
   font-weight: 700;
 }
@@ -3920,7 +3930,6 @@ h6,
 .brand-text,
 .footer-logo,
 .step-card strong,
-.how-number,
 .product-title-button {
   font-family: var(--heading-font) !important;
 }
@@ -5310,6 +5319,10 @@ h6,
   grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr);
   gap: 58px;
   align-items: start;
+}
+
+.faq-heading .eyebrow {
+  color: var(--green);
 }
 
 .faq-heading h2 {
