@@ -7723,6 +7723,78 @@ button,
   justify-self: center;
 }
 
+/* Match the All Products filter to the colorful mobile category-tile system. */
+@media (max-width: 760px) {
+  .filter-panel .produce-tabs {
+    width: calc(100% + 2px);
+    margin: 0;
+    padding: 3px 2px 12px;
+    display: flex;
+    grid-template-columns: none;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .filter-panel .produce-tabs::-webkit-scrollbar { display: none; }
+
+  .filter-panel .produce-tabs button,
+  .filter-panel-modern .produce-tabs button {
+    min-height: 96px;
+    flex: 0 0 148px;
+    width: 148px;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr);
+    grid-template-rows: 1fr;
+    justify-items: stretch;
+    align-items: center;
+    gap: 10px;
+    color: var(--green);
+    background: #F3F7EC;
+    border: 1px solid rgba(53, 92, 58, .13);
+    border-radius: 16px;
+    box-shadow: 0 8px 18px rgba(53, 92, 58, .08);
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.18;
+    text-align: left;
+    scroll-snap-align: start;
+    transform: none;
+  }
+
+  .filter-panel .produce-tabs button:nth-child(3n + 2) { background: #FFF0E9; }
+  .filter-panel .produce-tabs button:nth-child(3n) { background: #EAF3F5; }
+
+  .filter-panel .produce-tabs .tab-icon {
+    width: 36px;
+    height: 36px;
+    color: var(--ink);
+    background: rgba(255, 255, 255, .66);
+    border: 1px solid var(--neo-line);
+    border-radius: 10px;
+    box-shadow: none;
+    font-size: 16px;
+  }
+
+  .filter-panel .produce-tabs button.active,
+  .filter-panel-modern .produce-tabs button.active {
+    color: var(--white);
+    background: var(--green);
+    border-color: var(--green);
+    box-shadow: 3px 3px 0 #E9B949;
+    transform: none;
+  }
+
+  .filter-panel .produce-tabs button.active .tab-icon {
+    color: var(--white);
+    background: rgba(255, 255, 255, .16);
+    border-color: rgba(255, 255, 255, .36);
+    box-shadow: none;
+  }
+}
+
 /* Compact swipe rail: keeps the reference card style without the long stack. */
 @media (max-width: 760px) {
   .shop-section .produce-tabs {
@@ -8062,4 +8134,154 @@ button,
     border-color: rgba(255, 255, 255, .36);
     box-shadow: none;
   }
+}
+
+/* Tablet-sized phones can still use the compact filter swipe rail. */
+@media (max-width: 900px) {
+  .filter-panel .produce-tabs {
+    width: 100%;
+    margin: 0;
+    padding: 3px 0 12px;
+    display: flex !important;
+    grid-template-columns: none !important;
+    flex-wrap: nowrap !important;
+    gap: 10px;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .filter-panel .produce-tabs::-webkit-scrollbar { display: none; }
+
+  .filter-panel .produce-tabs button,
+  .filter-panel-modern .produce-tabs button {
+    min-height: 88px;
+    flex: 0 0 150px !important;
+    width: 150px !important;
+    padding: 11px;
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 9px;
+    scroll-snap-align: start;
+  }
+
+  .filter-panel .produce-tabs button { background: #F3F7EC; }
+  .filter-panel .produce-tabs button:nth-child(3n + 2) { background: #FFF0E9; }
+  .filter-panel .produce-tabs button:nth-child(3n) { background: #EAF3F5; }
+
+  .filter-panel .produce-tabs .tab-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    box-shadow: none;
+  }
+
+  .filter-panel .produce-tabs button.active,
+  .filter-panel-modern .produce-tabs button.active {
+    color: var(--white);
+    background: var(--green);
+    border-color: var(--green);
+    box-shadow: 3px 3px 0 #E9B949;
+    transform: none;
+  }
+}
+
+/* Full-width two-column filter cards are easier to scan than a slider. */
+@media (max-width: 900px) {
+  .filter-panel .produce-tabs {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    flex-wrap: initial !important;
+    gap: 12px;
+    overflow: visible !important;
+  }
+
+  .filter-panel .produce-tabs button,
+  .filter-panel-modern .produce-tabs button {
+    min-height: 96px;
+    width: 100% !important;
+    flex: none !important;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .filter-panel .produce-tabs button:last-child { grid-column: 1 / -1; }
+}
+
+/* Use the same easy-to-scan category grid on the homepage. */
+@media (max-width: 900px) {
+  .shop-section .produce-tabs {
+    width: 100%;
+    margin: 0 0 30px;
+    padding: 0;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px;
+    overflow: visible !important;
+  }
+
+  .shop-section .produce-tabs button,
+  .shop-section .produce-tabs button:nth-child(3n + 2),
+  .shop-section .produce-tabs button:nth-child(3n) {
+    min-height: 96px;
+    width: 100%;
+    flex: none !important;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 10px;
+    color: var(--green);
+    background: #F3F7EC;
+    border: 1px solid rgba(53, 92, 58, .13);
+    border-radius: 16px;
+    box-shadow: 0 8px 18px rgba(53, 92, 58, .08);
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.18;
+    text-align: left;
+  }
+
+  .shop-section .produce-tabs button:nth-child(3n + 2) { background: #FFF0E9; }
+  .shop-section .produce-tabs button:nth-child(3n) { background: #EAF3F5; }
+
+  .shop-section .produce-tabs .tab-icon {
+    width: 34px;
+    height: 34px;
+    color: var(--ink);
+    background: rgba(255, 255, 255, .66);
+    border: 1px solid var(--neo-line);
+    border-radius: 10px;
+    box-shadow: none;
+    font-size: 16px;
+  }
+
+  .shop-section .produce-tabs button.active {
+    color: var(--white);
+    background: var(--green);
+    border-color: var(--green);
+    box-shadow: 3px 3px 0 #E9B949;
+    transform: none;
+  }
+
+  .shop-section .produce-tabs button.active .tab-icon {
+    color: var(--white);
+    background: rgba(255, 255, 255, .16);
+    border-color: rgba(255, 255, 255, .36);
+    box-shadow: none;
+  }
+
+  .shop-section .produce-tabs button:last-child { grid-column: 1 / -1; }
 }
