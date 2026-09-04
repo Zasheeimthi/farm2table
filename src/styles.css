@@ -4861,7 +4861,7 @@ h6,
   }
 
   .hero-content h1 {
-    font-size: clamp(56px, 12vw, 82px);
+    font-size: clamp(50px, 14vw, 82px);
   }
 
   .hero-search {
