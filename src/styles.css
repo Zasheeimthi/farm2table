@@ -176,6 +176,13 @@ button {
   cursor: pointer;
 }
 
+@media (min-width: 641px) {
+  .header-actions > .header-icon-button:nth-child(1),
+  .header-actions > .header-icon-button:nth-child(3) {
+    display: none;
+  }
+}
+
 .header-actions .ant-badge-count {
   min-width: 24px;
   height: 24px;
@@ -6257,10 +6264,12 @@ h6,
   }
 
   .site-header.mobile-menu-open .header-actions {
-    max-height: 82px;
-    padding: 14px 4px 2px;
-    opacity: 1;
-    pointer-events: auto;
+    display: none;
+  }
+
+  .site-header.mobile-menu-open .header-actions > .header-icon-button:nth-child(1),
+  .site-header.mobile-menu-open .header-actions > .header-icon-button:nth-child(3) {
+    display: none;
   }
 
   .site-header.mobile-menu-open .header-icon-button,
