@@ -350,7 +350,7 @@ function CategoryFilter({ activeCategory, onChange }) {
           key={tab.id}
         >
           <span className="tab-icon">{tab.icon}</span>
-          {tab.label}
+          <span className="category-tab-label">{tab.label}</span>
         </button>
       ))}
     </div>

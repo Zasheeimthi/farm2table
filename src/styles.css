@@ -8361,3 +8361,13 @@ button,
   .shop-section .produce-tabs button:last-child,
   .filter-panel .produce-tabs button:last-child { grid-column: 1 / -1; }
 }
+
+/* Labels stay inside their category cards at every mobile width. */
+@media (max-width: 900px) {
+  .shop-section .category-tab-label,
+  .filter-panel .category-tab-label {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+}
