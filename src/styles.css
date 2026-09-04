@@ -7426,3 +7426,34 @@ button,
   .farm-support-strip > img { width: 100%; height: 190px; }
   .support-benefits { grid-template-columns: 1fr; }
 }
+
+/* Keep the mobile header symmetrical and its hero actions evenly sized. */
+@media (max-width: 760px) {
+  .header-brand-row {
+    position: relative;
+    min-height: 42px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .brand-text {
+    position: static;
+    width: max-content;
+    max-width: calc(100% - 112px);
+    margin: 0;
+    transform: none;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .mobile-menu-toggle { left: 0; top: 0; }
+
+  .neo-hero-actions {
+    width: min(100%, 290px);
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .neo-hero-actions button { width: 100%; }
+}
