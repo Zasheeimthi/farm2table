@@ -8285,3 +8285,79 @@ button,
 
   .shop-section .produce-tabs button:last-child { grid-column: 1 / -1; }
 }
+
+/* One shared mobile card system for home and product-category selectors. */
+@media (max-width: 900px) {
+  .shop-section .produce-tabs,
+  .filter-panel .produce-tabs {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px;
+  }
+
+  .shop-section .produce-tabs button,
+  .shop-section .produce-tabs button:nth-child(3n + 2),
+  .shop-section .produce-tabs button:nth-child(3n),
+  .filter-panel .produce-tabs button,
+  .filter-panel-modern .produce-tabs button {
+    min-height: 96px;
+    width: 100% !important;
+    flex: none !important;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 10px;
+    color: var(--green);
+    background: #F3F7EC;
+    border: 1px solid rgba(53, 92, 58, .13);
+    border-radius: 16px;
+    box-shadow: 0 8px 18px rgba(53, 92, 58, .08);
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: .01em;
+    text-align: left;
+  }
+
+  .shop-section .produce-tabs button:nth-child(3n + 2),
+  .filter-panel .produce-tabs button:nth-child(3n + 2) { background: #FFF0E9; }
+
+  .shop-section .produce-tabs button:nth-child(3n),
+  .filter-panel .produce-tabs button:nth-child(3n) { background: #EAF3F5; }
+
+  .shop-section .produce-tabs .tab-icon,
+  .filter-panel .produce-tabs .tab-icon {
+    width: 34px;
+    height: 34px;
+    color: var(--ink);
+    background: rgba(255, 255, 255, .66);
+    border: 1px solid var(--neo-line);
+    border-radius: 10px;
+    box-shadow: none;
+    font-size: 16px;
+  }
+
+  .shop-section .produce-tabs button.active,
+  .filter-panel .produce-tabs button.active,
+  .filter-panel-modern .produce-tabs button.active {
+    color: var(--white);
+    background: var(--green);
+    border-color: var(--green);
+    box-shadow: 3px 3px 0 #E9B949;
+    transform: none;
+  }
+
+  .shop-section .produce-tabs button.active .tab-icon,
+  .filter-panel .produce-tabs button.active .tab-icon {
+    color: var(--white);
+    background: rgba(255, 255, 255, .16);
+    border-color: rgba(255, 255, 255, .36);
+    box-shadow: none;
+  }
+
+  .shop-section .produce-tabs button:last-child,
+  .filter-panel .produce-tabs button:last-child { grid-column: 1 / -1; }
+}
