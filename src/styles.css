@@ -7204,7 +7204,7 @@ body,
   border-radius: 0;
   box-shadow: none;
   font-family: var(--heading-font);
-  font-size: clamp(16px, 1.5vw, 21px);
+  font-size: clamp(16px, 1.5vw, 16px);
   font-weight: 800;
   line-height: .95;
   text-align: left;
@@ -7661,7 +7661,7 @@ button,
     border: 1px solid rgba(53, 92, 58, .15);
     border-radius: 16px;
     box-shadow: 0 8px 18px rgba(53, 92, 58, .08);
-    font-size: 10px;
+    font-size: 14px;
     scroll-snap-align: start;
   }
 
@@ -7689,6 +7689,38 @@ button,
     border-color: rgba(255, 255, 255, .36);
     box-shadow: none;
   }
+}
+
+/* Shared mobile type scale for both category card groups. */
+@media (max-width: 760px) {
+  .shop-section .produce-tabs button,
+  .shop-section .produce-tabs button:nth-child(3n + 2),
+  .shop-section .produce-tabs button:nth-child(3n) {
+    flex-basis: 158px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  .home-category-showcase .competitor-bar button {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.18;
+  }
+}
+
+/* Center the icon and label as one balanced category-card composition. */
+.home-category-showcase .competitor-bar button {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  place-items: center;
+  text-align: center;
+}
+
+.home-category-showcase .competitor-bar button > span {
+  grid-column: 1;
+  justify-self: center;
 }
 
 /* Compact swipe rail: keeps the reference card style without the long stack. */
@@ -7996,7 +8028,7 @@ button,
     border: 1px solid rgba(53, 92, 58, .13);
     border-radius: 18px;
     box-shadow: 0 10px 22px rgba(53, 92, 58, .08);
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.22;
     letter-spacing: .025em;
     text-align: left;
