@@ -556,6 +556,8 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
 function ProductsPage({ products, activeCategory, setActiveCategory, onAdd }) {
   const [searchTerm, setSearchTerm] = useState(() => getRoute().params.get('search') || '');
   const [sortOption, setSortOption] = useState('popular');
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 9;
   const categoryProducts = activeCategory === 'all'
     ? products
     : products.filter((product) => product.category === activeCategory);
@@ -572,6 +574,13 @@ function ProductsPage({ products, activeCategory, setActiveCategory, onAdd }) {
     }
     return 0;
   });
+  const totalPages = Math.max(1, Math.ceil(sortedProducts.length / productsPerPage));
+  const activePage = Math.min(currentPage, totalPages);
+  const paginatedProducts = sortedProducts.slice((activePage - 1) * productsPerPage, activePage * productsPerPage);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeCategory, searchTerm, sortOption]);
 
   return (
     <main className="page-view">
@@ -631,8 +640,40 @@ function ProductsPage({ products, activeCategory, setActiveCategory, onAdd }) {
             <span>{sortedProducts.length} products</span>
           </div>
           <div className="product-grid product-grid-page">
-            {sortedProducts.map((product) => <ProductCard item={product} compact onAdd={onAdd} key={product.title} />)}
+            {paginatedProducts.map((product) => <ProductCard item={product} compact onAdd={onAdd} key={product.title} />)}
           </div>
+          {sortedProducts.length > productsPerPage && (
+            <div className="product-pagination" aria-label="Product pages">
+              <button
+                type="button"
+                onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
+                disabled={activePage === 1}
+                aria-label="Previous product page"
+              >
+                <ArrowLeftOutlined />
+              </button>
+              {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
+                <button
+                  className={page === activePage ? 'active' : ''}
+                  type="button"
+                  onClick={() => setCurrentPage(page)}
+                  aria-label={`Go to product page ${page}`}
+                  aria-current={page === activePage ? 'page' : undefined}
+                  key={page}
+                >
+                  {page}
+                </button>
+              ))}
+              <button
+                type="button"
+                onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
+                disabled={activePage === totalPages}
+                aria-label="Next product page"
+              >
+                <ArrowRightOutlined />
+              </button>
+            </div>
+          )}
         </div>
       </section>
       <Footer />
