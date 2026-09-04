@@ -395,18 +395,22 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
           <h1>Fresh. Natural.<br /><em>Delivered to you.</em></h1>
           <p>Discover small-scale, nutritious food sourced directly from farms you can actually know.</p>
           <form className="hero-search" onSubmit={(event) => { event.preventDefault(); searchProducts(); }}>
-            <SearchOutlined />
-            <input
-              value={heroSearch}
-              onChange={(event) => setHeroSearch(event.target.value)}
-              placeholder="Search products, farms or categories"
-              aria-label="Search products, farms or categories"
-            />
+            <div className="hero-search-query">
+              <SearchOutlined />
+              <div>
+                <input
+                  value={heroSearch}
+                  onChange={(event) => setHeroSearch(event.target.value)}
+                  placeholder="Search Products or Categories"
+                  aria-label="Search products, farms or categories"
+                />
+              </div>
+            </div>
             <button className="hero-location" type="button" onClick={detectLocation}>
               <EnvironmentOutlined />
-              <span>{heroLocation}</span>
+              <span className="hero-location-copy"><span>{heroLocation}</span></span>
             </button>
-            <button className="hero-search-submit" type="submit">Search</button>
+            <button className="hero-search-submit" type="submit"><span>Explore</span><ArrowRightOutlined /></button>
           </form>
           <button className="hero-browse-link" type="button" onClick={() => setRoute('/products')}>
             Browse this week's harvest <ArrowRightOutlined />
