@@ -7,7 +7,6 @@ import {
   ArrowUpOutlined,
   CalendarOutlined,
   CheckCircleOutlined,
-  CloseOutlined,
   CoffeeOutlined,
   CompassOutlined,
   EnvironmentOutlined,
@@ -229,6 +228,7 @@ function Brand({ onHome }) {
 }
 
 function Header({ route, setActiveCategory, cartCount, lastAddedSlug, isScrolled }) {
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const nav = [
     ['Home', '/'],
     ['Products', '/products'],
@@ -236,36 +236,27 @@ function Header({ route, setActiveCategory, cartCount, lastAddedSlug, isScrolled
     ['Contact us', '/contact']
   ];
 
-  const [menuOpen, setMenuOpen] = useState(false);
-  const goTo = (path) => {
-    if (path === '/' || path === '/products') setActiveCategory('all');
-    setRoute(path);
-    setMenuOpen(false);
-  };
-
   return (
-    <>
-      <div className="announcement-bar" aria-label="Farm to Table values">
-        <div>Farm fresh <span>•</span> Locally produced <span>•</span> Delivered to your door <span>•</span> Swedish farms <span>•</span> Farm fresh <span>•</span> Locally produced <span>•</span> Delivered to your door <span>•</span> Swedish farms <span>•</span></div>
-      </div>
-      <header className={`site-header ${route.path === '/' ? 'site-header-hero' : ''} ${isScrolled ? 'site-header-scrolled' : ''} ${route.path.startsWith('/product/') ? 'site-header-product' : ''} ${menuOpen ? 'mobile-menu-open' : ''}`}>
-      <div className="header-brand-row">
-        <Brand onHome={() => goTo('/')} />
-        <button
-          className="mobile-menu-toggle"
-          type="button"
-          onClick={() => setMenuOpen((open) => !open)}
-          aria-expanded={menuOpen}
-          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-        >
-          {menuOpen ? <CloseOutlined /> : <MenuOutlined />}
-        </button>
-      </div>
-      <nav className={menuOpen ? 'is-open' : ''} aria-label="Primary navigation">
+    <header className={`site-header ${route.path === '/' ? 'site-header-hero' : ''} ${isScrolled ? 'site-header-scrolled' : ''} ${route.path.startsWith('/product/') ? 'site-header-product' : ''} ${mobileNavOpen ? 'mobile-nav-open' : ''}`}>
+      <button
+        className="mobile-menu-toggle"
+        type="button"
+        aria-label={mobileNavOpen ? 'Close navigation menu' : 'Open navigation menu'}
+        aria-expanded={mobileNavOpen}
+        onClick={() => setMobileNavOpen((isOpen) => !isOpen)}
+      >
+        <MenuOutlined />
+      </button>
+      <Brand onHome={() => { setActiveCategory('all'); setRoute('/'); }} />
+      <nav aria-label="Primary navigation">
         {nav.map(([label, path]) => (
           <button
             className={route.path === path ? 'active' : ''}
-            onClick={() => goTo(path)}
+            onClick={() => {
+              if (path === '/' || path === '/products') setActiveCategory('all');
+              setRoute(path);
+              setMobileNavOpen(false);
+            }}
             key={path}
           >
             {label}
@@ -273,14 +264,8 @@ function Header({ route, setActiveCategory, cartCount, lastAddedSlug, isScrolled
         ))}
       </nav>
       <div className="header-actions" aria-label="Quick actions">
-        <button className="header-icon-button" type="button" onClick={() => setRoute('/products')} aria-label="Open wishlist">
-          <HeartOutlined />
-        </button>
         <button className="header-icon-button" type="button" onClick={() => setRoute('/contact')} aria-label="Open account and support">
           <TeamOutlined />
-        </button>
-        <button className="header-icon-button" type="button" onClick={() => setRoute('/products')} aria-label="Search products">
-          <SearchOutlined />
         </button>
         <Badge count={cartCount} color="#FE5D02">
           <button
@@ -293,8 +278,7 @@ function Header({ route, setActiveCategory, cartCount, lastAddedSlug, isScrolled
           </button>
         </Badge>
       </div>
-      </header>
-    </>
+    </header>
   );
 }
 
@@ -384,59 +368,50 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
 
   return (
     <main>
-      <section className="hero-section neo-hero">
-        <div className="neo-hero-copy">
-          <span className="neo-label">From Swedish farms<br />to your table</span>
-          <h1>Fresh food.<br /><strong>Real farms.</strong><br />No shortcuts.</h1>
-          <p>Shop fresh, traceable food directly from trusted Swedish farms and producers.</p>
-          <div className="neo-hero-actions">
-            <button type="button" onClick={() => setRoute('/products')}>Shop farm fresh <ArrowRightOutlined /></button>
-            <button type="button" onClick={() => setRoute('/about')}>Meet the farmers</button>
-          </div>
+      <section className="hero-section">
+        <video
+          className="hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-label="Farmer preparing fresh produce in a sunny field"
+        >
+          <source src="/storefront/hero-farmer.mp4" type="video/mp4" />
+        </video>
+        <div className="hero-content scroll-reveal">
+          <span className="eyebrow">Local farms. Premium produces.</span>
+          <h1>Fresh. Natural.<br /><em>Delivered to you.</em></h1>
+          <p>Discover small-scale, nutritious food sourced directly from farms you can actually know.</p>
           <form className="hero-search" onSubmit={(event) => { event.preventDefault(); searchProducts(); }}>
             <div className="hero-search-query">
               <SearchOutlined />
-              <div>
-                <input
-                  value={heroSearch}
-                  onChange={(event) => setHeroSearch(event.target.value)}
-                  placeholder="Search Products or Categories"
-                  aria-label="Search products, farms or categories"
-                />
-              </div>
+              <input
+                value={heroSearch}
+                onChange={(event) => setHeroSearch(event.target.value)}
+                placeholder="Search Products or Categories"
+                aria-label="Search products, farms or categories"
+              />
             </div>
             <button className="hero-location" type="button" onClick={detectLocation}>
               <EnvironmentOutlined />
-              <span className="hero-location-copy"><span>{heroLocation}</span></span>
+              <span>{heroLocation}</span>
             </button>
-            <button className="hero-search-submit" type="submit"><span>Explore</span><ArrowRightOutlined /></button>
+            <button className="hero-search-submit" type="submit">Explore <ArrowRightOutlined /></button>
           </form>
           <button className="hero-browse-link" type="button" onClick={() => setRoute('/products')}>
             Browse this week's harvest <ArrowRightOutlined />
           </button>
         </div>
-        <div className="neo-hero-media image-reveal">
-          <img src="/storefront/hero-swedish-farmhouse.jpg" alt="Traditional Swedish farmhouse and grazing cows" />
-          <span className="neo-sticker sticker-swedish">100% Swedish</span>
-          <span className="neo-sticker sticker-direct">Farm direct</span>
-          <span className="neo-scribble" aria-hidden="true">↘</span>
-        </div>
       </section>
 
-      <section className="home-category-showcase" aria-label="Store categories">
-        <div className="category-showcase-intro">
-          <span className="neo-label">Seasonal selections</span>
-          <h2>Shop what's<br /><em>fresh.</em></h2>
-          <button type="button" onClick={() => setRoute('/products')}>See everything <ArrowRightOutlined /></button>
-        </div>
-        <div className="competitor-bar">
-          {categoryTabs.slice(1).map((tab) => (
-            <button key={tab.id} onClick={() => { setActiveCategory(tab.id); setRoute('/products'); }}>
-              <span>{tab.icon}</span>
-              {tab.label}
-            </button>
-          ))}
-        </div>
+      <section className="competitor-bar" aria-label="Store categories">
+        {categoryTabs.slice(1).map((tab) => (
+          <button key={tab.id} onClick={() => { setActiveCategory(tab.id); setRoute('/products'); }}>
+            <span>{tab.icon}</span>
+            {tab.label}
+          </button>
+        ))}
       </section>
 
       <section className="market-flow section-block wide">
@@ -481,8 +456,7 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
 
       <section className="shop-section section-block">
         <div className="center-title scroll-reveal">
-          <span className="neo-label">Picked with care</span>
-          <h2>Fresh from<br />the farms.</h2>
+          <h2>Fresh & Clean</h2>
           <CategoryFilter activeCategory={activeCategory} onChange={setActiveCategory} />
         </div>
         <div className="product-grid">
@@ -576,7 +550,10 @@ function ProductsPage({ products, activeCategory, setActiveCategory, onAdd }) {
   });
   const totalPages = Math.max(1, Math.ceil(sortedProducts.length / productsPerPage));
   const activePage = Math.min(currentPage, totalPages);
-  const paginatedProducts = sortedProducts.slice((activePage - 1) * productsPerPage, activePage * productsPerPage);
+  const visibleProducts = sortedProducts.slice(
+    (activePage - 1) * productsPerPage,
+    activePage * productsPerPage
+  );
 
   useEffect(() => {
     setCurrentPage(1);
@@ -640,15 +617,15 @@ function ProductsPage({ products, activeCategory, setActiveCategory, onAdd }) {
             <span>{sortedProducts.length} products</span>
           </div>
           <div className="product-grid product-grid-page">
-            {paginatedProducts.map((product) => <ProductCard item={product} compact onAdd={onAdd} key={product.title} />)}
+            {visibleProducts.map((product) => <ProductCard item={product} compact onAdd={onAdd} key={product.title} />)}
           </div>
-          {sortedProducts.length > productsPerPage && (
-            <div className="product-pagination" aria-label="Product pages">
+          {totalPages > 1 && (
+            <nav className="product-pagination" aria-label="Product pages">
               <button
                 type="button"
                 onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
                 disabled={activePage === 1}
-                aria-label="Previous product page"
+                aria-label="Previous page"
               >
                 <ArrowLeftOutlined />
               </button>
@@ -657,7 +634,6 @@ function ProductsPage({ products, activeCategory, setActiveCategory, onAdd }) {
                   className={page === activePage ? 'active' : ''}
                   type="button"
                   onClick={() => setCurrentPage(page)}
-                  aria-label={`Go to product page ${page}`}
                   aria-current={page === activePage ? 'page' : undefined}
                   key={page}
                 >
@@ -668,11 +644,11 @@ function ProductsPage({ products, activeCategory, setActiveCategory, onAdd }) {
                 type="button"
                 onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
                 disabled={activePage === totalPages}
-                aria-label="Next product page"
+                aria-label="Next page"
               >
                 <ArrowRightOutlined />
               </button>
-            </div>
+            </nav>
           )}
         </div>
       </section>
@@ -1232,7 +1208,7 @@ function AboutPage() {
 
       <section className="about-story section-block wide">
         <div className="about-story-image image-reveal">
-          <img src="/storefront/farm-detail-hero-solmarka.jpg" alt="Traditional Swedish red barn surrounded by green fields" />
+          <img src="/storefront/585.jpg" alt="Farmer carrying fresh produce in a field" />
         </div>
         <div className="about-story-copy scroll-reveal">
           <span className="eyebrow">Our story</span>
