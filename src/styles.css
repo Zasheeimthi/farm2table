@@ -4586,7 +4586,7 @@ h6,
 
 /* Hero discovery layout */
 .hero-section {
-  min-height: 750px;
+  min-height: 860px;
   align-items: stretch;
   background: var(--green);
 }
@@ -4851,7 +4851,7 @@ h6,
 
 @media (max-width: 760px) {
   .hero-section {
-    min-height: 680px;
+    min-height: 760px;
   }
 
   .hero-content {
