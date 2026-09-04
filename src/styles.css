@@ -7691,6 +7691,75 @@ button,
   }
 }
 
+/* Compact swipe rail: keeps the reference card style without the long stack. */
+@media (max-width: 760px) {
+  .shop-section .produce-tabs {
+    width: calc(100% + 18px);
+    margin: 0 -18px 28px 0;
+    padding: 3px 18px 12px 0;
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .shop-section .produce-tabs::-webkit-scrollbar { display: none; }
+
+  .shop-section .produce-tabs button,
+  .shop-section .produce-tabs button:nth-child(3n + 2),
+  .shop-section .produce-tabs button:nth-child(3n) {
+    min-height: 96px;
+    flex: 0 0 142px;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 10px;
+    color: var(--green);
+    background: #F3F7EC;
+    border: 1px solid rgba(53, 92, 58, .13);
+    border-radius: 16px;
+    box-shadow: 0 8px 18px rgba(53, 92, 58, .08);
+    font-size: 9px;
+    line-height: 1.18;
+    letter-spacing: .025em;
+    text-align: left;
+    scroll-snap-align: start;
+  }
+
+  .shop-section .produce-tabs button:nth-child(3n + 2) { background: #FFF0E9; }
+  .shop-section .produce-tabs button:nth-child(3n) { background: #EAF3F5; }
+
+  .shop-section .produce-tabs .tab-icon {
+    width: 36px;
+    height: 36px;
+    color: var(--ink);
+    background: rgba(255, 255, 255, .66);
+    border: 1px solid var(--neo-line);
+    border-radius: 10px;
+    box-shadow: none;
+    font-size: 16px;
+  }
+
+  .shop-section .produce-tabs button.active {
+    color: var(--white);
+    background: var(--green);
+    border-color: var(--green);
+    box-shadow: 3px 3px 0 #E9B949;
+    transform: none;
+  }
+
+  .shop-section .produce-tabs button.active .tab-icon {
+    color: var(--white);
+    background: rgba(255, 255, 255, .16);
+    border-color: rgba(255, 255, 255, .36);
+    box-shadow: none;
+  }
+}
+
 /* Keep mobile categories visually consistent with the desktop icon selector. */
 @media (max-width: 760px) {
   .shop-section .produce-tabs {
@@ -7896,4 +7965,69 @@ button,
 .faq-heading h2,
 .shop-section .center-title h2 {
   letter-spacing: -0.07em;
+}
+
+/* Reference mobile layout: colorful two-column category cards. */
+@media (max-width: 760px) {
+  .shop-section .produce-tabs {
+    width: 100%;
+    margin: 0 0 30px;
+    padding: 0;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px;
+    overflow: visible;
+  }
+
+  .shop-section .produce-tabs button,
+  .shop-section .produce-tabs button:nth-child(3n + 2),
+  .shop-section .produce-tabs button:nth-child(3n) {
+    min-height: 120px;
+    flex: none;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 42px 1fr;
+    justify-items: start;
+    align-items: start;
+    gap: 11px;
+    color: var(--green);
+    background: #F3F7EC;
+    border: 1px solid rgba(53, 92, 58, .13);
+    border-radius: 18px;
+    box-shadow: 0 10px 22px rgba(53, 92, 58, .08);
+    font-size: 10px;
+    line-height: 1.22;
+    letter-spacing: .025em;
+    text-align: left;
+  }
+
+  .shop-section .produce-tabs button:nth-child(3n + 2) { background: #FFF0E9; }
+  .shop-section .produce-tabs button:nth-child(3n) { background: #EAF3F5; }
+
+  .shop-section .produce-tabs .tab-icon {
+    width: 42px;
+    height: 42px;
+    color: var(--ink);
+    background: rgba(255, 255, 255, .66);
+    border: 1px solid var(--neo-line);
+    border-radius: 12px;
+    box-shadow: none;
+    font-size: 18px;
+  }
+
+  .shop-section .produce-tabs button.active {
+    color: var(--white);
+    background: var(--green);
+    border-color: var(--green);
+    box-shadow: 4px 4px 0 #E9B949;
+    transform: none;
+  }
+
+  .shop-section .produce-tabs button.active .tab-icon {
+    color: var(--white);
+    background: rgba(255, 255, 255, .16);
+    border-color: rgba(255, 255, 255, .36);
+    box-shadow: none;
+  }
 }
