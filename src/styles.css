@@ -6150,6 +6150,7 @@ h6,
   .site-header-hero,
   .site-header-product,
   .site-header-hero.site-header-scrolled {
+    position: relative;
     min-height: 76px;
     padding: 18px 20px;
     grid-template-columns: 1fr;
@@ -6159,16 +6160,24 @@ h6,
 
   .header-brand-row {
     width: 100%;
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 18px;
   }
 
   .brand-text {
     justify-self: auto;
+    margin: 0 auto;
     text-align: left;
     font-size: clamp(31px, 8.6vw, 40px);
+  }
+
+  .mobile-menu-toggle {
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 
   .mobile-menu-toggle {
@@ -6262,6 +6271,40 @@ h6,
     place-items: center;
     background: rgba(216, 225, 204, .34);
     border: 1px solid rgba(16, 59, 55, .12);
+    border-radius: 50%;
+    font-size: 21px;
+  }
+
+  .site-header:not(.mobile-menu-open) .header-actions {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    width: 42px;
+    max-height: 42px;
+    padding: 0;
+    justify-content: initial;
+    gap: 0;
+    overflow: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .site-header:not(.mobile-menu-open) .header-actions .header-icon-button {
+    display: none;
+  }
+
+  .site-header:not(.mobile-menu-open) .header-actions .ant-badge {
+    display: block;
+  }
+
+  .site-header:not(.mobile-menu-open) .header-cart-button {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    color: var(--green);
+    background: rgba(255, 255, 255, .58);
+    border: 1px solid rgba(16, 59, 55, .16);
     border-radius: 50%;
     font-size: 21px;
   }
