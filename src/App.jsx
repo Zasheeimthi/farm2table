@@ -7,6 +7,7 @@ import {
   ArrowUpOutlined,
   CalendarOutlined,
   CheckCircleOutlined,
+  CloseOutlined,
   CoffeeOutlined,
   CompassOutlined,
   EnvironmentOutlined,
@@ -16,6 +17,7 @@ import {
   InboxOutlined,
   InstagramFilled,
   MailOutlined,
+  MenuOutlined,
   MinusOutlined,
   PlusOutlined,
   PhoneOutlined,
@@ -234,17 +236,32 @@ function Header({ route, setActiveCategory, cartCount, lastAddedSlug, isScrolled
     ['Contact us', '/contact']
   ];
 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const goTo = (path) => {
+    if (path === '/' || path === '/products') setActiveCategory('all');
+    setRoute(path);
+    setMenuOpen(false);
+  };
+
   return (
-    <header className={`site-header ${route.path === '/' ? 'site-header-hero' : ''} ${isScrolled ? 'site-header-scrolled' : ''} ${route.path.startsWith('/product/') ? 'site-header-product' : ''}`}>
-      <Brand onHome={() => { setActiveCategory('all'); setRoute('/'); }} />
-      <nav aria-label="Primary navigation">
+    <header className={`site-header ${route.path === '/' ? 'site-header-hero' : ''} ${isScrolled ? 'site-header-scrolled' : ''} ${route.path.startsWith('/product/') ? 'site-header-product' : ''} ${menuOpen ? 'mobile-menu-open' : ''}`}>
+      <div className="header-brand-row">
+        <Brand onHome={() => goTo('/')} />
+        <button
+          className="mobile-menu-toggle"
+          type="button"
+          onClick={() => setMenuOpen((open) => !open)}
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+        >
+          {menuOpen ? <CloseOutlined /> : <MenuOutlined />}
+        </button>
+      </div>
+      <nav className={menuOpen ? 'is-open' : ''} aria-label="Primary navigation">
         {nav.map(([label, path]) => (
           <button
             className={route.path === path ? 'active' : ''}
-            onClick={() => {
-              if (path === '/' || path === '/products') setActiveCategory('all');
-              setRoute(path);
-            }}
+            onClick={() => goTo(path)}
             key={path}
           >
             {label}
@@ -374,7 +391,7 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
           <source src="/storefront/hero-farmer.mp4" type="video/mp4" />
         </video>
         <div className="hero-content scroll-reveal">
-          <span className="eyebrow">Local farms. Premium produces.</span>
+          <span className="eyebrow">Local farms. Premium produce.</span>
           <h1>Fresh. Natural.<br /><em>Delivered to you.</em></h1>
           <p>Discover small-scale, nutritious food sourced directly from farms you can actually know.</p>
           <form className="hero-search" onSubmit={(event) => { event.preventDefault(); searchProducts(); }}>
