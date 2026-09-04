@@ -1178,7 +1178,7 @@ function AboutPage() {
 
       <section className="about-story section-block wide">
         <div className="about-story-image image-reveal">
-          <img src="/storefront/585.jpg" alt="Farmer carrying fresh produce in a field" />
+          <img src="/storefront/farm-detail-hero-solmarka.jpg" alt="Traditional Swedish red barn surrounded by green fields" />
         </div>
         <div className="about-story-copy scroll-reveal">
           <span className="eyebrow">Our story</span>

@@ -1946,6 +1946,10 @@ button {
   background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(216,225,204,0.33));
 }
 
+.promise-panel h2 {
+  margin-top: 8px;
+}
+
 .promise-quote {
   margin-top: 26px;
   padding-top: 20px;
@@ -3743,6 +3747,23 @@ button {
 }
 
 @media (max-width: 760px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-bottom: 12px;
+  }
+
+  .about-hero-copy h1 {
+    max-width: 560px;
+    font-size: clamp(54px, 15vw, 76px);
+    line-height: .94;
+  }
+
+  .about-hero-intro p {
+    max-width: 560px;
+    font-size: 18px;
+  }
+
   .site-header nav {
     flex-wrap: wrap;
     gap: 16px 26px;
@@ -3755,6 +3776,7 @@ button {
   .why-benefits,
   .how-steps,
   .farm-story,
+  .about-story,
   .care-grid,
   .visit-section,
   .visit-note-grid,
@@ -3786,6 +3808,23 @@ button {
 
   .product-detail-media {
     min-height: 320px;
+  }
+
+  .about-story {
+    gap: 32px;
+    align-items: start;
+  }
+
+  .about-story-image img {
+    height: 300px;
+  }
+
+  .about-promise {
+    margin-top: 32px;
+  }
+
+  .promise-panel {
+    padding: 34px 22px;
   }
 
   .product-detail-thumbs {
@@ -4393,7 +4432,8 @@ h6,
   }
 
   .footer-main {
-    gap: 36px;
+    gap: 28px;
+    padding-bottom: 32px;
   }
 }
 
