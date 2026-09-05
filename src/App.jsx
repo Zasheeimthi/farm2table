@@ -323,18 +323,33 @@ function ProductCard({ item, compact = false, onAdd }) {
   );
 }
 
+function CategoryArtwork({ category }) {
+  const artwork = {
+    all: <><rect x="15" y="15" width="22" height="22" rx="5" fill="var(--category-accent)" /><rect x="47" y="15" width="22" height="22" rx="5" fill="var(--category-accent)" /><rect x="15" y="47" width="22" height="22" rx="5" fill="var(--category-accent)" /><rect x="47" y="47" width="22" height="22" rx="5" fill="var(--category-accent)" /></>,
+    'meat-fish': <><path d="M14 39c13-20 35-20 48 0-13 20-35 20-48 0Z" fill="var(--category-accent)" /><path d="m62 39 13-13v26L62 39Z" fill="var(--category-accent)" /><path d="M43 23c-7 10-7 22 0 32M22 37h1" /><circle cx="25" cy="35" r="2" fill="currentColor" stroke="none" /></>,
+    dairy: <><path d="M13 45 56 24l13 19v21H13V45Z" fill="var(--category-accent)" /><path d="m13 45 43 4 13-6M56 49v15" /><circle cx="27" cy="54" r="3" /><circle cx="43" cy="57" r="2" /><path d="m30 36 8 2m11-9 5 3" /></>,
+    vegetables: <><path d="M51 25C28 23 24 52 15 68c20-5 47-17 43-34Z" fill="var(--category-accent)" /><path d="m50 28 1-17m4 19 16-10m-18 9 10-18M31 39l9 5m-15 7 8 5" /></>,
+    pantry: <><rect x="22" y="23" width="38" height="45" rx="10" fill="var(--category-accent)" /><rect x="23" y="15" width="36" height="9" rx="3" /><path d="M23 37h36M23 56h36" /><path d="M36 47c3-6 9-6 12 0-3 6-9 6-12 0Z" /></>,
+    drinks: <><path d="M30 22v12l-7 10v23h34V44l-7-10V22" fill="var(--category-accent)" /><rect x="29" y="13" width="22" height="9" rx="3" /><path d="M23 47h34M23 59h34m9-30 5-7m-3 16h8" /></>,
+    kitchen: <><path d="M17 35h48v10c0 14-10 22-24 22S17 59 17 45V35Z" fill="var(--category-accent)" /><path d="M17 39H9v11h9m47-11h8v11H63M14 29h54M35 23v-5h12v5m-3 12 14-22" /></>
+  };
+  return <svg viewBox="0 0 84 84" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{artwork[category]}</svg>;
+}
+
 function CategoryFilter({ activeCategory, onChange }) {
   return (
-    <div className="produce-tabs" role="tablist" aria-label="Product categories">
+    <div className="category-filters" role="group" aria-label="Product categories">
       {categoryTabs.map((tab) => (
         <button
-          className={activeCategory === tab.id ? 'active' : ''}
+          className="category-filter-card"
+          data-category={tab.id}
+          aria-pressed={activeCategory === tab.id}
           onClick={() => onChange(tab.id)}
           type="button"
           key={tab.id}
         >
-          <span className="tab-icon">{tab.icon}</span>
-          <span className="category-tab-label">{tab.label}</span>
+          <span className="category-filter-art"><CategoryArtwork category={tab.id} /></span>
+          <span className="category-filter-label">{tab.label}</span>
         </button>
       ))}
     </div>
@@ -405,13 +420,23 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
         </div>
       </section>
 
-      <section className="competitor-bar" aria-label="Store categories">
-        {categoryTabs.slice(1).map((tab) => (
-          <button key={tab.id} onClick={() => { setActiveCategory(tab.id); setRoute('/products'); }}>
-            <span>{tab.icon}</span>
-            {tab.label}
-          </button>
-        ))}
+      <section className="category-discovery" aria-labelledby="category-discovery-title">
+        <div className="category-discovery-heading">
+          <div>
+            <span>Good food starts here</span>
+            <h2 id="category-discovery-title">Find your farm favourites.</h2>
+          </div>
+          <button type="button" onClick={() => { setActiveCategory('all'); setRoute('/products'); }}>Shop everything <ArrowRightOutlined /></button>
+        </div>
+        <div className="category-discovery-grid">
+          {categoryTabs.slice(1).map((tab, index) => (
+            <button className={`category-discovery-card category-tone-${index}`} type="button" key={tab.id} onClick={() => { setActiveCategory(tab.id); setRoute('/products'); }}>
+              <span className="category-artwork"><CategoryArtwork category={tab.id} /></span>
+              <span className="category-discovery-label">{tab.label}</span>
+              <span className="category-discovery-arrow" aria-hidden="true"><ArrowRightOutlined /></span>
+            </button>
+          ))}
+        </div>
       </section>
 
       <section className="market-flow section-block wide">
@@ -434,24 +459,27 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
             </div>
           </div>
         </div>
-        <div className="how-panel scroll-reveal">
-          <div className="how-title">
-            <span><TagOutlined /></span>
-            <h2>How It Works</h2>
+        <section className="shopping-journey scroll-reveal" aria-labelledby="shopping-journey-title">
+          <div className="shopping-journey-heading">
+            <div>
+              <span className="shopping-journey-kicker">From their farm to your home</span>
+              <h2 id="shopping-journey-title">How it works<span>.</span></h2>
+            </div>
+            <p>Fresh food. Four simple steps.</p>
           </div>
-          <div className="how-steps">
-            {steps.map(([number, title, text, icon], index) => (
-              <article key={number}>
-                <div className="how-number">{number}</div>
-                <div>
-                  <strong>{title}</strong>
-                  <p>{text}</p>
+          <ol className="shopping-journey-steps">
+            {steps.map(([number, title, text, icon]) => (
+              <li key={number}>
+                <div className="shopping-journey-card-top">
+                  <span className="shopping-journey-icon" aria-hidden="true">{icon}</span>
+                  <span className="shopping-journey-number" aria-hidden="true">0{number}</span>
                 </div>
-                <span className="how-icon">{icon}</span>
-              </article>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </li>
             ))}
-          </div>
-        </div>
+          </ol>
+        </section>
       </section>
 
       <section className="shop-section section-block">
@@ -505,15 +533,19 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
         <div className="visit-image image-reveal">
           <img src="/ferme/13305.jpg" alt="Family visiting a farm garden" />
         </div>
-        <div className="visit-copy scroll-reveal">
-          <h2>Visit with<br />Kids</h2>
+        <div className="visit-copy family-visit scroll-reveal">
+          <span className="family-visit-kicker">Little adventures. Lasting memories.</span>
+          <h2>Visit with kids<span>.</span></h2>
           <p>The farm is open on selected weekends for families to explore fields, meet growers, and enjoy a slow day close to nature.</p>
-          <div className="visit-note-grid">
-            <span><strong>Guided Walks</strong><small>Meet growers and see the fields.</small></span>
-            <span><strong>Mini Harvest</strong><small>Pick seasonal greens with our team.</small></span>
-            <span><strong>Animal Care</strong><small>Learn gentle farm routines up close.</small></span>
+          <div className="family-activities">
+            <article><span aria-hidden="true"><CompassOutlined /></span><h3>Guided walks</h3><p>Meet growers and see the fields.</p></article>
+            <article><span aria-hidden="true"><ShoppingOutlined /></span><h3>Mini harvest</h3><p>Pick seasonal greens with our team.</p></article>
+            <article><span aria-hidden="true"><HeartOutlined /></span><h3>Animal care</h3><p>Learn gentle farm routines up close.</p></article>
           </div>
-          <button onClick={() => setRoute('/contact')}>Contact us</button>
+          <div className="family-visit-actions">
+            <button type="button" onClick={() => setRoute('/contact')}>Plan your visit <ArrowRightOutlined /></button>
+            <span><CalendarOutlined /> Selected weekends</span>
+          </div>
         </div>
         <div className="visit-small image-reveal">
           <img src="/ferme/visit-cow.jpg" alt="Feeding a cow on the farm" />
@@ -1275,28 +1307,47 @@ function AboutPage() {
 }
 
 function ContactPage() {
+  const prepareEmail = (event) => {
+    event.preventDefault();
+    const fields = new FormData(event.currentTarget);
+    const body = `${fields.get('message')}\n\nFrom: ${fields.get('name')}\nEmail: ${fields.get('email')}`;
+    window.location.href = `mailto:support@farmtotable.com?subject=${encodeURIComponent('Farm to Table enquiry')}&body=${encodeURIComponent(body)}`;
+  };
+
   return (
-    <main className="page-view simple-page">
-      <section className="page-hero contact-hero">
-        <span className="eyebrow">Contact us</span>
-        <h1>Talk to Farm to Table</h1>
-        <p>Questions about delivery, farm sourcing, or product availability? Our team is ready to help.</p>
+    <main className="page-view contact-experience">
+      <section className="contact-intro section-block">
+        <span className="contact-kicker">Let’s talk</span>
+        <h1>Good food starts with<br />a good conversation<span>.</span></h1>
+        <p>Questions about your delivery, our farms, or what’s fresh? We’re here to help.</p>
       </section>
-      <section className="contact-panel section-block">
-        <article className="contact-card">
-          <h2>Customer care</h2>
-          <p>support@farmtotable.com</p>
-          <p>+46 8 345 5678</p>
-        </article>
-        <article className="contact-card">
-          <h2>Delivery support</h2>
-          <p>Monday to Saturday</p>
-          <p>08:00 - 18:00</p>
-        </article>
-        <form className="contact-form">
-          <Input placeholder="Your email" type="email" />
-          <Input.TextArea placeholder="How can we help?" rows={5} />
-          <Button type="primary" className="contact-submit-button">Send Message</Button>
+      <section className="contact-workspace section-block" aria-label="Contact our team">
+        <aside className="contact-support">
+          <span className="contact-support-symbol" aria-hidden="true"><CoffeeOutlined /></span>
+          <h2>A little help,<br />a human touch.</h2>
+          <p>Find the right way to reach our team.</p>
+          <a className="contact-method" href="mailto:support@farmtotable.com">
+            <MailOutlined /><span><small>Email us</small><strong>support@farmtotable.com</strong></span><ArrowRightOutlined />
+          </a>
+          <a className="contact-method" href="tel:+4683455678">
+            <PhoneOutlined /><span><small>Give us a call</small><strong>+46 8 345 5678</strong></span><ArrowRightOutlined />
+          </a>
+          <div className="contact-hours">
+            <CalendarOutlined />
+            <div><strong>Delivery support</strong><p>Monday–Saturday · 08:00–18:00</p></div>
+          </div>
+        </aside>
+        <form className="contact-message" onSubmit={prepareEmail}>
+          <div className="contact-message-heading"><span>We’re listening</span><h2>How can we help?</h2></div>
+          <div className="contact-field-row">
+            <label htmlFor="contact-name">Your name<input id="contact-name" name="name" autoComplete="name" placeholder="Full name" required /></label>
+            <label htmlFor="contact-email">Email address<input id="contact-email" name="email" type="email" autoComplete="email" placeholder="you@example.com" required /></label>
+          </div>
+          <label htmlFor="contact-message">Your message<textarea id="contact-message" name="message" placeholder="Tell us a little about what you need…" rows={5} required /></label>
+          <div className="contact-send-row">
+            <p>Continue in your email app to review and send your message.</p>
+            <button type="submit">Continue in email <ArrowRightOutlined /></button>
+          </div>
         </form>
       </section>
       <Footer />
@@ -1364,19 +1415,38 @@ function Reviews() {
 }
 
 function FAQSection() {
+  const [openQuestion, setOpenQuestion] = useState(0);
+
   return (
-    <section className="faq-section section-block scroll-reveal">
+    <section className="faq-section section-block scroll-reveal" aria-labelledby="faq-title">
       <div className="faq-heading">
         <span className="eyebrow">Customer clarity</span>
-        <h2>Frequently Asked Questions</h2>
+        <h2 id="faq-title">Frequently Asked Questions</h2>
         <p>Simple answers for ordering fresh local food, choosing farms, and receiving deliveries with confidence.</p>
+        <button className="faq-contact" type="button" onClick={() => setRoute('/contact')}>
+          Still have questions? <span>Talk to us <ArrowRightOutlined /></span>
+        </button>
       </div>
       <div className="faq-list">
-        {faqItems.map(([question, answer]) => (
-          <article key={question}>
-            <span>Q</span>
-            <div>
-              <h3>{question}</h3>
+        {faqItems.map(([question, answer], index) => (
+          <article className={openQuestion === index ? 'is-open' : ''} key={question}>
+            <h3>
+              <button
+                className="faq-trigger"
+                type="button"
+                id={`faq-question-${index}`}
+                aria-expanded={openQuestion === index}
+                aria-controls={`faq-answer-${index}`}
+                onClick={() => setOpenQuestion(openQuestion === index ? null : index)}
+              >
+                <span className="faq-number" aria-hidden="true">0{index + 1}</span>
+                <span>{question}</span>
+                <span className="faq-toggle" aria-hidden="true">
+                  {openQuestion === index ? <MinusOutlined /> : <PlusOutlined />}
+                </span>
+              </button>
+            </h3>
+            <div className="faq-answer" id={`faq-answer-${index}`} role="region" aria-labelledby={`faq-question-${index}`} hidden={openQuestion !== index}>
               <p>{answer}</p>
             </div>
           </article>
