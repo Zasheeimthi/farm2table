@@ -1,3 +1,5 @@
+import { farmData, categoryTabs, productData } from './catalog.jsx';
+import { MarketProvider, useMarket, MarketTools, FarmsPage, ProductsPage, ProductDetailsPage, FarmPage, CartPage, CheckoutPage, PaymentPage, ConfirmationPage, AccountPage, AuthPage, OrdersPage, SavedPage, NotFound, FeaturedFarms, SaveButton } from './marketplace.jsx';
 import React, { useEffect, useMemo, useState } from 'react';
 import { Badge, Button, Input } from 'antd';
 import {
@@ -31,127 +33,6 @@ import {
   TruckOutlined
 } from '@ant-design/icons';
 
-const farmData = {
-  solmarka: {
-    name: 'Solmarka Farm',
-    location: 'Blekede, Sweden',
-    image: '/storefront/farm-detail-hero-solmarka.jpg',
-    summary: 'A biodynamic farm growing seasonal vegetables, dairy, and small-batch fresh food with soil-first methods.',
-    practices: ['Biodynamic', 'Organic', 'Seasonal harvest', 'Reusable boxes']
-  },
-  hagshult: {
-    name: 'Hagshult Grasslands',
-    location: 'Smaland, Sweden',
-    image: '/ferme/6293.jpg',
-    summary: 'Pasture-raised cattle from open grassland, focused on slow growth, welfare, and rich flavor.',
-    practices: ['Grass-fed', 'Small scale', 'Traceable meat', 'Low waste']
-  },
-  bjare: {
-    name: 'Bjare Chicken Farm',
-    location: 'Bjare Peninsula',
-    image: '/storefront/farm-sunny-side-clean.jpg',
-    summary: 'Slow-growing chicken raised with generous space, clean feed, and careful regional delivery.',
-    practices: ['Slow grown', 'Free range', 'Protein rich', 'Fresh packed']
-  },
-  hiddenfjord: {
-    name: 'Hiddenfjord Fishery',
-    location: 'Faroe Islands',
-    image: '/storefront/farm-pure-roots-clean.jpg',
-    summary: 'Premium salmon handled with cold-chain care and selected for clean texture and dependable quality.',
-    practices: ['Cold chain', 'Seafood', 'Premium cuts', 'Fresh delivery']
-  },
-  almnas: {
-    name: 'Almnas Dairy',
-    location: 'Vastergotland',
-    image: '/storefront/farm-heritage-clean.jpg',
-    summary: 'Heritage dairy makers producing aged cheese and cultured products with a refined, local character.',
-    practices: ['Aged cheese', 'Cultured dairy', 'Local makers', 'Rich flavor']
-  },
-  alvas: {
-    name: 'Alvas Naturbete',
-    location: 'Halland',
-    image: '/ferme/visit-cow.jpg',
-    summary: 'A pasture-focused dairy partner producing clean fermented staples from carefully managed herds.',
-    practices: ['Pasture dairy', 'Fermented', 'Fresh milk', 'Small batch']
-  },
-  guldhaven: {
-    name: 'Guldhaven',
-    location: 'Kalix Coast',
-    image: '/ferme/bundle-cheese.jpg',
-    summary: 'Northern seafood specialists supplying delicate roe and carefully packed coastal produce.',
-    practices: ['Coastal', 'Specialty seafood', 'Premium', 'Chilled delivery']
-  },
-  farmtable: {
-    name: 'Farm to Table Market',
-    location: 'Local partner network',
-    image: '/storefront/hero-produce.jpg',
-    summary: 'Curated bundles and pantry essentials assembled from nearby partner farms for weekly delivery.',
-    practices: ['Curated boxes', 'Pantry', 'Kitchen goods', 'Weekly delivery']
-  }
-};
-
-const categoryTabs = [
-  { id: 'all', label: 'All Produce', icon: <AppstoreOutlined /> },
-  { id: 'meat-fish', label: 'Meat, Chicken & Fish', icon: <SkinOutlined /> },
-  { id: 'dairy', label: 'Dairy & Cheese', icon: <CoffeeOutlined /> },
-  { id: 'vegetables', label: 'Vegetables & Roots', icon: <HomeOutlined /> },
-  { id: 'pantry', label: 'Pantry', icon: <InboxOutlined /> },
-  { id: 'drinks', label: 'Drinks', icon: <CompassOutlined /> },
-  { id: 'kitchen', label: 'To the Kitchen', icon: <ShoppingOutlined /> }
-];
-
-const productData = [
-  { title: 'Low-Pasteurized Whole Milk 1L', category: 'dairy', farmId: 'solmarka', price: '56 kr', image: '/ferme/product-milk.jpg', tag: 'Organic' },
-  { title: 'Grassland Yoghurt 1L', category: 'dairy', farmId: 'alvas', price: '56 kr', image: '/ferme/product-kefir.jpg', tag: 'Fresh' },
-  { title: 'Biodynamic Yoghurt 1L', category: 'dairy', farmId: 'solmarka', price: '56 kr', image: '/ferme/product-kefir.jpg' },
-  { title: 'Biodynamic Vegetable Box', category: 'vegetables', farmId: 'solmarka', price: '279 kr', image: '/ferme/product-sprouts.jpg', tag: 'Box' },
-  { title: 'Grass-Fed Minced Beef 500g', category: 'meat-fish', farmId: 'hagshult', price: '172 kr', image: '/ferme/fresh-beef-cubes.png' },
-  { title: 'Grass-Fed Minced Beef Box 4kg', category: 'meat-fish', farmId: 'hagshult', price: '1 256 kr', image: '/ferme/assortment-raw-meat-cuts.png', tag: 'Family' },
-  { title: 'Organic Ribeye Grass-Fed Beef', category: 'meat-fish', farmId: 'farmtable', price: 'From 213 kr', image: '/ferme/fresh-beef-cubes.png' },
-  { title: 'Organic Grass-Fed Starter Meat Box', category: 'meat-fish', farmId: 'farmtable', price: '1 144 kr', image: '/ferme/assortment-raw-meat-cuts.png', tag: 'Bundle' },
-  { title: 'Organic Beef Stew Cuts 500g', category: 'meat-fish', farmId: 'farmtable', price: '147 kr', image: '/ferme/fresh-beef-cubes.png' },
-  { title: 'Organic Tenderloin Grass-Fed Beef', category: 'meat-fish', farmId: 'farmtable', price: 'From 327 kr', image: '/ferme/fresh-beef-cubes.png' },
-  { title: 'Organic Minced Beef 450g', category: 'meat-fish', farmId: 'farmtable', price: '133 kr', image: '/ferme/fresh-beef-cubes.png' },
-  { title: 'Organic New Potatoes 1kg', category: 'vegetables', farmId: 'solmarka', price: '51 kr', image: '/ferme/product-avocado.jpg' },
-  { title: 'Biodynamic Potatoes 1kg', category: 'vegetables', farmId: 'solmarka', price: '37 kr', image: '/ferme/product-avocado.jpg' },
-  { title: 'Organic Tomato 200g', category: 'vegetables', farmId: 'solmarka', price: '37 kr', image: '/ferme/product-avocado.jpg' },
-  { title: 'Organic Cucumber', category: 'vegetables', farmId: 'solmarka', price: '32 kr', image: '/ferme/product-avocado.jpg' },
-  { title: 'Organic Early Carrots Bunch', category: 'vegetables', farmId: 'solmarka', price: '46 kr', image: '/ferme/product-sprouts.jpg' },
-  { title: 'Organic Fresh Corn', category: 'vegetables', farmId: 'solmarka', price: '23 kr', image: '/ferme/product-sprouts.jpg' },
-  { title: 'Organic Garlic', category: 'vegetables', farmId: 'solmarka', price: '30 kr', image: '/ferme/product-sprouts.jpg' },
-  { title: 'Organic Yellow Onion Bunch', category: 'vegetables', farmId: 'solmarka', price: '36 kr', image: '/ferme/product-sprouts.jpg' },
-  { title: 'Organic Kale 200g', category: 'vegetables', farmId: 'solmarka', price: '30 kr', image: '/ferme/product-sprouts.jpg' },
-  { title: 'Organic Zucchini', category: 'vegetables', farmId: 'solmarka', price: '26 kr', image: '/ferme/product-avocado.jpg' },
-  { title: 'Organic White Cabbage 500g', category: 'vegetables', farmId: 'solmarka', price: '37 kr', image: '/ferme/product-avocado.jpg' },
-  { title: 'Organic Baking Potato', category: 'vegetables', farmId: 'solmarka', price: '17 kr', image: '/ferme/product-avocado.jpg' },
-  { title: 'Organic Eldost 100g', category: 'dairy', farmId: 'solmarka', price: '46 kr', image: '/ferme/product-cheese.jpg' },
-  { title: 'Slow-Grown Chicken Breast Box', category: 'meat-fish', farmId: 'bjare', price: '1 189 kr', image: '/ferme/product-chicken.jpg' },
-  { title: 'Slow-Grown Chicken Thigh Box', category: 'meat-fish', farmId: 'bjare', price: '1 294 kr', image: '/ferme/product-chicken.jpg' },
-  { title: 'Two-Pack Chicken Breast Fillets', category: 'meat-fish', farmId: 'bjare', price: '297 kr', image: '/ferme/product-chicken.jpg' },
-  { title: 'Whole Slow-Grown Chicken 1.6kg', category: 'meat-fish', farmId: 'bjare', price: '229 kr', image: '/ferme/product-chicken.jpg' },
-  { title: 'Two-Pack Chicken Legs', category: 'meat-fish', farmId: 'bjare', price: '114 kr', image: '/ferme/product-chicken.jpg' },
-  { title: 'Faroe Salmon Fillet 400g', category: 'meat-fish', farmId: 'hiddenfjord', price: '194 kr', image: '/storefront/category-meat-fresh.png' },
-  { title: 'Faroe Salmon Fillet Box 4kg', category: 'meat-fish', farmId: 'hiddenfjord', price: '1 740 kr', image: '/storefront/category-meat-fresh.png', tag: 'Premium' },
-  { title: 'Salmon Tail Cuts 200g', category: 'meat-fish', farmId: 'hiddenfjord', price: '76 kr', image: '/storefront/category-meat-fresh.png' },
-  { title: 'Fresh Minced Salmon 400g', category: 'meat-fish', farmId: 'hiddenfjord', price: '145 kr', image: '/storefront/category-meat-fresh.png' },
-  { title: 'Hot-Smoked Salmon 450g', category: 'meat-fish', farmId: 'hiddenfjord', price: '274 kr', image: '/storefront/category-meat-fresh.png' },
-  { title: 'Cured Salmon 150g', category: 'meat-fish', farmId: 'hiddenfjord', price: '89 kr', image: '/storefront/category-meat-fresh.png' },
-  { title: 'Cold-Smoked Salmon 150g', category: 'meat-fish', farmId: 'hiddenfjord', price: '89 kr', image: '/storefront/category-meat-fresh.png' },
-  { title: 'Whole Salmon Side 1.9kg', category: 'meat-fish', farmId: 'hiddenfjord', price: '784 kr', image: '/storefront/category-meat-fresh.png' },
-  { title: 'Kalix Roe 500g', category: 'meat-fish', farmId: 'guldhaven', price: '1 249 kr', image: '/ferme/bundle-cheese.jpg', tag: 'Rare' },
-  { title: 'Biodynamic Fresh Cheese 200g', category: 'dairy', farmId: 'solmarka', price: '51 kr', image: '/ferme/product-cheese.jpg' },
-  { title: 'Organic Creme Fraiche 2dl', category: 'dairy', farmId: 'alvas', price: '58 kr', image: '/ferme/product-milk.jpg' },
-  { title: 'Almnas Tegel Aged Cheese', category: 'dairy', farmId: 'almnas', price: '124 kr', image: '/ferme/product-cheese.jpg' },
-  { title: 'Almnas Anno 1225 Cheese', category: 'dairy', farmId: 'almnas', price: '356 kr', image: '/ferme/product-cheese.jpg' },
-  { title: 'Almnas Large Format Cheese', category: 'dairy', farmId: 'almnas', price: '389 kr', image: '/ferme/product-cheese.jpg' },
-  { title: 'Organic Ginger Snaps 160g', category: 'pantry', farmId: 'farmtable', price: '49 kr', image: '/ferme/product-cookies.jpg' },
-  { title: 'Weekly Pantry Box', category: 'pantry', farmId: 'farmtable', price: '800 kr', image: '/ferme/product-cookies.jpg' },
-  { title: 'Kitchen Glass Jar Set', category: 'kitchen', farmId: 'farmtable', price: '199 kr', image: '/ferme/bundle-cheese.jpg' },
-  { title: 'Reusable Produce Bags', category: 'kitchen', farmId: 'farmtable', price: '149 kr', image: '/ferme/bundle-dairy.jpg' },
-  { title: 'Blueberry & Acai Kefir 250ml', category: 'drinks', farmId: 'alvas', price: '39 kr', image: '/ferme/product-kefir.jpg' },
-  { title: 'Fresh Farm Drink Selection', category: 'drinks', farmId: 'farmtable', price: 'From 89 kr', image: '/ferme/bundle-breakfast.jpg' }
-];
-
 const steps = [
   ['1', 'Choose Location', 'Enter your delivery location', <EnvironmentOutlined />],
   ['2', 'Select Farm', 'Browse farms near you', <HomeOutlined />],
@@ -174,24 +55,9 @@ const marketplaceBenefits = [
 
 const faqItems = [
   ['Where does the produce come from?', 'Every item is connected to a named farm, dairy, fishery, or local producer so customers can shop with clear origin details.'],
-  ['Can customers choose a delivery day?', 'Yes. Delivery slots can be selected during checkout based on the customer location and the weekly farm delivery schedule.'],
+  ['Can customers choose a delivery day?', 'You can choose a delivery day and time in the checkout preview. Live availability will be confirmed when ordering is connected.'],
   ['How are chilled products handled?', 'Dairy, meat, fish, and fresh drinks are packed with cold-chain care in clean reusable delivery boxes.'],
   ['Can I view farm details before buying?', 'Yes. Farm names open a dedicated farm page with location, practices, product list, and producer story.']
-];
-
-const farmBenefits = [
-  ['Chemical Free', 'No harsh chemicals, only natural farming.', <CheckCircleOutlined />],
-  ['Sustainably Grown', 'Eco-friendly practices from field to box.', <CompassOutlined />],
-  ['Locally Sourced', 'Fresh produce delivered from nearby farms.', <EnvironmentOutlined />],
-  ['Animal Welfare', 'Humane care for every partner animal.', <HeartOutlined />],
-  ['Farm Fresh', 'Harvested at peak freshness for better quality.', <TagOutlined />]
-];
-
-const supportBenefits = [
-  ['Fast Delivery', 'To your doorstep', <TruckOutlined />],
-  ['Secure Payments', 'Safe and trusted', <ShoppingCartOutlined />],
-  ['100% Natural', 'No chemicals', <CheckCircleOutlined />],
-  ['Help Center', 'We are here to help', <PhoneOutlined />]
 ];
 
 function getRoute() {
@@ -215,10 +81,6 @@ function productPath(item) {
   return `/product/${slugify(item.title)}`;
 }
 
-function findProductBySlug(slug, products) {
-  return products.find((product) => slugify(product.title) === slug);
-}
-
 function Brand({ onHome }) {
   return (
     <button className="brand-text" onClick={onHome} aria-label="Farm to Table home">
@@ -227,10 +89,13 @@ function Brand({ onHome }) {
   );
 }
 
-function Header({ route, setActiveCategory, cartCount, lastAddedSlug, isScrolled }) {
+function Header({ route, setActiveCategory, cartCount, isScrolled }) {
+  const market = useMarket();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  useEffect(() => { setMobileNavOpen(false); }, [route.path]);
   const nav = [
     ['Home', '/'],
+    ['Farms', '/farms'],
     ['Products', '/products'],
     ['About', '/about'],
     ['Contact us', '/contact']
@@ -251,7 +116,7 @@ function Header({ route, setActiveCategory, cartCount, lastAddedSlug, isScrolled
       <nav aria-label="Primary navigation">
         {nav.map(([label, path]) => (
           <button
-            className={route.path === path ? 'active' : ''}
+            className={route.path === path || (path === '/farms' && route.path.startsWith('/farm/')) ? 'active' : ''}
             onClick={() => {
               if (path === '/' || path === '/products') setActiveCategory('all');
               setRoute(path);
@@ -262,16 +127,19 @@ function Header({ route, setActiveCategory, cartCount, lastAddedSlug, isScrolled
             {label}
           </button>
         ))}
+        <button className="mobile-search-action" onClick={() => { market.setSearchOpen(true); setMobileNavOpen(false); }}>Search</button>
       </nav>
       <div className="header-actions" aria-label="Quick actions">
-        <button className="header-icon-button" type="button" onClick={() => setRoute('/contact')} aria-label="Open account and support">
+        <button className="header-delivery" onClick={() => market.setLocationOpen(true)}><EnvironmentOutlined /> {market.location?.city || "Delivery location"}</button>
+        <button className="header-search-button" aria-label="Search products and farms" onClick={() => market.setSearchOpen(true)}><SearchOutlined /></button>
+        <button className="header-icon-button" type="button" onClick={() => setRoute('/account')} aria-label="Open my account">
           <TeamOutlined />
         </button>
         <Badge count={cartCount} color="#FE5D02">
           <button
             className="header-cart-button"
             type="button"
-            onClick={() => setRoute(lastAddedSlug ? `/cart?item=${lastAddedSlug}` : '/cart')}
+            onClick={() => setRoute('/cart')}
             aria-label="Open cart"
           >
             <ShoppingCartOutlined />
@@ -298,7 +166,7 @@ function ProductCard({ item, compact = false, onAdd }) {
 
   return (
     <article className={`product-card scroll-reveal ${compact ? 'compact' : ''}`}>
-      <button className="heart-btn" aria-label={`Save ${item.title}`}><HeartOutlined /></button>
+      <SaveButton className="heart-btn" id={`product:${slugify(item.title)}`} label={item.title} />
       {item.tag && <span className="sale-ribbon">{item.tag}</span>}
       <button className="product-image product-image-button" type="button" onClick={() => setRoute(path)} aria-label={`View ${item.title}`}>
         <img src={item.image} alt={item.title} />
@@ -358,27 +226,17 @@ function CategoryFilter({ activeCategory, onChange }) {
 
 function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
   const [heroSearch, setHeroSearch] = useState('');
-  const [heroLocation, setHeroLocation] = useState('Uppsala, Sweden');
+  const market = useMarket();
+  const heroLocation = market.location?.city || 'Choose delivery location';
   const heroProducts = (activeCategory === 'all'
     ? products
     : products.filter((product) => product.category === activeCategory)
   ).slice(0, 8);
 
-  const detectLocation = () => {
-    if (!navigator.geolocation) {
-      setHeroLocation('Local delivery area');
-      return;
-    }
-
-    setHeroLocation('Finding your area...');
-    navigator.geolocation.getCurrentPosition(
-      () => setHeroLocation('Delivery near you'),
-      () => setHeroLocation('Local delivery area')
-    );
-  };
+  const detectLocation = () => market.setLocationOpen(true);
 
   const searchProducts = () => {
-    setRoute(`/products?search=${encodeURIComponent(heroSearch.trim())}`);
+    setRoute(`/farms?search=${encodeURIComponent(heroSearch.trim())}`);
   };
 
   return (
@@ -404,7 +262,7 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
               <input
                 value={heroSearch}
                 onChange={(event) => setHeroSearch(event.target.value)}
-                placeholder="Search Products or Categories"
+                placeholder="Search farms, products or categories"
                 aria-label="Search products, farms or categories"
               />
             </div>
@@ -414,8 +272,8 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
             </button>
             <button className="hero-search-submit" type="submit">Explore <ArrowRightOutlined /></button>
           </form>
-          <button className="hero-browse-link" type="button" onClick={() => setRoute('/products')}>
-            Browse this week's harvest <ArrowRightOutlined />
+          <button className="hero-browse-link" type="button" onClick={() => setRoute('/farms')}>
+            Explore our farm community <ArrowRightOutlined />
           </button>
         </div>
       </section>
@@ -426,11 +284,11 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
             <span>Good food starts here</span>
             <h2 id="category-discovery-title">Find your farm favourites.</h2>
           </div>
-          <button type="button" onClick={() => { setActiveCategory('all'); setRoute('/products'); }}>Shop everything <ArrowRightOutlined /></button>
+          <button type="button" onClick={() => { setActiveCategory('all'); setRoute('/farms'); }}>Explore all farms <ArrowRightOutlined /></button>
         </div>
         <div className="category-discovery-grid">
           {categoryTabs.slice(1).map((tab, index) => (
-            <button className={`category-discovery-card category-tone-${index}`} type="button" key={tab.id} onClick={() => { setActiveCategory(tab.id); setRoute('/products'); }}>
+            <button className={`category-discovery-card category-tone-${index}`} type="button" key={tab.id} onClick={() => { setActiveCategory(tab.id); setRoute(`/farms?category=${tab.id}`); }}>
               <span className="category-artwork"><CategoryArtwork category={tab.id} /></span>
               <span className="category-discovery-label">{tab.label}</span>
               <span className="category-discovery-arrow" aria-hidden="true"><ArrowRightOutlined /></span>
@@ -438,6 +296,8 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
           ))}
         </div>
       </section>
+
+      <FeaturedFarms />
 
       <section className="market-flow section-block wide">
         <div className="why-panel scroll-reveal">
@@ -491,17 +351,17 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
           {heroProducts.map((product) => <ProductCard item={product} onAdd={onAdd} key={product.title} />)}
         </div>
         <div className="section-action">
-          <Button type="primary" onClick={() => { setActiveCategory('all'); setRoute('/products'); }}>View All Products</Button>
+          <Button type="primary" onClick={() => setRoute(`/products?category=${activeCategory}`)}>View All Products</Button>
         </div>
       </section>
 
       <section id="about" className="farm-story section-block">
         <div className="farm-heading scroll-reveal">
-          <h2>The<br />Farm</h2>
+          <h2>Our<br />Farms</h2>
         </div>
         <div className="farm-copy scroll-reveal">
           <p>Farm to Table connects homes with growers, dairies, butchers, and fishers who care about every step from field to delivery.</p>
-          <button onClick={() => setRoute('/about')}>Learn More</button>
+          <button onClick={() => setRoute('/farms')}>Meet Our Farms</button>
         </div>
         <div className="video-card image-reveal">
           <img src="/ferme/farm-video.jpg" alt="A child running through a farm field" />
@@ -536,7 +396,7 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
         <div className="visit-copy family-visit scroll-reveal">
           <span className="family-visit-kicker">Little adventures. Lasting memories.</span>
           <h2>Visit with kids<span>.</span></h2>
-          <p>The farm is open on selected weekends for families to explore fields, meet growers, and enjoy a slow day close to nature.</p>
+          <p>Discover family visits with our farm partners. Contact us to ask about farm walks, meeting growers, and spending a day close to nature.</p>
           <div className="family-activities">
             <article><span aria-hidden="true"><CompassOutlined /></span><h3>Guided walks</h3><p>Meet growers and see the fields.</p></article>
             <article><span aria-hidden="true"><ShoppingOutlined /></span><h3>Mini harvest</h3><p>Pick seasonal greens with our team.</p></article>
@@ -554,672 +414,6 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
 
       <Reviews />
       <FAQSection />
-      <Footer />
-    </main>
-  );
-}
-
-function ProductsPage({ products, activeCategory, setActiveCategory, onAdd }) {
-  const [searchTerm, setSearchTerm] = useState(() => getRoute().params.get('search') || '');
-  const [sortOption, setSortOption] = useState('popular');
-  const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 9;
-  const categoryProducts = activeCategory === 'all'
-    ? products
-    : products.filter((product) => product.category === activeCategory);
-  const filteredProducts = categoryProducts.filter((product) => {
-    const farm = farmData[product.farmId];
-    const haystack = `${product.title} ${farm.name} ${farm.location}`.toLowerCase();
-    return haystack.includes(searchTerm.trim().toLowerCase());
-  });
-  const sortedProducts = [...filteredProducts].sort((firstProduct, secondProduct) => {
-    if (sortOption === 'low-to-high' || sortOption === 'high-to-low') {
-      const firstPrice = Number(firstProduct.price.replace(/[^0-9]/g, ''));
-      const secondPrice = Number(secondProduct.price.replace(/[^0-9]/g, ''));
-      return sortOption === 'low-to-high' ? firstPrice - secondPrice : secondPrice - firstPrice;
-    }
-    return 0;
-  });
-  const totalPages = Math.max(1, Math.ceil(sortedProducts.length / productsPerPage));
-  const activePage = Math.min(currentPage, totalPages);
-  const visibleProducts = sortedProducts.slice(
-    (activePage - 1) * productsPerPage,
-    activePage * productsPerPage
-  );
-
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [activeCategory, searchTerm, sortOption]);
-
-  return (
-    <main className="page-view">
-      <section className="page-hero products-page-hero">
-        <div className="products-page-heading">
-          <span className="eyebrow products-page-eyebrow">Shop local produce</span>
-          <h1>All Products</h1>
-        </div>
-        <p>Every item shows the farm or producer it comes from, with a curated assortment across meat, fish, dairy, vegetables, pantry, drinks, and kitchen goods.</p>
-      </section>
-      <section className="products-category-showcase section-block wide scroll-reveal" aria-label="Product category highlights">
-        <div>
-          <span className="eyebrow">Curated assortment</span>
-          <h2>Shop by harvest mood</h2>
-        </div>
-        <div className="category-showcase-grid">
-          {categoryTabs.map((tab) => {
-            const total = tab.id === 'all'
-              ? products.length
-              : products.filter((product) => product.category === tab.id).length;
-            return (
-              <button
-                className={activeCategory === tab.id ? 'active' : ''}
-                onClick={() => setActiveCategory(tab.id)}
-                type="button"
-                key={tab.id}
-              >
-                <span>{tab.icon}</span>
-                <strong>{tab.label}</strong>
-                <small>{total} products</small>
-              </button>
-            );
-          })}
-        </div>
-      </section>
-      <section className="products-layout section-block wide">
-        <aside className="filter-panel filter-panel-modern scroll-reveal">
-          <h2>Assortment</h2>
-          <CategoryFilter activeCategory={activeCategory} onChange={setActiveCategory} />
-          <div className="sort-filter">
-            <label htmlFor="sort-products">Sort by</label>
-            <select id="sort-products" value={sortOption} onChange={(event) => setSortOption(event.target.value)}>
-              <option value="popular">Popular</option>
-              <option value="low-to-high">Price: Low to High</option>
-              <option value="high-to-low">Price: High to Low</option>
-            </select>
-          </div>
-        </aside>
-        <div className="products-results">
-          <div className="products-toolbar">
-            <Input
-              prefix={<SearchOutlined />}
-              placeholder="Search products or farms"
-              value={searchTerm}
-              onChange={(event) => setSearchTerm(event.target.value)}
-            />
-            <span>{sortedProducts.length} products</span>
-          </div>
-          <div className="product-grid product-grid-page">
-            {visibleProducts.map((product) => <ProductCard item={product} compact onAdd={onAdd} key={product.title} />)}
-          </div>
-          {totalPages > 1 && (
-            <nav className="product-pagination" aria-label="Product pages">
-              <button
-                type="button"
-                onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
-                disabled={activePage === 1}
-                aria-label="Previous page"
-              >
-                <ArrowLeftOutlined />
-              </button>
-              {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
-                <button
-                  className={page === activePage ? 'active' : ''}
-                  type="button"
-                  onClick={() => setCurrentPage(page)}
-                  aria-current={page === activePage ? 'page' : undefined}
-                  key={page}
-                >
-                  {page}
-                </button>
-              ))}
-              <button
-                type="button"
-                onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
-                disabled={activePage === totalPages}
-                aria-label="Next page"
-              >
-                <ArrowRightOutlined />
-              </button>
-            </nav>
-          )}
-        </div>
-      </section>
-      <Footer />
-    </main>
-  );
-}
-
-function ProductDetailsPage({ slug, products, onAdd }) {
-  const product = findProductBySlug(slug, products) || products[0];
-  const farm = farmData[product.farmId];
-  const category = categoryTabs.find((tab) => tab.id === product.category)?.label;
-  const [quantity, setQuantity] = useState(1);
-  const [selectedPack, setSelectedPack] = useState('single');
-  const galleryImages = [product.image, farm.image, '/storefront/hero-produce.jpg', '/ferme/farm-video.jpg'];
-  const relatedProducts = products
-    .filter((item) => item.category === product.category && item.title !== product.title)
-    .slice(0, 4);
-
-  return (
-    <main className="page-view">
-      <section className="product-detail-page section-block wide">
-        <div className="breadcrumb-line">
-          <button onClick={() => setRoute('/products')}>Products</button>
-          <span>/</span>
-          <strong>{product.title}</strong>
-        </div>
-        <div className="product-detail-grid">
-          <div className="product-detail-gallery image-reveal">
-            <div className="product-detail-media">
-              {product.tag && <span className="sale-ribbon">{product.tag}</span>}
-              <img src={galleryImages[0]} alt={product.title} />
-            </div>
-            <div className="product-detail-thumbs">
-              {galleryImages.map((image, index) => (
-                <img src={image} alt={`${product.title} view ${index + 1}`} key={`${image}-${index}`} />
-              ))}
-            </div>
-            <div className="product-assurance-grid">
-              <span><TruckOutlined /> Cold-chain delivery</span>
-              <span><CheckCircleOutlined /> Farm verified</span>
-              <span><TagOutlined /> Weekly fresh stock</span>
-            </div>
-          </div>
-          <article className="product-detail-copy scroll-reveal">
-            <div className="product-detail-kicker">
-              <span className="product-category">{category}</span>
-              <span><CheckCircleOutlined /> Farm verified</span>
-            </div>
-            <h1>{product.title}</h1>
-            <p className="product-detail-intro">Premium produce selected from a trusted farm partner and packed for fresh home delivery.</p>
-            <div className="product-detail-origin">
-              <span><EnvironmentOutlined /> {farm.location}</span>
-              <FarmLink farmId={product.farmId} />
-            </div>
-            <strong className="product-detail-price">{product.price}</strong>
-            <div className="pack-options" aria-label="Pack size">
-              <span>Choose your pack</span>
-              <button className={selectedPack === 'single' ? 'active' : ''} type="button" onClick={() => setSelectedPack('single')}>
-                <strong>1 pack</strong><small>{product.price}</small>
-              </button>
-              <button className={selectedPack === 'family' ? 'active' : ''} type="button" onClick={() => setSelectedPack('family')}>
-                <strong>3 pack</strong><small>Save 10%</small>
-              </button>
-            </div>
-            <div className="product-detail-buy-row">
-              <div className="quantity-control" aria-label="Quantity selector">
-                <button type="button" aria-label="Decrease quantity" onClick={() => setQuantity((value) => Math.max(1, value - 1))}><MinusOutlined /></button>
-                <span>{quantity}</span>
-                <button type="button" aria-label="Increase quantity" onClick={() => setQuantity((value) => value + 1)}><PlusOutlined /></button>
-              </div>
-              <Button type="primary" onClick={() => onAdd(product, quantity)}>Add to Cart</Button>
-            </div>
-            <Button className="product-farm-button" onClick={() => setRoute(`/farm/${product.farmId}`)}>View Farm</Button>
-          </article>
-        </div>
-      </section>
-      <section className="section-block wide related-products">
-        <div className="section-heading">
-          <h2>Similar Picks</h2>
-          <Button onClick={() => setRoute('/products')}>View All Products</Button>
-        </div>
-        <div className="product-grid">
-          {relatedProducts.map((item) => <ProductCard item={item} onAdd={onAdd} key={item.title} />)}
-        </div>
-      </section>
-      <Footer />
-    </main>
-  );
-}
-
-function CartPage({ selectedSlug, products }) {
-  const product = findProductBySlug(selectedSlug, products) || products[0];
-  const farm = farmData[product.farmId];
-
-  return (
-    <main className="page-view">
-      <section className="cart-page section-block wide">
-        <span className="eyebrow">Secure checkout</span>
-        <h1>Your Cart</h1>
-        <div className="cart-layout">
-          <article className="cart-items-card scroll-reveal">
-            <div className="cart-item-row">
-              <img src={product.image} alt={product.title} />
-              <div>
-                <span className="product-category">{categoryTabs.find((tab) => tab.id === product.category)?.label}</span>
-                <h2>{product.title}</h2>
-                <FarmLink farmId={product.farmId} />
-                <p><EnvironmentOutlined /> {farm.location}</p>
-              </div>
-              <div className="quantity-control">
-                <button type="button" aria-label="Decrease quantity"><MinusOutlined /></button>
-                <span>1</span>
-                <button type="button" aria-label="Increase quantity"><PlusOutlined /></button>
-              </div>
-              <strong>{product.price}</strong>
-            </div>
-            <button className="continue-link" type="button" onClick={() => setRoute('/products')}>
-              Continue shopping
-            </button>
-          </article>
-          <aside className="cart-summary-card scroll-reveal">
-            <h2>Order Summary</h2>
-            <div><span>Subtotal</span><strong>{product.price}</strong></div>
-            <div><span>Delivery</span><strong>Free</strong></div>
-            <div><span>Packaging</span><strong>0 kr</strong></div>
-            <hr />
-            <div className="cart-total"><span>Total</span><strong>{product.price}</strong></div>
-            <Button type="primary" block onClick={() => setRoute(`/checkout?item=${slugify(product.title)}`)}>Proceed to Checkout</Button>
-            <small>Fresh products are packed by source and delivered with cold-chain care.</small>
-          </aside>
-        </div>
-      </section>
-      <Footer />
-    </main>
-  );
-}
-
-function CheckoutPage({ selectedSlug, products }) {
-  const product = findProductBySlug(selectedSlug, products) || products[0];
-
-  return (
-    <main className="page-view checkout-page">
-      <section className="checkout-shell section-block wide">
-        <div className="checkout-heading">
-          <span className="eyebrow">Secure checkout</span>
-          <h1>Checkout</h1>
-          <p>Your details are protected and your fresh order will be packed with care.</p>
-        </div>
-        <div className="checkout-progress" aria-label="Checkout progress">
-          <span className="active"><strong>1</strong> Delivery</span>
-          <i />
-          <span><strong>2</strong> Payment</span>
-          <i />
-          <span><strong>3</strong> Confirmation</span>
-        </div>
-        <div className="checkout-layout">
-          <div className="checkout-form-column">
-            <section className="checkout-card">
-              <div className="checkout-card-heading"><span>1</span><h2>Delivery Address</h2></div>
-              <div className="address-options">
-                <label className="address-option selected">
-                  <input type="radio" name="address" defaultChecked />
-                  <span><strong>Home</strong><small>123, Green Valley Road<br />Uppsala, 755 04<br />Sweden<br /><br />+46 70 123 4567</small></span>
-                  <em>Default</em>
-                </label>
-                <label className="address-option">
-                  <input type="radio" name="address" />
-                  <span><strong>Work</strong><small>Vaksalagatan 10<br />753 20 Uppsala<br />Sweden<br /><br />+46 70 987 6543</small></span>
-                </label>
-                <button className="add-address-option" type="button"><strong>+</strong><span>Add New Address</span></button>
-              </div>
-              <label className="checkout-check"><input type="checkbox" /> Deliver to a different address</label>
-            </section>
-            <section className="checkout-card">
-              <div className="checkout-card-heading"><span>2</span><h2>Delivery Slot</h2></div>
-              <div className="delivery-slot-row">
-                <div className="date-options">
-                  {['25', '26', '27', '28', '29'].map((date, index) => (
-                    <button className={index === 0 ? 'selected' : ''} type="button" key={date}>
-                      <small>{index === 0 ? 'Today' : index === 1 ? 'Tomorrow' : ['Tue', 'Wed', 'Thu'][index - 2]}</small><strong>{date}</strong>
-                    </button>
-                  ))}
-                </div>
-                <select defaultValue="9:00 AM - 11:00 AM" aria-label="Delivery time">
-                  <option>9:00 AM - 11:00 AM</option>
-                  <option>11:00 AM - 1:00 PM</option>
-                  <option>2:00 PM - 4:00 PM</option>
-                </select>
-              </div>
-              <small className="delivery-note">Fast delivery available</small>
-            </section>
-            <section className="checkout-card">
-              <div className="checkout-card-heading"><span>3</span><h2>Order Notes <small>(Optional)</small></h2></div>
-              <Input.TextArea rows={4} placeholder="Add order notes (e.g. gate code, special instructions)" />
-            </section>
-          </div>
-          <aside className="checkout-summary checkout-card">
-            <div className="checkout-summary-heading"><h2>Order Summary</h2><button type="button" onClick={() => setRoute(`/cart?item=${slugify(product.title)}`)}>Edit Cart</button></div>
-            <div className="checkout-product-line">
-              <img src={product.image} alt={product.title} />
-              <span><strong>{product.title}</strong><small>{product.price}</small></span>
-              <b>1</b>
-            </div>
-            <div className="checkout-totals"><span>Subtotal</span><strong>{product.price}</strong><span>Delivery Charge</span><strong>Free</strong><span>Packaging Charge</span><strong>0 kr</strong></div>
-            <div className="checkout-total"><span>Total Amount</span><strong>{product.price}</strong><small>You are saving with free delivery</small></div>
-            <Button type="primary" block onClick={() => setRoute(`/payment?item=${slugify(product.title)}`)}>Continue to Payment</Button>
-            <p className="checkout-payment-note">Your payment details are encrypted and securely processed.</p>
-          </aside>
-        </div>
-      </section>
-      <Footer />
-    </main>
-  );
-}
-
-function PaymentPage({ selectedSlug, products }) {
-  const product = findProductBySlug(selectedSlug, products) || products[0];
-
-  return (
-    <main className="page-view payment-page">
-      <section className="checkout-shell section-block wide">
-        <div className="payment-heading">
-          <span className="eyebrow">Checkout / Payment</span>
-          <h1>Payment</h1>
-        </div>
-        <div className="checkout-progress payment-progress" aria-label="Checkout progress">
-          <span className="complete"><strong>1</strong> Delivery</span>
-          <i />
-          <span className="active"><strong>2</strong> Payment</span>
-          <i />
-          <span><strong>3</strong> Confirmation</span>
-        </div>
-        <div className="payment-layout">
-          <div className="payment-methods">
-            <section className="payment-card">
-              <h2>Payment Options</h2>
-              <p>Choose how you would like to pay for this order.</p>
-              <label className="payment-option selected">
-                <input type="radio" name="payment" defaultChecked />
-                <strong className="payment-logo swish-logo">S</strong>
-                <span><b>Swish</b><small>Pay instantly with Swish</small></span>
-              </label>
-              <label className="payment-option">
-                <input type="radio" name="payment" />
-                <strong className="payment-logo klarna-logo">K.</strong>
-                <span><b>Klarna</b><small>Pay now or later with Klarna</small></span>
-              </label>
-              <Button type="primary" block onClick={() => setRoute(`/confirmation?item=${slugify(product.title)}`)}>Pay {product.price}</Button>
-              <div className="payment-trust-row"><span><CheckCircleOutlined /> Encrypted and secure payment</span><span>You will review your order before confirmation.</span></div>
-            </section>
-          </div>
-          <aside className="checkout-summary payment-summary checkout-card">
-            <div className="checkout-summary-heading"><h2>Order Summary</h2><button type="button" onClick={() => setRoute(`/cart?item=${slugify(product.title)}`)}>Edit Cart</button></div>
-            <div className="checkout-product-line">
-              <img src={product.image} alt={product.title} />
-              <span><strong>{product.title}</strong><small>{product.price}</small></span>
-              <b>1</b>
-            </div>
-            <div className="checkout-totals"><span>Subtotal</span><strong>{product.price}</strong><span>Delivery Fee</span><strong>Free</strong><span>Discount</span><strong className="discount-value">- Free delivery</strong></div>
-            <div className="checkout-total"><span>Total</span><strong>{product.price}</strong></div>
-            <div className="payment-detail-box"><strong><EnvironmentOutlined /> Delivery Address</strong><button type="button">Edit</button><p>Home<br />123, Green Valley Road<br />Uppsala, Sweden</p></div>
-            <div className="payment-detail-box"><strong><CalendarOutlined /> Delivery Slot</strong><button type="button">Edit</button><p>Tomorrow<br />9:00 AM - 11:00 AM</p></div>
-          </aside>
-        </div>
-      </section>
-      <Footer />
-    </main>
-  );
-}
-
-function ConfirmationPage({ selectedSlug, products }) {
-  const product = findProductBySlug(selectedSlug, products) || products[0];
-
-  return (
-    <main className="page-view confirmation-page">
-      <section className="checkout-shell section-block wide">
-        <div className="confirmation-heading">
-          <span className="eyebrow">Checkout / Confirmation</span>
-          <h1>Order Success</h1>
-        </div>
-        <div className="checkout-progress confirmation-progress" aria-label="Checkout progress">
-          <span className="complete"><strong>1</strong> Delivery</span>
-          <i />
-          <span className="complete"><strong>2</strong> Payment</span>
-          <i />
-          <span className="complete"><strong>3</strong> Confirmation</span>
-        </div>
-        <div className="confirmation-layout">
-          <section className="confirmation-card">
-            <div className="confirmation-mark"><CheckCircleOutlined /></div>
-            <div>
-              <h2>Order Placed Successfully!</h2>
-              <p>Thank you for shopping with Farm to Table.</p>
-            </div>
-            <div className="confirmation-details">
-              <span><small>Order ID</small><strong>FT2410524001</strong></span>
-              <span><small>Payment Method</small><strong>Swish</strong></span>
-              <span><small>Paid Amount</small><strong>{product.price}</strong></span>
-              <span><small>Estimated Delivery</small><strong>Tomorrow, May 25<br />9:00 AM - 11:00 AM</strong></span>
-            </div>
-            <div className="confirmation-actions">
-              <Button type="primary" onClick={() => setRoute(`/cart?item=${slugify(product.title)}`)}>Track Order</Button>
-              <Button onClick={() => setRoute('/products')}>Continue Shopping</Button>
-            </div>
-          </section>
-          <aside className="checkout-summary confirmation-summary checkout-card">
-            <div className="checkout-summary-heading"><h2>Order Summary</h2></div>
-            <div className="checkout-product-line">
-              <img src={product.image} alt={product.title} />
-              <span><strong>{product.title}</strong><small>{product.price}</small></span>
-              <b>1</b>
-            </div>
-            <div className="checkout-totals"><span>Subtotal</span><strong>{product.price}</strong><span>Delivery Fee</span><strong>Free</strong><span>Packaging Charge</span><strong>0 kr</strong></div>
-            <div className="checkout-total"><span>Total</span><strong>{product.price}</strong></div>
-            <div className="payment-detail-box"><strong><EnvironmentOutlined /> Delivery Address</strong><p>Home<br />123, Green Valley Road<br />Uppsala, Sweden</p></div>
-            <div className="payment-detail-box"><strong><CalendarOutlined /> Delivery Slot</strong><p>Tomorrow<br />9:00 AM - 11:00 AM</p></div>
-          </aside>
-        </div>
-      </section>
-      <Footer />
-    </main>
-  );
-}
-
-function FarmPage({ farmId, products, setActiveCategory, onAdd }) {
-  const resolvedFarmId = farmData[farmId] ? farmId : 'farmtable';
-  const farm = farmData[resolvedFarmId];
-  const farmProducts = products.filter((product) => product.farmId === resolvedFarmId);
-  const farmCategories = ['all', ...new Set(farmProducts.map((product) => product.category))];
-  const [activeFarmCategory, setActiveFarmCategory] = useState('all');
-
-  useEffect(() => {
-    setActiveFarmCategory('all');
-  }, [resolvedFarmId]);
-
-  const visibleFarmProducts = activeFarmCategory === 'all'
-    ? farmProducts
-    : farmProducts.filter((product) => product.category === activeFarmCategory);
-  const relatedFarmIds = Object.keys(farmData).filter((id) => id !== resolvedFarmId).slice(0, 5);
-  const galleryImages = [
-    farm.image,
-    '/storefront/585.jpg',
-    '/storefront/hero-produce.jpg',
-    '/ferme/farm-video.jpg',
-    '/ferme/visit-cow.jpg'
-  ];
-  const infoRows = [
-    ['Location', farm.location, <EnvironmentOutlined />],
-    ['Farm Size', resolvedFarmId === 'hiddenfjord' ? 'Cold-water coastal network' : '120 hectares'],
-    ['Established', '2012', <CalendarOutlined />],
-    ['Farmer', resolvedFarmId === 'farmtable' ? 'Local partner network' : 'Erik & Anna Johansson', <TeamOutlined />],
-    ['Certifications', farm.practices.slice(0, 2).join(', '), <CheckCircleOutlined />],
-    ['Business Hours', 'Mon - Sun: 08:00 AM - 06:00 PM', <CalendarOutlined />]
-  ];
-
-  return (
-    <main className="page-view">
-      <section className="farm-detail-top section-block wide">
-        <div className="breadcrumb-line">
-          <button onClick={() => setRoute('/')}>Home</button>
-          <span>/</span>
-          <button onClick={() => setRoute('/products')}>Products</button>
-          <span>/</span>
-          <strong>{farm.name}</strong>
-        </div>
-        <div className="farm-hero-grid">
-          <article className="farm-detail-card scroll-reveal">
-            <div className="farm-title-row">
-              <h1>{farm.name}</h1>
-              <span>Verified Farm</span>
-            </div>
-            <div className="farm-location-row">
-              <span><EnvironmentOutlined /> {farm.location}</span>
-              <span><CompassOutlined /> 3.2 km away</span>
-            </div>
-            <p>{farm.summary} We focus on clean produce, animal welfare, and direct farm-to-home freshness.</p>
-            <div className="practice-row">
-              {farm.practices.map((practice) => <span key={practice}>{practice}</span>)}
-            </div>
-            <div className="farm-action-row">
-              <Button type="primary" onClick={() => document.getElementById('farm-products')?.scrollIntoView({ behavior: 'smooth' })}>
-                View Products
-              </Button>
-              <Button onClick={() => setRoute('/contact')}><PhoneOutlined /> Contact Farm</Button>
-            </div>
-          </article>
-          <div className="farm-hero-photo image-reveal">
-            <img src={farm.image} alt={farm.name} />
-            <div className="farm-icon-actions">
-              <button aria-label={`Save ${farm.name}`}><HeartOutlined /></button>
-              <button aria-label={`Share ${farm.name}`}><ShareAltOutlined /></button>
-            </div>
-            <div className="farm-stats">
-              <span><strong>12+</strong>Years in Business</span>
-              <span><strong>150+</strong>Happy Customers</span>
-              <span><strong>98%</strong>Positive Reviews</span>
-              <span><strong>{farmProducts.length}+</strong>Products Available</span>
-            </div>
-          </div>
-        </div>
-        <div className="farm-thumb-row">
-          {galleryImages.map((image, index) => (
-            <img src={image} alt={`${farm.name} gallery ${index + 1}`} key={`${image}-${index}`} />
-          ))}
-        </div>
-      </section>
-
-      <section className="farm-info-layout section-block wide">
-        <article className="farm-content-card scroll-reveal">
-          <h2>About {farm.name}</h2>
-          <p>We are a family-focused farm partner dedicated to providing fresh, organic, and locally sourced food to our community. Our practices focus on sustainability, soil health, careful sourcing, and farm-level transparency.</p>
-          <ul>
-            <li><CheckCircleOutlined /> 100% organic fruits, vegetables, dairy, meat, and pantry staples</li>
-            <li><CheckCircleOutlined /> Free-range and ethically managed animal care where applicable</li>
-            <li><CheckCircleOutlined /> No synthetic pesticides or unnecessary chemical fertilizers</li>
-            <li><CheckCircleOutlined /> Supporting local biodiversity and clean water initiatives</li>
-            <li><CheckCircleOutlined /> Delivering farm-fresh goodness to your table</li>
-          </ul>
-        </article>
-        <article className="farm-content-card farm-info-card scroll-reveal">
-          <h2>Farm Information</h2>
-          <div className="farm-info-list">
-            {infoRows.map(([label, value, icon]) => (
-              <div key={label}>
-                <span>{icon || <HomeOutlined />}</span>
-                <strong>{label}</strong>
-                <p>{value}</p>
-              </div>
-            ))}
-          </div>
-        </article>
-      </section>
-
-      <section className="farm-benefits-panel section-block wide scroll-reveal">
-        <h2>Why Choose {farm.name}?</h2>
-        <div className="farm-benefit-grid">
-          {farmBenefits.map(([title, text, icon]) => (
-            <article key={title}>
-              <span>{icon}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="farm-products" className="section-block wide farm-products">
-        <div className="section-heading">
-          <h2>Our Products</h2>
-          <Button onClick={() => { setActiveCategory('all'); setRoute('/products'); }}>Back to Products</Button>
-        </div>
-        <div className="farm-product-tabs">
-          {farmCategories.map((category) => {
-            const label = category === 'all'
-              ? 'All Products'
-              : categoryTabs.find((tab) => tab.id === category)?.label;
-            return (
-              <button
-                className={activeFarmCategory === category ? 'active' : ''}
-                onClick={() => setActiveFarmCategory(category)}
-                key={category}
-              >
-                {categoryTabs.find((tab) => tab.id === category)?.icon || <AppstoreOutlined />}
-                {label}
-              </button>
-            );
-          })}
-        </div>
-        <div className="product-grid">
-          {visibleFarmProducts.map((product) => <ProductCard item={product} onAdd={onAdd} key={product.title} />)}
-        </div>
-      </section>
-
-      <section className="farm-gallery-review section-block wide">
-        <article className="farm-content-card gallery-card image-reveal">
-          <div className="mini-heading-row">
-            <h2>Farm Gallery</h2>
-            <button>View All Photos</button>
-          </div>
-          <div className="gallery-mosaic">
-            <img src={farm.image} alt={`${farm.name} wide view`} />
-            <img src="/ferme/13305.jpg" alt="Farm visit" />
-            <img src="/ferme/visit-cow.jpg" alt="Farm animal care" />
-          </div>
-        </article>
-        <article className="farm-content-card customer-review-card scroll-reveal">
-          <div className="mini-heading-row">
-            <h2>What Our Customers Say</h2>
-            <button>View All Reviews</button>
-          </div>
-          <div className="rating-row">
-            <strong>4.8</strong>
-            <span><StarFilled /><StarFilled /><StarFilled /><StarFilled /><StarFilled /></span>
-            <p>(128 Reviews)</p>
-          </div>
-          <div className="featured-review">
-            <strong>Maria Andersson</strong>
-            <small>{farm.location}</small>
-            <span><StarFilled /><StarFilled /><StarFilled /><StarFilled /><StarFilled /></span>
-            <p>Amazing quality produce. You can really taste the difference, and everything arrives fresh, organic, and on time.</p>
-          </div>
-        </article>
-      </section>
-
-      <section className="farm-support-strip section-block wide scroll-reveal">
-        <img src="/storefront/hero-produce.jpg" alt="Fresh produce box" />
-        <article>
-          <h2>Support Local Farms. Eat Fresh. Live Healthy.</h2>
-          <p>When you choose local farms, you support your community and get the freshest products delivered to your door.</p>
-          <Button type="primary" onClick={() => setRoute('/products')}>Explore More Farms</Button>
-        </article>
-        <div className="support-benefits">
-          {supportBenefits.map(([title, text, icon]) => (
-            <article key={title}>{icon}<strong>{title}</strong><small>{text}</small></article>
-          ))}
-        </div>
-      </section>
-
-      <section className="related-farms section-block wide">
-        <div className="section-heading">
-          <h2>You May Also Like</h2>
-          <Button onClick={() => setRoute('/products')}>View All Farms</Button>
-        </div>
-        <div className="related-farm-grid">
-          {relatedFarmIds.map((id) => {
-            const related = farmData[id];
-            return (
-              <article className="related-farm-card scroll-reveal" key={id}>
-                <button className="heart-btn" aria-label={`Save ${related.name}`}><HeartOutlined /></button>
-                <img src={related.image} alt={related.name} />
-                <h3>{related.name}</h3>
-                <p>{related.location}</p>
-                <button onClick={() => setRoute(`/farm/${id}`)}>View Farm</button>
-              </article>
-            );
-          })}
-        </div>
-      </section>
       <Footer />
     </main>
   );
@@ -1471,7 +665,11 @@ function Footer() {
         <article className="footer-links">
           <h3>Links</h3>
           <button type="button" onClick={() => setRoute('/')}>Home</button>
+          <button type="button" onClick={() => setRoute('/farms')}>Our farms</button>
           <button type="button" onClick={() => setRoute('/products')}>Products</button>
+          <button type="button" onClick={() => setRoute('/account')}>My account</button>
+          <button type="button" onClick={() => setRoute('/orders')}>My orders</button>
+          <button type="button" onClick={() => setRoute('/saved')}>Saved favourites</button>
           <button type="button" onClick={() => setRoute('/about')}>About</button>
           <button type="button" onClick={() => setRoute('/contact')}>Contact us</button>
         </article>
@@ -1504,17 +702,13 @@ function Footer() {
   );
 }
 
-function App() {
+function StorefrontApp() {
+  const market = useMarket();
   const [route, setRouteState] = useState(getRoute);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeCategory, setActiveCategory] = useState('all');
-  const [cartCount, setCartCount] = useState(0);
-  const [lastAddedSlug, setLastAddedSlug] = useState('');
-
-  const addToCart = (product, quantity = 1) => {
-    setCartCount((count) => count + quantity);
-    setLastAddedSlug(slugify(product.title));
-  };
+  const cartCount = market.count;
+  const addToCart = market.add;
 
   useEffect(() => {
     const syncRoute = () => setRouteState(getRoute());
@@ -1552,24 +746,36 @@ function App() {
 
   let page = <HomePage products={renderedProducts} activeCategory={activeCategory} setActiveCategory={setActiveCategory} onAdd={addToCart} />;
 
-  if (route.path === '/products') {
-    page = <ProductsPage products={renderedProducts} activeCategory={activeCategory} setActiveCategory={setActiveCategory} onAdd={addToCart} />;
+  if (route.path === '/farms') {
+    page = <FarmsPage params={route.params} />;
+  } else if (route.path === '/products') {
+    page = <ProductsPage params={route.params} />;
   } else if (route.path.startsWith('/product/')) {
-    page = <ProductDetailsPage slug={route.path.replace('/product/', '')} products={renderedProducts} onAdd={addToCart} />;
+    page = <ProductDetailsPage key={route.path} slug={route.path.replace('/product/', '')} />;
   } else if (route.path === '/cart') {
-    page = <CartPage selectedSlug={route.params.get('item')} products={renderedProducts} />;
+    page = <CartPage />;
   } else if (route.path === '/checkout') {
-    page = <CheckoutPage selectedSlug={route.params.get('item')} products={renderedProducts} />;
+    page = <CheckoutPage />;
   } else if (route.path === '/payment') {
-    page = <PaymentPage selectedSlug={route.params.get('item')} products={renderedProducts} />;
+    page = <PaymentPage />;
   } else if (route.path === '/confirmation') {
-    page = <ConfirmationPage selectedSlug={route.params.get('item')} products={renderedProducts} />;
+    page = <ConfirmationPage params={route.params} />;
   } else if (route.path.startsWith('/farm/')) {
-    page = <FarmPage farmId={route.path.replace('/farm/', '')} products={renderedProducts} setActiveCategory={setActiveCategory} onAdd={addToCart} />;
+    page = <FarmPage key={route.path} farmId={route.path.replace('/farm/', '')} />;
+  } else if (route.path === '/account') {
+    page = <AccountPage />;
+  } else if (route.path === '/orders' || route.path.startsWith('/orders/')) {
+    page = <OrdersPage orderId={route.path.startsWith('/orders/') ? route.path.slice(8) : undefined} />;
+  } else if (['/auth/login', '/auth/register', '/auth/forgot-password'].includes(route.path)) {
+    page = <AuthPage key={route.path} mode={route.path.split('/').pop()} params={route.params} />;
+  } else if (route.path === '/saved') {
+    page = <SavedPage />;
   } else if (route.path === '/about') {
     page = <AboutPage />;
   } else if (route.path === '/contact') {
     page = <ContactPage />;
+  } else if (route.path !== '/') {
+    page = <NotFound />;
   }
 
   return (
@@ -1578,12 +784,13 @@ function App() {
         route={route}
         setActiveCategory={setActiveCategory}
         cartCount={cartCount}
-        lastAddedSlug={lastAddedSlug}
         isScrolled={isScrolled}
       />
       {page}
+      {!["/", "/about", "/contact"].includes(route.path) && <Footer />}
+      <MarketTools />
     </div>
   );
 }
 
-export default App;
+export default function App() { return <MarketProvider><StorefrontApp /></MarketProvider>; }
