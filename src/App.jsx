@@ -130,7 +130,6 @@ function Header({ route, setActiveCategory, cartCount, isScrolled }) {
         <button className="mobile-search-action" onClick={() => { market.setSearchOpen(true); setMobileNavOpen(false); }}>Search</button>
       </nav>
       <div className="header-actions" aria-label="Quick actions">
-        <button className="header-delivery" onClick={() => market.setLocationOpen(true)}><EnvironmentOutlined /> {market.location?.city || "Delivery location"}</button>
         <button className="header-search-button" aria-label="Search products and farms" onClick={() => market.setSearchOpen(true)}><SearchOutlined /></button>
         <button className="header-icon-button" type="button" onClick={() => setRoute('/account')} aria-label="Open my account">
           <TeamOutlined />
