@@ -30,7 +30,8 @@ import {
   StarFilled,
   TagOutlined,
   TeamOutlined,
-  TruckOutlined
+  TruckOutlined,
+  UserOutlined
 } from '@ant-design/icons';
 
 const steps = [
@@ -103,7 +104,7 @@ function Header({ route, setActiveCategory, cartCount, isScrolled }) {
   ];
 
   return (
-    <header className={`store-header ${mobileNavOpen ? 'store-menu-open' : ''}`}>
+    <header className={`store-header ${route.path !== '/' ? 'store-header-page' : ''} ${mobileNavOpen ? 'store-menu-open' : ''} ${isScrolled ? 'scrolled' : ''}`}>
       <div className="store-header-inner">
       <button
         className="store-menu-toggle"
@@ -123,7 +124,7 @@ function Header({ route, setActiveCategory, cartCount, isScrolled }) {
         <Badge count={cartCount} color="#103B37">
           <button className="store-cart" type="button" onClick={() => setRoute('/cart')} aria-label="Open cart"><ShoppingCartOutlined /></button>
         </Badge>
-        <a className="store-login" href="#/auth/login">Login</a>
+        <a className="store-login" href="#/auth/login"><UserOutlined className="store-login-icon" /><span>Login</span></a>
         <a className="store-signup" href="#/auth/register">Sign up</a>
       </div>
       </div>
@@ -403,7 +404,7 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
           </div>
           <div className="family-visit-actions">
             <button type="button" onClick={() => setRoute('/contact')}>Plan your visit <ArrowRightOutlined /></button>
-            <span><CalendarOutlined /> Selected weekends</span>
+            {/* <span><CalendarOutlined /> Selected weekends</span> */}
           </div>
         </div>
         <div className="visit-small image-reveal">
@@ -660,17 +661,6 @@ function Footer() {
             <button type="button" aria-label="Facebook"><FacebookFilled /></button>
             <button type="button" aria-label="Instagram"><InstagramFilled /></button>
           </div>
-        </article>
-        <article className="footer-links">
-          <h3>Links</h3>
-          <button type="button" onClick={() => setRoute('/')}>Home</button>
-          <button type="button" onClick={() => setRoute('/farms')}>Our farms</button>
-          <button type="button" onClick={() => setRoute('/products')}>Products</button>
-          <button type="button" onClick={() => setRoute('/account')}>My account</button>
-          <button type="button" onClick={() => setRoute('/orders')}>My orders</button>
-          <button type="button" onClick={() => setRoute('/saved')}>Saved favourites</button>
-          <button type="button" onClick={() => setRoute('/about')}>About</button>
-          <button type="button" onClick={() => setRoute('/contact')}>Contact us</button>
         </article>
         <article>
           <h3>Contact</h3>

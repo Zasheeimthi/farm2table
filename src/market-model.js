@@ -29,4 +29,4 @@ export function deliveryDates(today = new Date()) {
     return { value: `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`, label: date.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' }) };
   });
 }
-export const validAddress = (address) => Boolean(address && /\d/.test(address.street || '') && (address.city || '').trim().length >= 2 && /^\d{3}\s?\d{2}$/.test(address.postcode || ''));
+export const validAddress = (address) => Boolean(address && /\d/.test(address.street || '') && (address.city || '').trim().length >= 2 && /^(?:\d{3}\s?\d{2}|\d{6})$/.test((address.postcode || '').replace(/\u00a0/g, ' ').trim()));
