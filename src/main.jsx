@@ -4,6 +4,7 @@ import { ConfigProvider } from 'antd';
 import App from './App.jsx';
 import './styles.css';
 import './marketplace.css';
+import './refinements.css';
 
 const theme = {
   token: {
@@ -16,7 +17,7 @@ const theme = {
     colorBgContainer: '#FFFFFF',
     colorBorder: '#103B37',
     borderRadius: 4,
-    fontFamily: 'Cormorant, Georgia, serif',
+    fontFamily: 'Montserrat, Arial, sans-serif',
     controlHeight: 48
   },
   components: {

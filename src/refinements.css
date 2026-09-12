@@ -1,0 +1,247 @@
+/* Shared typography and the reference-style storefront header. */
+:root {
+  --text-body: 15px;
+  --text-small: 13px;
+  --text-caption: 12px;
+  --title-page: clamp(40px, 4.5vw, 64px);
+  --title-section: clamp(34px, 3.4vw, 48px);
+  --title-card: 21px;
+}
+
+body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
+.page-shell { overflow-x: clip; }
+.page-shell :is(h1, h2) {
+  font-family: var(--heading-font) !important;
+  font-weight: 600;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+.page-shell h1 { font-size: var(--title-page); line-height: 1.1; }
+.page-shell h2 { font-size: var(--title-section); line-height: 1.15; }
+.page-shell .family-visit h2, .page-shell .market-featured .market-section-heading h2 {
+  font-family: var(--heading-font) !important;
+  font-size: var(--title-section);
+  line-height: 1.15;
+}
+.page-shell :is(h3, h4, h5, h6, .product-title-button) {
+  font-family: var(--body-font) !important;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -.015em;
+}
+.page-shell p { font-size: var(--text-body); font-weight: 400; line-height: 1.7; }
+.page-shell :is(button, input, select, textarea) { font-family: var(--body-font); }
+.page-shell :is(.eyebrow, .market-kicker, .shopping-journey-kicker, .family-visit-kicker, .contact-kicker, .contact-support-symbol + h2 + p) {
+  color: var(--green-soft);
+  font-family: var(--body-font);
+}
+.page-shell :is(.eyebrow, .market-heading .eyebrow, .market-section-heading .eyebrow, .market-results-heading .eyebrow, .shopping-journey-kicker, .family-visit-kicker) {
+  font-size: var(--text-caption);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: .12em;
+}
+.page-shell :is(.hero-content, .care-panel, .cta-panel, .market-auth-visual, .market-farm-hero-copy) .eyebrow { color: #eef1e7; }
+.page-shell :is(.market-primary, .market-secondary, .market-link, .market-add, .market-continue, .continue-link, .faq-contact, .family-visit-actions button) {
+  font-size: var(--text-small);
+  font-weight: 600;
+  line-height: 1.5;
+}
+.page-shell .ant-btn { font-size: var(--text-small); font-family: var(--body-font); }
+.page-shell :is(.market-heading, .market-results-heading, .market-section-heading) p { font-size: var(--text-body); }
+
+.store-header { position: sticky; top: 0; z-index: 80; width: 100%; background: #fffdf8; color: var(--green); border-bottom: 1px solid var(--line); }
+.store-header-inner { width: min(1440px, calc(100% - 64px)); min-height: 84px; margin: auto; display: grid; grid-template-columns: auto minmax(200px, 1fr) auto; gap: clamp(22px, 4vw, 64px); align-items: center; }
+.store-header .brand-text { position: static; width: auto; max-width: none; margin: 0; display: inline-flex; align-items: center; gap: 10px; font-family: var(--body-font) !important; font-size: 24px; line-height: 1.1; font-weight: 800; letter-spacing: -.045em; color: var(--green); justify-self: start; transform: none; overflow: visible; }
+.store-brand-symbol { width: 38px; height: 38px; border-radius: 50%; background: #e9efdf; display: inline-grid; place-items: center; flex: 0 0 auto; }
+.store-brand-symbol svg { width: 27px; height: 27px; }
+.store-search { width: 100%; height: 48px; min-width: 0; display: flex; align-items: center; gap: 12px; padding: 0 18px; border: 1px solid #dce2d7; border-radius: 12px; color: var(--muted); background: #f8f9f3; cursor: pointer; text-align: left; font-size: 14px; }
+.store-search .anticon { font-size: 20px; }
+.store-search > span:last-child { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.store-header-actions { display: flex; align-items: center; gap: 22px; }
+.store-header-actions a { color: var(--green); text-decoration: none; font-size: 14px; font-weight: 600; white-space: nowrap; }
+.store-cart { display: grid; place-items: center; width: 42px; height: 44px; border: 0; background: none; color: var(--green); font-size: 25px; cursor: pointer; }
+.store-header-actions .store-signup { color: #fff; background: var(--green); border-radius: 10px; padding: 12px 20px; }
+.store-header-actions .ant-badge-count { min-width: 18px; height: 18px; line-height: 18px; font-size: 11px; right: 5px; top: 6px; box-shadow: 0 0 0 2px #fffdf8; }
+.store-menu-toggle { display: none; border: 0; background: none; color: var(--green); padding: 0; width: 40px; height: 44px; font-size: 22px; cursor: pointer; }
+.store-navigation[hidden] { display: none; }
+.store-navigation { border-top: 1px solid var(--line); padding: 18px 24px; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.store-navigation button { background: transparent; border: 0; border-radius: 8px; min-height: 44px; color: var(--green); font-size: 13px; font-weight: 600; cursor: pointer; }
+.store-navigation button:hover, .store-navigation button.active { background: #e9efdf; }
+.store-header :focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+
+/* One display style for all home sections; compact cards use the same sans-serif. */
+.page-shell .hero-content { padding-top: 0; }
+.page-shell .hero-content h1 { font-size: clamp(52px, 6.4vw, 88px); line-height: 1.04; font-weight: 600; }
+.page-shell .hero-content > p { max-width: 670px; font-size: 18px; line-height: 1.7; }
+.page-shell .hero-section { min-height: 720px; }
+.page-shell :is(.hero-search input, .hero-location, .hero-search-submit, .hero-browse-link) { font-size: 13px; }
+.page-shell .hero-browse-link { letter-spacing: .025em; }
+.page-shell :is(.category-discovery h2, .shopping-journey h2, .family-visit h2, .farm-heading h2, .reviews-section > h2, .faq-heading h2, .why-copy h2, .care-panel > h2) { font-size: var(--title-section); line-height: 1.15; }
+.page-shell :is(.shopping-journey h3, .care-grid h3, .family-activities h3, .about-grid h3) { font-size: 19px; }
+.page-shell :is(.shopping-journey p, .family-activities p, .why-benefits small) { font-size: 14px; line-height: 1.65; }
+.page-shell .why-benefits strong { font-size: 16px; line-height: 1.45; }
+.page-shell .farm-story { align-items: center; }
+.page-shell .farm-copy p { font-size: 17px; }
+.page-shell .review-feature-card h3 { font-family: var(--heading-font) !important; font-size: 36px; font-weight: 600; }
+.page-shell .review-mini-stack span { font-size: 14px; }
+.page-shell :is(.review-topline small, .review-mini-stack small, .review-feature-card em) { font-size: 12px; }
+.page-shell .faq-trigger { font-size: 16px; line-height: 1.5; font-weight: 600; }
+.page-shell .faq-answer p { font-size: 14px; line-height: 1.75; }
+.page-shell .product-card h3 { font-size: 16px; line-height: 1.5; }
+.page-shell .product-title-button { font-size: inherit; font-weight: 600; }
+.page-shell :is(.product-category, .product-meta, .product-meta > span, .farm-link) { font-size: 12px; line-height: 1.6; letter-spacing: 0; }
+.page-shell .product-card-bottom p { font-size: 18px; font-weight: 700; }
+.page-shell .product-card-bottom button { font-size: 13px; }
+.page-shell .category-discovery-label { font-size: 14px; font-weight: 600; line-height: 1.5; }
+.page-shell .category-discovery-heading > div > span { font-size: 12px; }
+.page-shell .category-discovery-heading > button { font-size: 13px; }
+.page-shell .category-tab-label { font-size: 13px; line-height: 1.5; }
+
+/* Farm listings share the card title, body and metadata scale everywhere. */
+.page-shell .market-farm-card { display: flex; flex-direction: column; background: #fffdf8; }
+.page-shell .market-farm-copy { padding: 24px 24px 0; display: flex; flex-direction: column; flex: 1; }
+.page-shell .market-farm-copy h2 { font-family: var(--body-font) !important; font-size: var(--title-card); font-weight: 600; line-height: 1.4; letter-spacing: -.025em; margin: 12px 0; }
+.page-shell .market-farm-copy > p { min-height: 0; font-size: 14px; line-height: 1.75; margin-bottom: 24px; }
+.page-shell .market-farm-copy .market-tags { margin-top: auto; }
+.page-shell :is(.market-kicker, .market-product-farm) { font-size: 12px; line-height: 1.6; font-weight: 500; letter-spacing: 0; }
+.page-shell :is(.market-tags span, .market-farm-badge, .market-product-tag) { font-size: 11px; line-height: 1.5; font-weight: 500; }
+.page-shell .market-farm-bottom { font-size: 12px; line-height: 1.5; padding-block: 20px; }
+.page-shell .market-farm-image { height: auto; aspect-ratio: 1.65; flex-shrink: 0; }
+.page-shell .market-farm-image > a { position: absolute; inset: 0; display: block; }
+.page-shell .market-farm-image > a > img { width: 100%; height: 100%; object-fit: cover; }
+.page-shell .market-save { width: 40px; height: 40px; }
+.page-shell :is(.market-promise strong, .market-account-signin h2) { font-size: 30px; line-height: 1.25; }
+.page-shell :is(.market-promise small, .market-promise a) { font-size: 13px; line-height: 1.6; }
+.page-shell .market-farm-hero-copy .market-kicker { color: #eff3e9; font-size: 12px; letter-spacing: .08em; }
+.page-shell .market-farm-introduction > p { font-size: 16px; }
+.page-shell .market-farm-tabs button { font-size: 14px; }
+.page-shell .market-farm-hero-copy h1 { font-size: var(--title-page); }
+.page-shell .market-breadcrumb { font-size: 12px; }
+
+/* Shopping, account and checkout use readable text rather than miniature labels. */
+.page-shell .market-chips button { font-size: 12px; padding: 12px 16px; }
+.page-shell .market-filter-label { font-size: 13px; line-height: 1.5; }
+.page-shell :is(.market-toolbar select, .market-filters select, .market-search input) { font-size: 13px; }
+.page-shell .market-search { min-height: 48px; }
+.page-shell .market-filters h2 { font-size: 30px; }
+.page-shell :is(.market-filter-note p, .market-filter-note a) { font-size: 13px; }
+.page-shell .market-filter-note strong { font-size: 15px; }
+.page-shell .market-product-copy { padding: 20px 18px; }
+.page-shell .market-product-copy h3 { font-size: 16px; line-height: 1.5; min-height: 48px; }
+.page-shell .market-product-category { font-size: 12px; line-height: 1.5; }
+.page-shell .market-product-bottom { flex-wrap: wrap; gap: 12px; }
+.page-shell .market-product-bottom > strong { font-size: 17px; }
+.page-shell :is(.market-location-bar, .market-location-bar button, .market-progress > span) { font-size: 12px; }
+.page-shell :is(.market-add, .market-primary, .market-secondary) { min-height: 44px; }
+.page-shell .market-quantity button { width: 32px; height: 40px; font-size: 12px; }
+.page-shell .market-quantity > span { font-size: 14px; }
+.page-shell :is(.market-thumbnails button, .market-assurances, .market-detail-price > span, .market-origin small, .market-pack-options legend, .market-pack-options small, .market-delivery-check, .market-delivery-check small) { font-size: 12px; line-height: 1.6; }
+.page-shell :is(.market-origin strong, .market-pack-options strong, .market-pack-options b, .market-detail-copy summary) { font-size: 14px; }
+.page-shell .market-detail-copy details p { font-size: 14px; }
+.page-shell .market-cart-line h3 { font-size: 14px; line-height: 1.5; }
+.page-shell :is(.market-cart-line p, .market-remove, .market-cart-group > header small, .market-cart-group > header > a) { font-size: 12px; line-height: 1.6; }
+.page-shell .market-cart-group > header > span { font-size: 14px; }
+.page-shell .market-line-total { font-size: 14px; }
+.page-shell :is(.market-summary-products strong, .market-summary-products b, .market-order-summary dl > div) { font-size: 13px; }
+.page-shell .market-summary-products small { font-size: 11px; }
+.page-shell .market-order-summary h2 { font-size: 30px; }
+.page-shell .market-order-summary .market-total { font-size: 21px; }
+.page-shell .market-note { font-size: 12px !important; line-height: 1.75; }
+.page-shell :is(.market-form label, .market-form input, .market-form textarea, .market-form select, .market-delivery-review strong, .market-payment-options span, .market-summary-back) { font-size: 14px; }
+.page-shell :is(.market-date-options label, .market-status) { font-size: 12px; }
+.page-shell :is(.market-form-card h2, .market-account-grid h2) { font-size: 32px; }
+.page-shell :is(.market-date-options legend, .market-payment-options legend, .market-preview-note strong) { font-size: 14px; }
+.page-shell .market-date-options { gap: 8px; }
+.page-shell .market-date-options label { flex-basis: 85px; }
+.page-shell .market-preview-note p { font-size: 13px; }
+.page-shell .market-confirmation h1 { font-size: var(--title-page); }
+.page-shell .market-account-grid span { font-size: 13px; }
+.page-shell .market-auth-copy h2 { font-size: var(--title-section); }
+.page-shell .market-auth-copy > p { font-size: 14px; }
+.page-shell .market-auth-visual p { color: #f4f5ed; }
+.page-shell .contact-intro h1, .page-shell .about-hero-copy h1 { font-size: var(--title-page); line-height: 1.1; }
+.page-shell .contact-message-heading h2 { font-size: 36px; }
+.page-shell :is(.contact-message label, .contact-message input, .contact-message textarea) { font-size: 14px; }
+.page-shell .contact-method strong { font-size: 15px; }
+.page-shell .contact-method small { font-size: 12px; }
+.page-shell .page-footer h3 { font-family: var(--body-font) !important; font-size: 18px; line-height: 1.4; letter-spacing: -.015em; }
+.page-shell .page-footer p, .page-shell .footer-links button { font-size: 13px; line-height: 1.75; }
+.page-shell .footer-subscribe h3 { font-size: 21px; }
+.page-shell .footer-bottom p { font-size: 12px; }
+.page-shell .footer-logo { font-size: 25px; }
+.market-modal .market-form label, .market-modal .market-form input, .market-modal .market-form select { font-size: 14px; }
+.market-modal .market-note, .market-modal .location-form > p { font-size: 13px !important; }
+.market-modal .market-search input, .market-modal .search-results strong { font-size: 14px; }
+.market-modal .search-results small, .market-modal .market-chips button { font-size: 12px; }
+
+/* Preserve natural colour and detail; no permanent transform layer on photos. */
+.page-shell :is(.market-product-image img, .market-main-photo > img, .product-image img) { mix-blend-mode: normal; filter: none; }
+.page-shell :is(.image-reveal, .scroll-reveal).is-visible { will-change: auto; }
+.page-shell .image-reveal.is-visible img { transform: none; }
+.page-shell .market-farm-image img { object-fit: cover; }
+.page-shell .market-product-image { height: auto; aspect-ratio: 1.15; }
+.page-shell .market-product-image img { padding: 12px; }
+
+@media (max-width: 1050px) {
+  .store-header-inner { width: calc(100% - 40px); gap: 24px; }
+  .store-header .brand-text { font-size: 21px; }
+  .store-header-actions { gap: 16px; }
+  .market-checkout-layout { grid-template-columns: minmax(0, 1.2fr) minmax(310px, 1fr); }
+  .page-shell .market-farm-copy { padding: 20px 18px 0; }
+  .page-shell .market-farm-bottom { flex-wrap: wrap; gap: 10px; }
+}
+@media (max-width: 760px) {
+  :root { --title-section: 36px; --title-page: 42px; --text-body: 15px; --title-card: 20px; }
+  .store-header-inner { width: calc(100% - 32px); min-height: 120px; padding: 12px 0; grid-template-columns: 32px minmax(0, 1fr) 40px; gap: 9px; }
+  .store-menu-toggle { display: grid; place-items: center; grid-column: 1; grid-row: 1; width: 32px; }
+  .store-header .brand-text { grid-column: 2; grid-row: 1; justify-self: center; font-size: 22px; gap: 7px; }
+  .store-brand-symbol { width: 30px; height: 30px; }
+  .store-brand-symbol svg { width: 22px; height: 22px; }
+  .store-header-actions { grid-column: 3; grid-row: 1; }
+  .store-header-actions :is(.store-login, .store-signup) { display: none; }
+  .store-search { grid-column: 1 / -1; grid-row: 2; height: 44px; font-size: 13px; padding-inline: 14px; }
+  .store-navigation:not([hidden]) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page-shell > main.page-view { padding-top: 0; }
+  .page-shell .hero-section { min-height: 660px; }
+  .page-shell .hero-content { padding: 40px 0; }
+  .page-shell .hero-content h1 { font-size: 52px; line-height: 1.08; }
+  .page-shell .hero-content > p { font-size: 16px; }
+  .page-shell .market-farm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page-shell .market-farm-bottom { flex-wrap: wrap; }
+  .page-shell .market-product-copy { padding: 16px 12px; }
+  .page-shell .market-product-copy h3 { font-size: 14px; }
+  .page-shell .market-product-farm { font-size: 11px; }
+  .page-shell .market-product-category { font-size: 11px; }
+  .page-shell .market-product-bottom > strong { font-size: 15px; }
+  .page-shell .market-add { padding: 9px 12px; font-size: 12px; }
+  .page-shell .market-save { width: 34px; height: 34px; }
+  .page-shell .market-product-tag { font-size: 10px; }
+  .page-shell .market-chips button { font-size: 12px; }
+  .page-shell .market-toolbar { flex-wrap: wrap; }
+  .page-shell .market-toolbar .market-search { flex-basis: 100%; }
+  .page-shell .market-toolbar select { max-width: none; width: 100%; }
+  .market-checkout-layout { grid-template-columns: minmax(0, 1fr); }
+  .page-shell .market-cart-line { grid-template-columns: 52px minmax(0, 1fr); }
+  .page-shell .market-cart-line > a { grid-row: 1 / 3; }
+  .page-shell .market-cart-line-copy { grid-column: 2; }
+  .page-shell .market-cart-line .market-quantity { grid-column: 2; }
+  .page-shell .market-line-total { grid-column: 2; grid-row: auto; justify-self: end; }
+  .page-shell .market-pack-options label { flex-wrap: wrap; }
+  .page-shell .market-assurances { gap: 10px; }
+  .page-shell .market-location-bar { flex-wrap: wrap; }
+  .page-shell .market-detail-buy { position: static; flex-wrap: wrap; }
+  .page-shell .market-detail-buy .market-primary { min-width: 180px; }
+  .page-shell .family-activities { gap: 20px; }
+}
+@media (max-width: 540px) {
+  .page-shell .market-farm-grid { grid-template-columns: minmax(0, 1fr); }
+  .page-shell .market-farm-copy { padding: 24px 22px 0; }
+  .page-shell .market-farm-bottom { flex-wrap: nowrap; }
+  .page-shell .market-farm-image { aspect-ratio: 1.65; }
+  .page-shell .market-form input, .page-shell .market-form textarea, .market-modal .market-form input { font-size: 16px; }
+}
+@media (max-width: 360px) {
+  .store-header .brand-text { font-size: 19px; }
+  .store-brand-symbol { display: none; }
+}

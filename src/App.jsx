@@ -84,7 +84,8 @@ function productPath(item) {
 function Brand({ onHome }) {
   return (
     <button className="brand-text" onClick={onHome} aria-label="Farm to Table home">
-      Farm to Table
+      <span className="store-brand-symbol" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M16 25V13m0 5C7 18 5 12 5 6c8 0 11 4 11 12Zm0-4C16 7 21 4 28 4c0 7-4 10-12 10Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /><path d="M8 27h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg></span>
+      <span>Farm to Table</span>
     </button>
   );
 }
@@ -102,18 +103,31 @@ function Header({ route, setActiveCategory, cartCount, isScrolled }) {
   ];
 
   return (
-    <header className={`site-header ${route.path === '/' ? 'site-header-hero' : ''} ${isScrolled ? 'site-header-scrolled' : ''} ${route.path.startsWith('/product/') ? 'site-header-product' : ''} ${mobileNavOpen ? 'mobile-nav-open' : ''}`}>
+    <header className={`store-header ${mobileNavOpen ? 'store-menu-open' : ''}`}>
+      <div className="store-header-inner">
       <button
-        className="mobile-menu-toggle"
+        className="store-menu-toggle"
         type="button"
         aria-label={mobileNavOpen ? 'Close navigation menu' : 'Open navigation menu'}
         aria-expanded={mobileNavOpen}
+        aria-controls="store-navigation"
         onClick={() => setMobileNavOpen((isOpen) => !isOpen)}
       >
         <MenuOutlined />
       </button>
       <Brand onHome={() => { setActiveCategory('all'); setRoute('/'); }} />
-      <nav aria-label="Primary navigation">
+      <button className="store-search" aria-label="Search products and farms" onClick={() => market.setSearchOpen(true)}>
+        <SearchOutlined /><span>Search products, farms and categories…</span>
+      </button>
+      <div className="store-header-actions" aria-label="Quick actions">
+        <Badge count={cartCount} color="#103B37">
+          <button className="store-cart" type="button" onClick={() => setRoute('/cart')} aria-label="Open cart"><ShoppingCartOutlined /></button>
+        </Badge>
+        <a className="store-login" href="#/auth/login">Login</a>
+        <a className="store-signup" href="#/auth/register">Sign up</a>
+      </div>
+      </div>
+      <nav id="store-navigation" className="store-navigation" aria-label="Primary navigation" hidden={!mobileNavOpen}>
         {nav.map(([label, path]) => (
           <button
             className={route.path === path || (path === '/farms' && route.path.startsWith('/farm/')) ? 'active' : ''}
@@ -127,25 +141,10 @@ function Header({ route, setActiveCategory, cartCount, isScrolled }) {
             {label}
           </button>
         ))}
-        <button className="mobile-search-action" onClick={() => { market.setSearchOpen(true); setMobileNavOpen(false); }}>Search</button>
+        <button onClick={() => { setRoute('/account'); setMobileNavOpen(false); }}>My account</button>
+        <button onClick={() => { setRoute('/auth/login'); setMobileNavOpen(false); }}>Login</button>
+        <button onClick={() => { setRoute('/auth/register'); setMobileNavOpen(false); }}>Sign up</button>
       </nav>
-      <div className="header-actions" aria-label="Quick actions">
-        <button className="header-delivery" onClick={() => market.setLocationOpen(true)}><EnvironmentOutlined /> {market.location?.city || "Delivery location"}</button>
-        <button className="header-search-button" aria-label="Search products and farms" onClick={() => market.setSearchOpen(true)}><SearchOutlined /></button>
-        <button className="header-icon-button" type="button" onClick={() => setRoute('/account')} aria-label="Open my account">
-          <TeamOutlined />
-        </button>
-        <Badge count={cartCount} color="#FE5D02">
-          <button
-            className="header-cart-button"
-            type="button"
-            onClick={() => setRoute('/cart')}
-            aria-label="Open cart"
-          >
-            <ShoppingCartOutlined />
-          </button>
-        </Badge>
-      </div>
     </header>
   );
 }
@@ -364,7 +363,7 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
           <button onClick={() => setRoute('/farms')}>Meet Our Farms</button>
         </div>
         <div className="video-card image-reveal">
-          <img src="/ferme/farm-video.jpg" alt="A child running through a farm field" />
+          <img src="/ferme/13305.jpg" alt="A family spending time together at the farm" loading="lazy" />
         </div>
       </section>
 
@@ -408,7 +407,7 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
           </div>
         </div>
         <div className="visit-small image-reveal">
-          <img src="/ferme/visit-cow.jpg" alt="Feeding a cow on the farm" />
+          <img src="/photography/pasture.jpg" alt="Cows grazing in a sunny pasture" loading="lazy" />
         </div>
       </section>
 
