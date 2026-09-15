@@ -248,6 +248,12 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
 .page-shell :is(.image-reveal, .scroll-reveal).is-visible { will-change: auto; }
 .page-shell .image-reveal.is-visible img { transform: none; }
 .page-shell .market-farm-image img { object-fit: cover; }
+.page-shell .market-farm-hero > img { filter: brightness(.86) contrast(1.12) saturate(1.08); }
+.page-shell .market-farm-hero-shade {
+  background:
+    linear-gradient(90deg, rgba(16, 59, 55, .2), rgba(16, 59, 55, 0) 38%),
+    linear-gradient(0deg, #062921eb, #08291d15 90%);
+}
 .page-shell .market-product-image { height: auto; aspect-ratio: 1.15; }
 .page-shell .market-product-image img { width: 100%; height: 100%; padding: 0; object-fit: cover; mix-blend-mode: normal; }
 .page-shell .product-card .product-image img { width: 100%; height: 100%; padding: 0; object-fit: cover; mix-blend-mode: normal; }
