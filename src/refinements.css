@@ -1093,6 +1093,35 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
   overflow-wrap: anywhere;
 }
 
+/* Keep the checkout login gate typography balanced on narrow screens. */
+.page-shell .market-login-card { font-family: var(--body-font); }
+.page-shell .market-login-card h1 {
+  font-size: 30px;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+.page-shell .market-login-card h2 {
+  font-size: 19px;
+  line-height: 1.3;
+  letter-spacing: -.015em;
+}
+.page-shell .market-login-card > p,
+.page-shell .market-login-card > div > p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.page-shell .market-login-card .market-primary { font-size: 14px; }
+.page-shell .market-login-create { font-size: 13px; }
+
+@media (max-width: 760px) {
+  .page-shell .market-login-card h1 { font-size: 27px; line-height: 1.15; }
+  .page-shell .market-login-card h2 { font-size: 18px; line-height: 1.3; }
+  .page-shell .market-login-card > p,
+  .page-shell .market-login-card > div > p { font-size: 14px; line-height: 1.55; }
+  .page-shell .market-login-card .market-primary { font-size: 14px; }
+  .page-shell .market-login-create { font-size: 13px; }
+}
+
 /* Reserve the fixed mobile header height on every non-home page. */
 @media (max-width: 760px) {
   .page-shell .store-header-page ~ .page-view { padding-top: 84px; }
