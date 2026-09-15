@@ -30,3 +30,4 @@ export function deliveryDates(today = new Date()) {
   });
 }
 export const validAddress = (address) => Boolean(address && /\d/.test(address.street || '') && (address.city || '').trim().length >= 2 && /^(?:\d{3}\s?\d{2}|\d{6})$/.test((address.postcode || '').replace(/\u00a0/g, ' ').trim()));
+export const validLocation = (location) => validAddress(location) || Boolean(location && location.countryCode === 'SE' && Number.isFinite(location.lat) && Number.isFinite(location.lng) && location.lat >= 55 && location.lat <= 69.1 && location.lng >= 10.5 && location.lng <= 24.2 && location.city?.trim());

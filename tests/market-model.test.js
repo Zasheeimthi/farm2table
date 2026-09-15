@@ -1,6 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { changeCart, cartLines, normalizeCart, subtotalOf, packPrice, deliveryDates, validAddress } from '../src/market-model.js';
+import { changeCart, cartLines, normalizeCart, subtotalOf, packPrice, deliveryDates, validAddress, validLocation } from '../src/market-model.js';
+
+test('a Swedish map selection allows shopping but still requires a full checkout address', () => {
+  const place = { city: 'Uppsala', countryCode: 'SE', lat: 59.8586, lng: 17.6389 };
+  assert.equal(validLocation(place), true);
+  assert.equal(validAddress(place), false);
+  assert.equal(validLocation({ ...place, countryCode: 'NO' }), false);
+  assert.equal(validLocation({ ...place, lat: NaN }), false);
+  assert.equal(validLocation({ city: 'Uppsala' }), false);
+  assert.equal(validLocation({ street: 'Example 12', city: 'Uppsala', postcode: '753 10' }), true);
+});
 
 const milk = { title: 'Whole Milk 1L', price: '56 kr', farmId: 'dairy' };
 const beef = { title: 'Beef Box', price: '1 256 kr', farmId: 'pasture' };

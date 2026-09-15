@@ -48,3 +48,5 @@ createRoot(document.getElementById('root')).render(
     </ConfigProvider>
   </React.StrictMode>
 );
+
+import './location-map.css';

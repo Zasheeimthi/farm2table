@@ -149,7 +149,9 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
 .page-shell .market-farm-copy { padding: 24px 24px 0; display: flex; flex-direction: column; flex: 1; }
 .page-shell .market-farm-copy h2 { font-family: var(--body-font) !important; font-size: var(--title-card); font-weight: 600; line-height: 1.4; letter-spacing: -.025em; margin: 12px 0; }
 .page-shell .market-farm-copy > p { min-height: 0; font-size: 14px; line-height: 1.75; margin-bottom: 24px; }
-.page-shell .market-farm-copy .market-tags { margin-top: auto; }
+.page-shell .market-farm-actions { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: auto; padding-bottom: 22px; }
+.page-shell .market-farm-actions .market-tags { flex: 1 1 170px; margin: 0; }
+.page-shell .market-farm-actions .market-farm-bottom { flex: 0 0 auto; margin: 0 0 0 auto; padding: 6px 0; border: 0; white-space: nowrap; }
 .page-shell :is(.market-kicker, .market-product-farm) { font-size: 12px; line-height: 1.6; font-weight: 500; letter-spacing: 0; }
 .page-shell :is(.market-tags span, .market-farm-badge, .market-product-tag) { font-size: 11px; line-height: 1.5; font-weight: 500; }
 .page-shell .market-farm-bottom { font-size: 12px; line-height: 1.5; padding-block: 20px; }
@@ -247,7 +249,12 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
 .page-shell .image-reveal.is-visible img { transform: none; }
 .page-shell .market-farm-image img { object-fit: cover; }
 .page-shell .market-product-image { height: auto; aspect-ratio: 1.15; }
-.page-shell .market-product-image img { padding: 12px; }
+.page-shell .market-product-image img { width: 100%; height: 100%; padding: 0; object-fit: cover; mix-blend-mode: normal; }
+.page-shell .product-card .product-image img { width: 100%; height: 100%; padding: 0; object-fit: cover; mix-blend-mode: normal; }
+.page-shell .market-main-photo:not(.is-farm) > img { width: 100%; height: 100%; padding: 0; object-fit: cover; mix-blend-mode: normal; }
+.page-shell .market-detail-sections { display: block; width: 100%; margin-left: calc(-100% - 60px); }
+.page-shell .market-detail-sections details { width: 100%; }
+.page-shell .market-detail-sections details:first-child { transform: none; }
 
 @media (max-width: 1050px) {
   .store-header-inner { width: calc(100% - 40px); gap: 24px; }
@@ -255,6 +262,7 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
   .store-header-actions { gap: 16px; }
   .page-shell .footer-main { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .market-checkout-layout { grid-template-columns: minmax(0, 1.2fr) minmax(310px, 1fr); }
+  .page-shell .market-detail-sections { margin-left: calc(-100% - 30px); }
   .page-shell .market-farm-copy { padding: 20px 18px 0; }
   .page-shell .market-farm-bottom { flex-wrap: wrap; gap: 10px; }
 }
@@ -309,6 +317,9 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
   .page-shell .market-progress > span { gap: 7px; font-size: 11px; }
   .page-shell .market-progress b { width: 34px; height: 34px; flex-basis: 34px; font-size: 12px; }
   .page-shell .market-detail-buy { position: static; flex-wrap: wrap; }
+  .page-shell .market-detail-sections { display: block; width: auto; margin-left: 0; }
+  .page-shell .market-detail-sections details { width: auto; }
+  .page-shell .market-detail-sections details:first-child { transform: none; }
   .page-shell .market-detail-buy .market-primary { min-width: 180px; }
   .page-shell .family-activities { gap: 20px; }
 }
@@ -342,7 +353,7 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
   .page-shell .why-benefits article { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; gap: 8px; padding: 14px 12px; min-height: 0; height: auto; }
   .page-shell .why-benefits article > span { flex: 0 0 36px; width: 36px; height: 36px; }
   .page-shell .why-benefits strong { align-self: center; margin: 0; font-size: 14px; line-height: 1.4; }
-  .page-shell .why-benefits small { width: 100%; font-size: 13px; line-height: 1.5; }
+  .page-shell .why-benefits small { width: 100%; text-align: center; align-self: center; font-size: 13px; line-height: 1.5; }
   .page-shell .shopping-journey { margin-top: 24px; }
   .page-shell .shopping-journey-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .page-shell .shopping-journey-steps > li { display: flex; flex-direction: column; min-width: 0; height: auto; padding: 14px 12px; }
@@ -357,4 +368,175 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
   .page-shell .faq-trigger { font-size: 14px; line-height: 1.5; }
   .page-shell .faq-answer p { font-size: 14px; line-height: 1.65; }
   .page-shell .page-footer h3 { font-size: 18px; line-height: 1.4; }
+}
+
+/* Keep the mobile farm directory callout readable and balanced. */
+@media (max-width: 760px) {
+  .page-shell .market-promise {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
+    align-items: start;
+    gap: 12px 14px;
+    padding: 24px 20px;
+    margin-top: 28px;
+    min-height: 0;
+  }
+  .page-shell .market-promise > .anticon {
+    font-size: 28px;
+    margin-top: 4px;
+  }
+  .page-shell .market-promise > span {
+    min-width: 0;
+  }
+  .page-shell .market-promise strong {
+    font-size: 27px;
+    line-height: 1.15;
+  }
+  .page-shell .market-promise small {
+    max-width: 280px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .page-shell .market-promise a {
+    grid-column: 2;
+    justify-self: start;
+    margin: 0;
+    font-size: 13px;
+  }
+}
+
+/* Add a small breathing space before the farm hero below the fixed mobile header. */
+@media (max-width: 760px) {
+  .page-shell > main.market-farm-detail .market-farm-hero {
+    margin-top: 16px;
+  }
+}
+
+/* Delivery address dialog: editorial farm panel and a focused, compact form. */
+.delivery-modal.market-modal .ant-modal-content { padding: 0; overflow: hidden; border-radius: 24px; background: #fffdf8; }
+.delivery-modal .ant-modal-header { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); }
+.delivery-modal .ant-modal-close { top: 14px; right: 14px; width: 34px; height: 34px; border-radius: 50%; background: #eef1e7; }
+.delivery-layout { display: grid; grid-template-columns: .85fr 1.15fr; }
+.delivery-story { position: relative; min-height: 540px; overflow: hidden; background: var(--green); color: white; }
+.delivery-story > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.delivery-story::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(16,59,55,.18), rgba(16,59,55,.3) 30%, rgba(16,59,55,.95)); }
+.delivery-story-badge { position: absolute; z-index: 1; top: 26px; left: 24px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #ffffff50; border-radius: 30px; background: #103b3766; font-size: 11px; }
+.delivery-story-copy { position: absolute; z-index: 1; bottom: 36px; left: 28px; right: 28px; }
+.delivery-story-copy > span, .delivery-kicker { font-size: 10px; font-weight: 700; letter-spacing: .13em; }
+.delivery-story-copy h2 { font-family: var(--heading-font); font-size: 42px; font-weight: 600; line-height: 1.08; color: #fff; margin: 16px 0; }
+.delivery-story-copy p { margin: 0; font-size: 13px; line-height: 1.7; color: #eef1e7; }
+.delivery-modal .location-form { padding: 38px 32px 28px; gap: 18px; align-content: center; }
+.delivery-kicker { color: var(--green-soft); }
+.delivery-form-heading h2 { font-family: var(--heading-font); font-size: 38px; font-weight: 600; line-height: 1.08; letter-spacing: -.025em; margin: 10px 0 14px; color: var(--green); }
+.delivery-form-heading p { font-size: 13px; line-height: 1.65; margin: 0 0 4px; color: var(--muted); }
+.delivery-modal .location-form label { font-size: 12px; gap: 7px; }
+.delivery-modal .location-form input { width: 100%; height: 48px; padding: 12px; font-size: 14px; border: 1px solid #d6ddd0; }
+.delivery-modal .market-field-pair { grid-template-columns: 1fr 1fr; gap: 12px; }
+.delivery-modal .location-form .delivery-preview-note { display: flex; align-items: flex-start; gap: 10px; padding: 12px; margin: 0; border-radius: 10px; background: #eff2e8; color: var(--green); font-size: 12px; line-height: 1.6; }
+.delivery-preview-note > .anticon { margin-top: 3px; font-size: 17px; }
+.delivery-preview-note small { font-size: 11px; color: var(--muted); }
+.delivery-modal .location-form .market-primary { border: 1px solid var(--green); box-shadow: 0 6px 18px #103b371a; font-size: 14px; }
+@media (max-width: 600px) {
+  .delivery-modal { max-width: calc(100vw - 24px); margin-inline: auto; }
+  .delivery-layout { grid-template-columns: minmax(0, 1fr); }
+  .delivery-story { min-height: 140px; }
+  .delivery-story-badge { top: 16px; left: 20px; padding: 5px 10px; }
+  .delivery-story-copy { bottom: 16px; left: 20px; right: 20px; }
+  .delivery-story-copy > span, .delivery-story-copy p { display: none; }
+  .delivery-story-copy h2 { font-size: 28px; margin: 0; }
+  .delivery-story-copy h2 br { display: none; }
+  .delivery-modal .location-form { padding: 22px 20px; gap: 16px; }
+  .delivery-form-heading h2 { font-size: 32px; }
+  .delivery-form-heading h2 br { display: none; }
+  .delivery-modal .location-form input { font-size: 16px; }
+}
+
+/* Checkout login gate keeps the basket visible while asking for an account. */
+.page-shell .market-checkout-gate-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(300px, 1fr);
+  align-items: start;
+  gap: 28px;
+  padding-top: 24px;
+}
+.page-shell .market-login-card {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 12px 16px;
+  padding: 32px;
+  border-radius: 18px;
+}
+.page-shell .market-login-card > div { min-width: 0; }
+.page-shell .market-login-icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: #e8f0e7;
+  color: var(--green);
+  font-size: 25px;
+}
+.page-shell .market-login-card h1 {
+  font-family: var(--body-font) !important;
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -.03em;
+  margin: 8px 0 10px;
+}
+.page-shell .market-login-card h2 {
+  grid-column: 1 / -1;
+  font-family: var(--body-font) !important;
+  font-size: 20px;
+  line-height: 1.35;
+  letter-spacing: -.02em;
+  margin: 12px 0 0;
+}
+.page-shell .market-login-card > p { grid-column: 1 / -1; margin: 0; }
+.page-shell .market-login-card > .market-primary { grid-column: 1 / -1; }
+.page-shell .market-login-card .market-form {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 18px 0 0;
+}
+.page-shell .market-login-card .market-primary { width: 100%; margin-top: 8px; }
+.page-shell .market-login-create { font-size: 13px; }
+.page-shell .market-login-create a { color: var(--green); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 760px) {
+  .page-shell .market-checkout-gate-layout { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-top: 10px; }
+  .page-shell .market-login-card { grid-template-columns: 44px minmax(0, 1fr); gap: 10px 12px; padding: 22px 18px; }
+  .page-shell .market-login-icon { width: 44px; height: 44px; border-radius: 12px; font-size: 21px; }
+  .page-shell .market-login-card h1 { font-size: 27px; margin-top: 3px; }
+  .page-shell .market-login-card h2 { font-size: 18px; margin-top: 8px; }
+  .page-shell .market-login-card .market-form { margin-top: 12px; }
+}
+
+@media (max-width: 760px) {
+  /* The farm search sits below the heading on mobile and uses the full card width. */
+  .page-shell > main.market-farm-detail .farm-shop .market-results-heading {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .page-shell > main.market-farm-detail .farm-shop .market-results-heading > .market-search {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+
+  /* Keep the back-to-top control visible in the compact footer. */
+  .page-shell .footer-bottom {
+    position: relative;
+    min-height: 118px;
+    padding-right: 58px;
+  }
+  .page-shell .footer-top-button {
+    display: grid;
+    position: absolute;
+    right: 0;
+    bottom: 22px;
+    width: 42px;
+    height: 42px;
+  }
 }

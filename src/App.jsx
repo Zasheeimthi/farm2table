@@ -272,9 +272,6 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
             </button>
             <button className="hero-search-submit" type="submit">Explore <ArrowRightOutlined /></button>
           </form>
-          <button className="hero-browse-link" type="button" onClick={() => setRoute('/farms')}>
-            Explore our farm community <ArrowRightOutlined />
-          </button>
         </div>
       </section>
 
