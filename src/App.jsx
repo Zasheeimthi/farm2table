@@ -85,7 +85,8 @@ function productPath(item) {
 function Brand({ onHome }) {
   return (
     <button className="brand-text" onClick={onHome} aria-label="Farm to Table home">
-      <img className="brand-logo-image" src="/storefront/farmtotable-logo.png" alt="Farm to Table" />
+      <img className="brand-logo-image brand-logo-white" src="/storefront/farmtotable-logo-white.png" alt="Farm to Table" />
+      <img className="brand-logo-image brand-logo-dark" src="/storefront/farmtotable-logo-dark.png" alt="" aria-hidden="true" />
     </button>
   );
 }
@@ -651,7 +652,7 @@ function Footer() {
       <div className="footer-main">
         <article className="footer-brand">
           <button className="footer-logo" type="button" onClick={() => setRoute('/')} aria-label="Farm to Table home">
-            <img className="footer-logo-image" src="/storefront/farmtotable-logo.png" alt="Farm to Table" />
+            <img className="footer-logo-image" src="/storefront/farmtotable-logo-white.png" alt="Farm to Table" />
           </button>
           <p>Fresh local produce, premium pantry goods, and trusted farms delivered with care.</p>
           <div className="social-row" aria-label="Social links">
