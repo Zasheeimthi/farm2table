@@ -391,7 +391,7 @@ button {
 }
 
 .hero-section::after {
-  content: '';
+  content: none;
   position: absolute;
   inset: 0;
   background: rgba(16, 59, 55, .24);
@@ -5304,7 +5304,7 @@ h6,
 
 .hero-section > video {
   object-position: center;
-  filter: saturate(.92) contrast(1.02);
+  filter: none;
 }
 
 .hero-content {

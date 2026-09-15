@@ -90,8 +90,27 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
 
 /* One display style for all home sections; compact cards use the same sans-serif. */
 .page-shell .hero-content { padding-top: 0; }
-.page-shell .hero-content h1 { font-size: clamp(52px, 6.4vw, 88px); line-height: 1.04; font-weight: 600; }
-.page-shell .hero-content > p { max-width: 670px; font-size: 18px; line-height: 1.7; }
+.page-shell .hero-content h1 {
+  font-size: clamp(52px, 6.4vw, 88px);
+  line-height: 1.04;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, .45);
+}
+.page-shell .hero-content h1 em { color: #fff; font-weight: inherit; }
+.page-shell .hero-content .eyebrow {
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, .5);
+}
+.page-shell .hero-content > p {
+  max-width: 670px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, .5);
+}
 .page-shell .hero-section { min-height: 720px; }
 .page-shell :is(.hero-search input, .hero-location, .hero-search-submit, .hero-browse-link) { font-size: 13px; }
 .page-shell .hero-browse-link { letter-spacing: .025em; }

@@ -247,9 +247,9 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
           muted
           loop
           playsInline
-          aria-label="Farmer preparing fresh produce in a sunny field"
+          aria-label="European farms and fresh farm produce"
         >
-          <source src="/storefront/hero-farmer.mp4" type="video/mp4" />
+          <source src="/storefront/hero-european-farms.mp4" type="video/mp4" />
         </video>
         <div className="hero-content scroll-reveal">
           <span className="eyebrow">Local farms. Premium produces.</span>
