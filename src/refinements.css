@@ -289,7 +289,7 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
 @media (max-width: 1050px) {
   .store-header-inner { width: calc(100% - 40px); gap: 24px; }
   .store-header .brand-text { font-size: 21px; }
-  .brand-logo-image { width: 200px; height: 68px; }
+  .brand-logo-image { width: 180px; height: 62px; }
   .store-header-actions { gap: 16px; }
   .page-shell .footer-main { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .market-checkout-layout { grid-template-columns: minmax(0, 1.2fr) minmax(310px, 1fr); }
