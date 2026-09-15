@@ -249,7 +249,7 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
           playsInline
           aria-label="European farms and fresh farm produce"
         >
-          <source src="/storefront/hero-european-farms.mp4" type="video/mp4" />
+          <source src="/storefront/mixfarms.mp4" type="video/mp4" />
         </video>
         <div className="hero-content scroll-reveal">
           <span className="eyebrow">Local farms. Premium produces.</span>

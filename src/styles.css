@@ -391,10 +391,12 @@ button {
 }
 
 .hero-section::after {
-  content: none;
+  content: "";
   position: absolute;
   inset: 0;
-  background: rgba(16, 59, 55, .24);
+  pointer-events: none;
+  z-index: 1;
+  background: rgba(0, 0, 0, .28);
 }
 
 .hero-card {
@@ -5295,7 +5297,7 @@ h6,
 }
 
 .hero-section::after {
-  background: rgba(16, 59, 55, .3);
+  background: rgba(0, 0, 0, .28);
 }
 
 .hero-section > img {
@@ -5305,6 +5307,7 @@ h6,
 .hero-section > video {
   object-position: center;
   filter: none;
+  transform: none;
 }
 
 .hero-content {
