@@ -36,3 +36,13 @@ yarn-error.log*
 next-env.d.ts
 
 /dist/
+# next.js
+/.next/
+/out/
+
+# env
+.env
+.env*.local
+
+# python tooling
+__pycache__/

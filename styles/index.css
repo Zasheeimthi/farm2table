@@ -1,0 +1,12 @@
+/**
+ * Single stylesheet entry point.
+ *
+ * Import order is the cascade: refinements.css deliberately overrides rules
+ * from marketplace.css, which overrides styles.css. Importing these directly
+ * from app/layout.jsx let the bundler reorder them, which silently dropped the
+ * refinements, so they are pinned here with ordered @imports instead.
+ */
+@import './styles.css';
+@import './marketplace.css';
+@import './refinements.css';
+@import './location-map.css';
