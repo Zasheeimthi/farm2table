@@ -55,7 +55,7 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
 .store-header { position: absolute; top: 0; left: 0; z-index: 80; width: 100%; background: rgba(16,59,55,.25) !important; color: #fff; border-bottom: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(10px); }
 .store-header-inner { width: min(var(--container-width), calc(100% - 64px)) !important; min-height: 84px; margin-inline: auto; display: grid; grid-template-columns: auto minmax(200px, 1fr) auto; gap: clamp(22px, 4vw, 64px); align-items: center; }
 .store-header .brand-text { position: static; width: auto; max-width: none; margin: 0; display: inline-flex; align-items: center; font-family: var(--logo-font) !important; font-size: 27px; line-height: 1.1; font-weight: 600; letter-spacing: -.045em; color: #fff; justify-self: start; transform: none; overflow: visible; }
-.brand-logo-image { display: block; width: 200px; height: 68px; object-fit: contain; object-position: left center; }
+.brand-logo-image { display: block; width: 210px; height: 80px; object-fit: contain; object-position: left center; }
 .brand-logo-dark { display: none; }
 .store-header.scrolled .brand-logo-white, .store-header-page .brand-logo-white { display: none; }
 .store-header.scrolled .brand-logo-dark, .store-header-page .brand-logo-dark { display: block; }
@@ -252,7 +252,7 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
 .page-shell .footer-subscribe h3 { font-size: 21px; }
 .page-shell .footer-bottom p { font-size: 12px; }
 .page-shell .footer-logo { font-family: var(--logo-font) !important; font-size: 25px; }
-.footer-logo-image { display: block; width: 200px; height: 68px; object-fit: contain; object-position: left center; }
+.footer-logo-image { display: block; width: 210px; height: 80px; object-fit: contain; object-position: left center; }
 .page-shell .footer-main { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, 1.2fr); }
 .market-modal .market-form label, .market-modal .market-form input, .market-modal .market-form select { font-size: 14px; }
 .market-modal .market-note, .market-modal .location-form > p { font-size: 13px !important; }
