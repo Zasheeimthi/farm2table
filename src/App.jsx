@@ -1,5 +1,5 @@
 import { farmData, categoryTabs, productData } from './catalog.jsx';
-import { MarketProvider, useMarket, MarketTools, FarmsPage, ProductsPage, ProductDetailsPage, FarmPage, CartPage, CheckoutPage, PaymentPage, ConfirmationPage, AccountPage, AuthPage, OrdersPage, SavedPage, NotFound, FeaturedFarms, SaveButton } from './marketplace.jsx';
+import { MarketProvider, useMarket, MarketTools, FarmsPage, ProductsPage, ProductDetailsPage, FarmPage, CartPage, CheckoutPage, PaymentPage, ConfirmationPage, AccountPage, AuthPage, OrdersPage, SavedPage, NotFound, FeaturedFarms } from './marketplace.jsx';
 import React, { useEffect, useMemo, useState } from 'react';
 import { Badge, Button, Input } from 'antd';
 import {
@@ -166,7 +166,6 @@ function ProductCard({ item, compact = false, onAdd }) {
 
   return (
     <article className={`product-card scroll-reveal ${compact ? 'compact' : ''}`}>
-      <SaveButton className="heart-btn" id={`product:${slugify(item.title)}`} label={item.title} />
       {item.tag && <span className="sale-ribbon">{item.tag}</span>}
       <button className="product-image product-image-button" type="button" onClick={() => setRoute(path)} aria-label={`View ${item.title}`}>
         <img src={item.image} alt={item.title} />
@@ -262,7 +261,7 @@ function HomePage({ products, activeCategory, setActiveCategory, onAdd }) {
               <input
                 value={heroSearch}
                 onChange={(event) => setHeroSearch(event.target.value)}
-                placeholder="Search farms, products or categories"
+                placeholder="Search Farms, Categories"
                 aria-label="Search products, farms or categories"
               />
             </div>
