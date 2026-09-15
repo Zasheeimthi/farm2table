@@ -55,6 +55,8 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
 .store-header { position: absolute; top: 0; left: 0; z-index: 80; width: 100%; background: rgba(16,59,55,.25) !important; color: #fff; border-bottom: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(10px); }
 .store-header-inner { width: min(var(--container-width), calc(100% - 64px)) !important; min-height: 84px; margin-inline: auto; display: grid; grid-template-columns: auto minmax(200px, 1fr) auto; gap: clamp(22px, 4vw, 64px); align-items: center; }
 .store-header .brand-text { position: static; width: auto; max-width: none; margin: 0; display: inline-flex; align-items: center; font-family: var(--logo-font) !important; font-size: 27px; line-height: 1.1; font-weight: 600; letter-spacing: -.045em; color: #fff; justify-self: start; transform: none; overflow: visible; }
+.brand-logo-image { display: block; width: 184px; height: 58px; object-fit: contain; object-position: left center; }
+.store-header.scrolled .brand-logo-image, .store-header-page .brand-logo-image { filter: brightness(0) saturate(100%) invert(19%) sepia(25%) saturate(1082%) hue-rotate(127deg) brightness(88%) contrast(95%); }
 .store-brand-symbol { display: none; }
 .store-search { width: 100%; height: 48px; min-width: 0; display: flex; align-items: center; gap: 12px; padding: 0 18px; border: 1px solid #dce2d7; border-radius: 12px; color: var(--muted); background: #f8f9f3; cursor: pointer; text-align: left; font-size: 14px; }
 .store-search .anticon { font-size: 20px; }
@@ -248,6 +250,7 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
 .page-shell .footer-subscribe h3 { font-size: 21px; }
 .page-shell .footer-bottom p { font-size: 12px; }
 .page-shell .footer-logo { font-family: var(--logo-font) !important; font-size: 25px; }
+.footer-logo-image { display: block; width: 218px; height: 72px; object-fit: contain; object-position: left center; }
 .page-shell .footer-main { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, 1.2fr); }
 .market-modal .market-form label, .market-modal .market-form input, .market-modal .market-form select { font-size: 14px; }
 .market-modal .market-note, .market-modal .location-form > p { font-size: 13px !important; }
@@ -284,6 +287,7 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
 @media (max-width: 1050px) {
   .store-header-inner { width: calc(100% - 40px); gap: 24px; }
   .store-header .brand-text { font-size: 21px; }
+  .brand-logo-image { width: 142px; height: 48px; }
   .store-header-actions { gap: 16px; }
   .page-shell .footer-main { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .market-checkout-layout { grid-template-columns: minmax(0, 1.2fr) minmax(310px, 1fr); }
