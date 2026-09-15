@@ -141,7 +141,6 @@ export function ProductDetailsPage({ slug }) {
 }
 export function FarmPage({ farmId }) {
   const f = farmData[farmId];
-  const m = useMarket();
   const [category, setCategory] = useState('all');
   const [search, setSearch] = useState('');
   useEffect(() => { setCategory('all'); setSearch(''); }, [farmId]);
@@ -158,7 +157,7 @@ export function FarmPage({ farmId }) {
     <CategoryChips value={category} onChange={setCategory} available={categories.map(c => c.id)} />
     {categories.map(c => { const items = products.filter(p => p.category === c.id); return items.length > 0 && <section className="farm-category-group" key={c.id}><div className="farm-category-heading"><h3>{c.label}</h3><span>{items.length} {items.length === 1 ? 'item' : 'items'}</span></div><div className="market-product-grid four">{items.map(p => <ProductCard key={p.title} item={p} />)}</div></section>; })}
     {!products.length && <Empty title="No products found." text="Try another category or search." action="Show all farm products" onAction={() => { setCategory('all'); setSearch(''); }} />}</section>
-    <section className="farm-information"><article><span className="eyebrow">Farm information</span><h2>Get to know {f.name}.</h2><p>{f.summary}</p><dl><div><dt><EnvironmentOutlined /> Farm location</dt><dd>{f.address || f.location}</dd>{!f.address && <dd className="market-note">Region shown. Exact visiting address is not available.</dd>}</div><div><dt><TruckOutlined /> Delivery</dt><dd>Availability depends on your delivery location.</dd><dd className="market-note">Delivery coverage will be confirmed when live ordering is available.</dd></div></dl><button className="market-secondary" onClick={() => m.setLocationOpen(true)}>{m.location ? 'Change delivery location' : 'Choose delivery location'} <ArrowRightOutlined /></button><div className="market-tags">{f.practices.map(p => <span key={p}>{p}</span>)}</div></article>
+    <section className="farm-information"><article><span className="eyebrow">Farm information</span><h2>Get to know {f.name}.</h2><p>{f.summary}</p><dl><div><dt><EnvironmentOutlined /> Farm location</dt><dd>{f.address || f.location}</dd>{!f.address && <dd className="market-note">Region shown. Exact visiting address is not available.</dd>}</div><div><dt><TruckOutlined /> Delivery</dt><dd>Availability depends on your delivery location.</dd><dd className="market-note">Delivery coverage will be confirmed when live ordering is available.</dd></div></dl><div className="market-tags">{f.practices.map(p => <span key={p}>{p}</span>)}</div></article>
     <aside className="farm-location-panel"><span className="eyebrow">Farm location</span><h3>Explore the area</h3><p>{f.location}</p><FarmRegionMap location={f.address || f.location} /><a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(f.address || f.location)}`} target="_blank" rel="noreferrer" className="market-link">Open area in maps <ArrowRightOutlined /></a></aside></section>
   </div></Page>;
 }
