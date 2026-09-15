@@ -408,7 +408,10 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
 /* Add a small breathing space before the farm hero below the fixed mobile header. */
 @media (max-width: 760px) {
   .page-shell > main.market-farm-detail .market-farm-hero {
-    margin-top: 16px;
+    position: relative;
+    top: 16px;
+    margin-top: 30px;
+    margin-bottom: 16px;
   }
 }
 
