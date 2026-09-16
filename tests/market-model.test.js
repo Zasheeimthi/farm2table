@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { changeCart, cartLines, normalizeCart, subtotalOf, packPrice, deliveryDates, validAddress, validLocation } from '../src/market-model.js';
+import { changeCart, cartLines, normalizeCart, subtotalOf, packPrice, deliveryDates, validAddress, validLocation } from '../lib/market-model.js';
 
 test('a Swedish map selection allows shopping but still requires a full checkout address', () => {
   const place = { city: 'Uppsala', countryCode: 'SE', lat: 59.8586, lng: 17.6389 };
