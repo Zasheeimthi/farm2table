@@ -1,0 +1,68 @@
+{
+  "overflow": false,
+  "elements": [
+    {
+      "text": "Search products, farms and categories…1LoginSign upHomeFarmsProductsAboutContact usMy accountLoginSign up",
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 85,
+      "fontSize": "14px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "",
+      "x": 16,
+      "y": 16,
+      "width": 150,
+      "height": 52,
+      "fontSize": "22px",
+      "fontFamily": "\"Instrument Sans\", system-ui, -apple-system, sans-serif"
+    },
+    {
+      "text": "Where should we deliver?",
+      "x": 16,
+      "y": 208.59375,
+      "width": 358,
+      "height": 92.375,
+      "fontSize": "42px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "Your details",
+      "x": 77,
+      "y": 534.71875,
+      "width": 104.453125,
+      "height": 26.875,
+      "fontSize": "24px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "Delivery address",
+      "x": 77,
+      "y": 1027.46875,
+      "width": 144.40625,
+      "height": 26.875,
+      "fontSize": "24px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "Payment method",
+      "x": 77,
+      "y": 1841.421875,
+      "width": 151.625,
+      "height": 26.875,
+      "fontSize": "24px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "Your order summary",
+      "x": 37,
+      "y": 2490.546875,
+      "width": 316,
+      "height": 34.5,
+      "fontSize": "30px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    }
+  ]
+}

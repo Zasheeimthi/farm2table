@@ -1,0 +1,77 @@
+{
+  "overflow": false,
+  "elements": [
+    {
+      "text": "Search products, farms and categories…1LoginSign upHomeFarmsProductsAboutContact usMy accountLoginSign up",
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 85,
+      "fontSize": "14px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "",
+      "x": 16,
+      "y": 16,
+      "width": 150,
+      "height": 52,
+      "fontSize": "22px",
+      "fontFamily": "\"Instrument Sans\", system-ui, -apple-system, sans-serif"
+    },
+    {
+      "text": "Low-Pasteurized Whole Milk 1L",
+      "x": 16,
+      "y": 751.953125,
+      "width": 358,
+      "height": 75.59375,
+      "fontSize": "36px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "More from Solmarka Farm.",
+      "x": 16,
+      "y": 1932.140625,
+      "width": 324.53125,
+      "height": 36.796875,
+      "fontSize": "32px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": " Solmarka FarmBiodynamic Yoghurt 1LDairy & Cheese56 kr Add",
+      "x": 16,
+      "y": 2030.4375,
+      "width": 173,
+      "height": 338.78125,
+      "fontSize": "14px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "Box Solmarka FarmBiodynamic Vegetable BoxVegetables & Roots279 kr Add",
+      "x": 201,
+      "y": 2030.4375,
+      "width": 173,
+      "height": 338.78125,
+      "fontSize": "14px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmOrganic New Potatoes 1kgVegetables & Roots51 kr Add",
+      "x": 16,
+      "y": 2381.21875,
+      "width": 173,
+      "height": 338.78125,
+      "fontSize": "14px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmBiodynamic Potatoes 1kgVegetables & Roots37 kr Add",
+      "x": 201,
+      "y": 2381.21875,
+      "width": 173,
+      "height": 338.78125,
+      "fontSize": "14px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    }
+  ]
+}

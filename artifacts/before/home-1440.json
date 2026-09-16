@@ -1,0 +1,140 @@
+{
+  "overflow": false,
+  "elements": [
+    {
+      "text": "Search products, farms and categories…1LoginSign upHomeFarmsProductsAboutContact usMy accountLoginSign up",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 85,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "",
+      "x": 130,
+      "y": 2,
+      "width": 200,
+      "height": 80,
+      "fontSize": "27px",
+      "fontFamily": "\"Instrument Sans\", system-ui, -apple-system, sans-serif"
+    },
+    {
+      "text": "Fresh. Natural.Delivered to you.",
+      "x": 444.53125,
+      "y": 191.890625,
+      "width": 550.9375,
+      "height": 183.03125,
+      "fontSize": "88px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "Find your farm favourites.",
+      "x": 130,
+      "y": 790,
+      "width": 460.90625,
+      "height": 55.1875,
+      "fontSize": "48px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "Meet your producers.",
+      "x": 130,
+      "y": 1213.1875,
+      "width": 450.25,
+      "height": 55.1875,
+      "fontSize": "48px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "Solmarka Farm",
+      "x": 155,
+      "y": 1609.53125,
+      "width": 327.328125,
+      "height": 29.390625,
+      "fontSize": "21px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "Hagshult Grasslands",
+      "x": 556.328125,
+      "y": 1609.53125,
+      "width": 327.328125,
+      "height": 29.390625,
+      "fontSize": "21px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "Bjare Chicken Farm",
+      "x": 957.65625,
+      "y": 1609.53125,
+      "width": 327.34375,
+      "height": 29.390625,
+      "fontSize": "21px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "Why Choose Farm to Table?",
+      "x": 718.359375,
+      "y": 2076.265625,
+      "width": 544.640625,
+      "height": 52.796875,
+      "fontSize": "48px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "How it works.",
+      "x": 161,
+      "y": 2546.421875,
+      "width": 263.015625,
+      "height": 44,
+      "fontSize": "40px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "OurFarms",
+      "x": 130,
+      "y": 2932.25,
+      "width": 454.28125,
+      "height": 110.375,
+      "fontSize": "48px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "We Care for Nature",
+      "x": 208,
+      "y": 3720.78125,
+      "width": 1024,
+      "height": 55.1875,
+      "fontSize": "48px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "Visit with kids.",
+      "x": 784.640625,
+      "y": 4229.3125,
+      "width": 525.34375,
+      "height": 55.1875,
+      "fontSize": "48px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "Real Reviews From Real Customers",
+      "x": 28,
+      "y": 4912.5,
+      "width": 1384,
+      "height": 55.1875,
+      "fontSize": "48px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "Frequently Asked Questions",
+      "x": 130,
+      "y": 5583.75,
+      "width": 403.90625,
+      "height": 110.375,
+      "fontSize": "48px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    }
+  ]
+}

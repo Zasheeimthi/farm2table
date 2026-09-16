@@ -1,0 +1,51 @@
+"use client";
+
+import { CheckCircleOutlined } from "@ant-design/icons";
+import { CreditCardOutlined } from "@ant-design/icons";
+import { DeleteOutlined } from "@ant-design/icons";
+import { PlusOutlined } from "@ant-design/icons";
+import { SafetyOutlined } from "@ant-design/icons";
+export function PaymentMethodSection({
+  payment,
+  number = '02'
+}) {
+  const {
+    cards,
+    selectedCard,
+    selectedCardId,
+    setSelectedCardId,
+    showCardForm,
+    setShowCardForm,
+    cardForm,
+    setCardForm,
+    cardError,
+    setCardError,
+    saveCard,
+    deleteCard
+  } = payment;
+  return <section className="market-form-card market-payment-card"><div className="market-card-title"><span>{number}</span><h2>Payment method</h2>{selectedCard && <span className="market-selection-badge">Card selected</span>}</div><p>Use a saved card or add a new one securely for this preview order.</p><div className="market-saved-cards"><h3>Saved cards</h3><p className="market-note">Save up to 3 cards. Newly added cards are selected automatically.</p>{cards.length ? cards.map(card => <article className={`market-saved-card ${selectedCardId === card.id ? 'selected' : ''}`} key={card.id} onClick={() => {
+        setSelectedCardId(card.id);
+        setCardError('');
+      }}><button type="button" className="market-card-select" aria-label={`Use ${card.brand} ending ${card.last4}`} onClick={() => {
+          setSelectedCardId(card.id);
+          setCardError('');
+        }}><CreditCardOutlined /></button><div><span>{card.brand}</span><strong>•••• {card.last4}</strong><small>Expires {card.expiry}</small></div>{selectedCardId === card.id && <CheckCircleOutlined className="market-card-check" />}<button type="button" className="market-card-delete" onClick={e => {
+          e.stopPropagation();
+          deleteCard(card.id);
+        }}><DeleteOutlined /> Delete</button></article>) : <p className="market-note">No saved cards yet. Add a card to continue.</p>}</div>{!showCardForm ? <button type="button" className="market-add-card" onClick={() => {
+      setShowCardForm(true);
+      setCardError('');
+    }}><PlusOutlined /> Add a new card</button> : <div className="market-new-card"><h3>Add a new card</h3><p>Securely processed by Stripe. Card details are never stored in this preview.</p><label>Card number<div className="market-card-number"><CreditCardOutlined /><input inputMode="numeric" autoComplete="cc-number" placeholder="1234 1234 1234 1234" value={cardForm.number} onChange={e => setCardForm({
+            ...cardForm,
+            number: e.target.value
+          })} /></div></label><div className="market-field-pair"><label>MM / YY<input inputMode="numeric" autoComplete="cc-exp" placeholder="MM / YY" value={cardForm.expiry} onChange={e => setCardForm({
+            ...cardForm,
+            expiry: e.target.value
+          })} /></label><label>Security code<input inputMode="numeric" autoComplete="cc-csc" placeholder="CVC" value={cardForm.cvc} onChange={e => setCardForm({
+            ...cardForm,
+            cvc: e.target.value
+          })} /></label></div><div className="market-card-form-actions"><button type="button" className="market-secondary" onClick={() => {
+          setShowCardForm(false);
+          setCardError('');
+        }}>Cancel</button><button type="button" className="market-primary" onClick={saveCard}>Save card <CheckCircleOutlined /></button></div></div>}{cardError && <p className="market-error" role="alert">{cardError}</p>}<div className="market-preview-note"><SafetyOutlined /><span><strong>Secure preview checkout.</strong><p>Live ordering and payments are not connected. Your card is represented by a masked demo entry and no charge is made.</p></span></div></section>;
+}

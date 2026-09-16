@@ -1,0 +1,50 @@
+{
+  "overflow": false,
+  "elements": [
+    {
+      "text": "Search products, farms and categories…1LoginSign upHomeFarmsProductsAboutContact usMy accountLoginSign up",
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 85,
+      "fontSize": "14px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "",
+      "x": 16,
+      "y": 16,
+      "width": 150,
+      "height": 52,
+      "fontSize": "22px",
+      "fontFamily": "\"Instrument Sans\", system-ui, -apple-system, sans-serif"
+    },
+    {
+      "text": "A basket full of good things.",
+      "x": 16,
+      "y": 208.59375,
+      "width": 358,
+      "height": 92.375,
+      "fontSize": "42px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "Low-Pasteurized Whole Milk 1LSingle pack · 56 kr each Remove156 kr",
+      "x": 17,
+      "y": 642.53125,
+      "width": 356,
+      "height": 188.359375,
+      "fontSize": "14px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "Your order summary",
+      "x": 37,
+      "y": 974.78125,
+      "width": 316,
+      "height": 34.5,
+      "fontSize": "30px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    }
+  ]
+}

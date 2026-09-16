@@ -1,0 +1,203 @@
+{
+  "overflow": false,
+  "elements": [
+    {
+      "text": "Search products, farms and categories…1LoginSign upHomeFarmsProductsAboutContact usMy accountLoginSign up",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 85,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "",
+      "x": 130,
+      "y": 2,
+      "width": 200,
+      "height": 80,
+      "fontSize": "27px",
+      "fontFamily": "\"Instrument Sans\", system-ui, -apple-system, sans-serif"
+    },
+    {
+      "text": "Solmarka Farm",
+      "x": 118,
+      "y": 393.703125,
+      "width": 1204,
+      "height": 70.390625,
+      "fontSize": "64px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "Shop the farm.",
+      "x": 80,
+      "y": 781.15625,
+      "width": 262.046875,
+      "height": 55.1875,
+      "fontSize": "48px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "Organic Solmarka FarmLow-Pasteurized Whole Milk 1LDairy & Cheese56 kr1",
+      "x": 80,
+      "y": 990.6875,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmBiodynamic Yoghurt 1LDairy & Cheese56 kr Add",
+      "x": 405,
+      "y": 990.6875,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmOrganic Eldost 100gDairy & Cheese46 kr Add",
+      "x": 730,
+      "y": 990.6875,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmBiodynamic Fresh Cheese 200gDairy & Cheese51 kr Add",
+      "x": 1055,
+      "y": 990.6875,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "Box Solmarka FarmBiodynamic Vegetable BoxVegetables & Roots279 kr Add",
+      "x": 80,
+      "y": 1540.6875,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmOrganic New Potatoes 1kgVegetables & Roots51 kr Add",
+      "x": 405,
+      "y": 1540.6875,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmBiodynamic Potatoes 1kgVegetables & Roots37 kr Add",
+      "x": 730,
+      "y": 1540.6875,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmOrganic Tomato 200gVegetables & Roots37 kr Add",
+      "x": 1055,
+      "y": 1540.6875,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmOrganic CucumberVegetables & Roots32 kr Add",
+      "x": 80,
+      "y": 2015.34375,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmOrganic Early Carrots BunchVegetables & Roots46 kr Add",
+      "x": 405,
+      "y": 2015.34375,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmOrganic Fresh CornVegetables & Roots23 kr Add",
+      "x": 730,
+      "y": 2015.34375,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmOrganic GarlicVegetables & Roots30 kr Add",
+      "x": 1055,
+      "y": 2015.34375,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmOrganic Yellow Onion BunchVegetables & Roots36 kr Add",
+      "x": 80,
+      "y": 2490,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmOrganic Kale 200gVegetables & Roots30 kr Add",
+      "x": 405,
+      "y": 2490,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmOrganic ZucchiniVegetables & Roots26 kr Add",
+      "x": 730,
+      "y": 2490,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmOrganic White Cabbage 500gVegetables & Roots37 kr Add",
+      "x": 1055,
+      "y": 2490,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmOrganic Baking PotatoVegetables & Roots17 kr Add",
+      "x": 80,
+      "y": 2964.65625,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "Get to know Solmarka Farm.",
+      "x": 80,
+      "y": 3546.3125,
+      "width": 616,
+      "height": 46,
+      "fontSize": "40px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "overflow": false,
+  "elements": [
+    {
+      "text": "Search products, farms and categories…1LoginSign upHomeFarmsProductsAboutContact usMy accountLoginSign up",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 85,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "",
+      "x": 130,
+      "y": 2,
+      "width": 200,
+      "height": 80,
+      "fontSize": "27px",
+      "fontFamily": "\"Instrument Sans\", system-ui, -apple-system, sans-serif"
+    },
+    {
+      "text": "Low-Pasteurized Whole Milk 1L",
+      "x": 750,
+      "y": 209.59375,
+      "width": 610,
+      "height": 120.9375,
+      "fontSize": "57.6px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "More from Solmarka Farm.",
+      "x": 80,
+      "y": 1341.203125,
+      "width": 486.78125,
+      "height": 55.1875,
+      "fontSize": "48px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": " Solmarka FarmBiodynamic Yoghurt 1LDairy & Cheese56 kr Add",
+      "x": 80,
+      "y": 1426.390625,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "Box Solmarka FarmBiodynamic Vegetable BoxVegetables & Roots279 kr Add",
+      "x": 405,
+      "y": 1426.390625,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmOrganic New Potatoes 1kgVegetables & Roots51 kr Add",
+      "x": 730,
+      "y": 1426.390625,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": " Solmarka FarmBiodynamic Potatoes 1kgVegetables & Roots37 kr Add",
+      "x": 1055,
+      "y": 1426.390625,
+      "width": 305,
+      "height": 454.65625,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    }
+  ]
+}

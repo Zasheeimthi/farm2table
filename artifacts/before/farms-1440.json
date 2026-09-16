@@ -1,0 +1,113 @@
+{
+  "overflow": false,
+  "elements": [
+    {
+      "text": "Search products, farms and categories…1LoginSign upHomeFarmsProductsAboutContact usMy accountLoginSign up",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 85,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "",
+      "x": 130,
+      "y": 2,
+      "width": 200,
+      "height": 80,
+      "fontSize": "27px",
+      "fontFamily": "\"Instrument Sans\", system-ui, -apple-system, sans-serif"
+    },
+    {
+      "text": "A world of good food.A community of farms.",
+      "x": 80,
+      "y": 203.703125,
+      "width": 729,
+      "height": 140.78125,
+      "fontSize": "64px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "Find your farm.",
+      "x": 80,
+      "y": 631.78125,
+      "width": 277.296875,
+      "height": 55.1875,
+      "fontSize": "48px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    },
+    {
+      "text": "Solmarka Farm",
+      "x": 105,
+      "y": 1048.3125,
+      "width": 360.65625,
+      "height": 29.390625,
+      "fontSize": "21px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "Hagshult Grasslands",
+      "x": 539.65625,
+      "y": 1048.328125,
+      "width": 360.671875,
+      "height": 29.390625,
+      "fontSize": "21px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "Bjare Chicken Farm",
+      "x": 974.328125,
+      "y": 1048.3125,
+      "width": 360.65625,
+      "height": 29.390625,
+      "fontSize": "21px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "Hiddenfjord Fishery",
+      "x": 105,
+      "y": 1568.046875,
+      "width": 360.65625,
+      "height": 29.390625,
+      "fontSize": "21px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "Almnas Dairy",
+      "x": 539.65625,
+      "y": 1568.0625,
+      "width": 360.671875,
+      "height": 29.390625,
+      "fontSize": "21px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "Alvas Naturbete",
+      "x": 974.328125,
+      "y": 1568.046875,
+      "width": 360.65625,
+      "height": 29.390625,
+      "fontSize": "21px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "Guldhaven",
+      "x": 105,
+      "y": 2087.78125,
+      "width": 360.65625,
+      "height": 29.390625,
+      "fontSize": "21px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "Farm to Table Market",
+      "x": 539.65625,
+      "y": 2087.796875,
+      "width": 360.671875,
+      "height": 29.390625,
+      "fontSize": "21px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    }
+  ]
+}

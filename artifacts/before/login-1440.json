@@ -1,0 +1,50 @@
+{
+  "overflow": false,
+  "elements": [
+    {
+      "text": "Search products, farms and categories…1LoginSign upHomeFarmsProductsAboutContact usMy accountLoginSign up",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 85,
+      "fontSize": "15px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "",
+      "x": 130,
+      "y": 2,
+      "width": 200,
+      "height": 80,
+      "fontSize": "27px",
+      "fontFamily": "\"Instrument Sans\", system-ui, -apple-system, sans-serif"
+    },
+    {
+      "text": "Log in to continue",
+      "x": 185,
+      "y": 173,
+      "width": 650.28125,
+      "height": 34.5,
+      "fontSize": "30px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "Sign in to continue checkout.",
+      "x": 113,
+      "y": 281.890625,
+      "width": 722.28125,
+      "height": 24.6875,
+      "fontSize": "19px",
+      "fontFamily": "Montserrat, Arial, sans-serif"
+    },
+    {
+      "text": "Your order summary",
+      "x": 923.28125,
+      "y": 171,
+      "width": 409.71875,
+      "height": 34.5,
+      "fontSize": "30px",
+      "fontFamily": "Cormorant, Georgia, serif"
+    }
+  ]
+}
