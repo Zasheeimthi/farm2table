@@ -118,7 +118,7 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
   color: #fff;
   text-shadow: 0 1px 4px rgba(0, 0, 0, .5);
 }
-.page-shell .hero-section { min-height: 720px; }
+.page-shell .hero-section { min-height: 850px; }
 .page-shell :is(.hero-search input, .hero-location, .hero-search-submit, .hero-browse-link) { font-size: 13px; }
 .page-shell .hero-browse-link { letter-spacing: .025em; }
 .page-shell :is(.category-discovery h2, .shopping-journey h2, .family-visit h2, .farm-heading h2, .reviews-section > h2, .faq-heading h2, .why-copy h2, .care-panel > h2) { font-size: var(--title-section); line-height: 1.15; }

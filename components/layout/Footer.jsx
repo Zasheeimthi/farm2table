@@ -14,7 +14,7 @@ export function Footer() {
       <div className="footer-main">
         <article className="footer-brand">
           <button className="footer-logo" type="button" onClick={() => go('/')} aria-label="Farm to Table home">
-            <img className="footer-logo-image" src="/storefront/farmtotable-logo-white.png" alt="Farm to Table" />
+            <img className="footer-logo-image" src="/storefront/footer-white.png" alt="Farm to Table" />
           </button>
           <p>Fresh local produce, premium pantry goods, and trusted farms delivered with care.</p>
           <div className="social-row" aria-label="Social links">
