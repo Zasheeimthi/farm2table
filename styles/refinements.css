@@ -58,8 +58,10 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
 .brand-logo-image { display: block; width: 200px; height: 80px; object-fit: contain; object-position: left center; }
 .brand-logo-white { display: block; }
 .brand-logo-dark { display: none; }
-.store-header.scrolled .brand-logo-white, .store-header-page .brand-logo-white { display: none; }
-.store-header.scrolled .brand-logo-dark, .store-header-page .brand-logo-dark { display: block; }
+.store-header .brand-logo-white { display: block; }
+.store-header .brand-logo-dark { display: none; }
+.store-header.scrolled .brand-logo-white, .store-header-page .brand-logo-white { display: none !important; }
+.store-header.scrolled .brand-logo-dark, .store-header-page .brand-logo-dark { display: block !important; }
 .store-brand-symbol { display: none; }
 .store-search { width: 100%; height: 48px; min-width: 0; display: flex; align-items: center; gap: 12px; padding: 0 18px; border: 1px solid #dce2d7; border-radius: 12px; color: var(--muted); background: #f8f9f3; cursor: pointer; text-align: left; font-size: 14px; }
 .store-search .anticon { font-size: 20px; }
@@ -78,9 +80,9 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
 .store-navigation button:hover, .store-navigation button.active { background: #e9efdf; }
 .store-header :focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
 .store-menu-toggle { display: none !important; }
-.store-header.scrolled { position: fixed; background: #fffdf8 !important; color: var(--green); border-bottom-color: var(--line); backdrop-filter: blur(12px); }
+.store-header.scrolled { position: fixed; background: #fffdf8 !important; color: var(--green); border-bottom-color: rgba(166,189,86,.32); backdrop-filter: blur(12px); }
 .store-header.scrolled .brand-text, .store-header.scrolled .store-header-actions a, .store-header.scrolled .store-cart { color: var(--green); }
-.store-header-page { position: fixed; background: #fffdf8 !important; color: var(--green); border-bottom: 1px solid var(--line); backdrop-filter: none; }
+.store-header-page { position: fixed; background: #fffdf8 !important; color: var(--green); border-bottom: 1px solid rgba(166,189,86,.32); backdrop-filter: none; }
 .store-header-page .brand-text, .store-header-page .store-header-actions a, .store-header-page .store-cart { color: var(--green); }
 .store-header-page ~ .page-view { padding-top: 84px; }
 .store-header .store-navigation { display: none !important; }
