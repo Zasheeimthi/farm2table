@@ -56,6 +56,7 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
 .store-header-inner { width: min(var(--container-width), calc(100% - 64px)) !important; min-height: 84px; margin-inline: auto; display: grid; grid-template-columns: auto minmax(200px, 1fr) auto; gap: clamp(22px, 4vw, 64px); align-items: center; }
 .store-header .brand-text { position: static; width: auto; max-width: none; margin: 0; display: inline-flex; align-items: center; font-family: var(--logo-font) !important; font-size: 27px; line-height: 1.1; font-weight: 600; letter-spacing: -.045em; color: #fff; justify-self: start; transform: none; overflow: visible; }
 .brand-logo-image { display: block; width: 200px; height: 80px; object-fit: contain; object-position: left center; }
+.brand-logo-white { display: block; }
 .brand-logo-dark { display: none; }
 .store-header.scrolled .brand-logo-white, .store-header-page .brand-logo-white { display: none; }
 .store-header.scrolled .brand-logo-dark, .store-header-page .brand-logo-dark { display: block; }

@@ -3,8 +3,8 @@
 :root {
   --cream: #F8F3EC;
   --cream-deep: #F1E9DF;
-  --green: #103B37;
-  --green-soft: #416A64;
+  --green: #A6BD56;
+  --green-soft: #C7D98B;
   --sage: #D8E1CC;
   --sage-dark: #98B2AA;
   --coral: #FE5D02;
@@ -73,6 +73,16 @@ button {
   font-weight: 700;
   letter-spacing: 0;
   cursor: pointer;
+}
+
+.brand-logo-image,
+.footer-logo-image {
+  display: block;
+  width: 210px;
+  height: 78px;
+  object-fit: contain;
+  object-position: left center;
+  filter: brightness(0) saturate(100%) invert(72%) sepia(1) saturate(1.7) hue-rotate(38deg) brightness(1.15);
 }
 
 .site-header nav {

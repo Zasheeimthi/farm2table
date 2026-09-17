@@ -8,14 +8,14 @@ import './refinements.css';
 
 const theme = {
   token: {
-    colorPrimary: '#FE5D02',
-    colorSuccess: '#103B37',
+    colorPrimary: '#A6BD56',
+    colorSuccess: '#A6BD56',
     colorWarning: '#FE5D02',
     colorText: '#121212',
     colorTextSecondary: '#526762',
     colorBgBase: '#F8F3EC',
     colorBgContainer: '#FFFFFF',
-    colorBorder: '#103B37',
+    colorBorder: '#A6BD56',
     borderRadius: 4,
     fontFamily: 'Montserrat, Arial, sans-serif',
     controlHeight: 48
