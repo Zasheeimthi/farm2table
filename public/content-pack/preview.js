@@ -33,3 +33,23 @@ choice.addEventListener('change', render);
 document.querySelector('#mobile').onclick = () => {frame.style.maxWidth='375px';document.querySelector('#mobile').setAttribute('aria-pressed','true');document.querySelector('#desktop').setAttribute('aria-pressed','false');};
 document.querySelector('#desktop').onclick = () => {frame.style.maxWidth='100%';document.querySelector('#desktop').setAttribute('aria-pressed','true');document.querySelector('#mobile').setAttribute('aria-pressed','false');};
 render();
+const trigger = document.querySelector('#template-trigger');
+const menu = document.querySelector('#template-options');
+const selected = document.querySelector('#template-selected');
+const options = Array.from(choice.options).map((option) => {
+ const button = document.createElement('button');
+ button.type = 'button';button.role = 'option';button.textContent = option.text;
+ button.dataset.value = option.value;button.tabIndex = -1;
+ button.onclick = () => {choice.value = option.value;choice.dispatchEvent(new Event('change'));closeMenu();trigger.focus();};
+ menu.append(button);return button;
+});
+function syncSelection(){selected.textContent = choice.selectedOptions[0].text;options.forEach(o=>o.setAttribute('aria-selected',String(o.dataset.value===choice.value)));}
+function closeMenu(){menu.hidden=true;trigger.setAttribute('aria-expanded','false');}
+function openMenu(){menu.hidden=false;trigger.setAttribute('aria-expanded','true');menu.style.maxHeight=Math.max(100,Math.min(280,window.innerHeight-trigger.getBoundingClientRect().bottom-20))+'px';options[choice.selectedIndex].focus({preventScroll:true});options[choice.selectedIndex].scrollIntoView({block:'nearest'});}
+trigger.onclick=()=>menu.hidden?openMenu():closeMenu();
+trigger.onkeydown=e=>{if(['ArrowDown','ArrowUp'].includes(e.key)){e.preventDefault();openMenu();}};
+menu.onkeydown=e=>{const index=options.indexOf(document.activeElement);let next=index;if(e.key==='ArrowDown')next=Math.min(index+1,options.length-1);else if(e.key==='ArrowUp')next=Math.max(index-1,0);else if(e.key==='Home')next=0;else if(e.key==='End')next=options.length-1;else if(e.key==='Escape'){e.preventDefault();closeMenu();trigger.focus();return;}else if(e.key==='Tab'){closeMenu();trigger.focus();return;}else return;e.preventDefault();options[next].focus();};
+document.addEventListener('click',e=>{if(!e.target.closest('.template-dropdown'))closeMenu();});
+choice.addEventListener('change',syncSelection);
+window.addEventListener('resize',closeMenu);
+syncSelection();
