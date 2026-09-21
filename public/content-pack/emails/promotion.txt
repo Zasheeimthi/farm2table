@@ -1,0 +1,21 @@
+Subject: {{offer_title}} — fresh picks from Farm to Table
+
+A little something for your next farm-fresh basket.
+
+Fresh finds. A little extra joy.
+
+Hi {{first_name}}, there’s something good waiting at the market. Enjoy {{offer_description}} on {{eligible_products}} and make your next meal a little more special.
+
+Shop the offer: {{promotion_url}}
+
+Use code {{promo_code}} at checkout. Offer ends {{offer_end_date}} ({{offer_timezone}}). {{offer_terms}}
+
+With care,
+The Farm to Table team
+
+Support: {{support_url}}
+{{business_name}} · {{business_address}}
+Privacy: {{privacy_url}}
+You opted in to Farm to Table updates.
+Unsubscribe: {{unsubscribe_url}}
+Email preferences: {{preferences_url}}

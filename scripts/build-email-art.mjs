@@ -1,0 +1,22 @@
+import { chromium } from '@playwright/test';
+import { mkdir } from 'node:fs/promises';
+await mkdir('public/content-pack/assets', { recursive: true });
+const motifs = {
+ welcome: '<path d="M110 211V110l74-58 74 58v101z" fill="#103b37"/><path d="M143 211v-76h82v76" fill="#cfddbb"/><path d="M184 177v-55m0 29q-39 0-35-32 35 0 35 32m0-16q34 0 32-30-32 0-32 30" fill="#8faa76" stroke="#8faa76" stroke-width="4"/>',
+ promotion: '<path d="M106 78h95l66 66-89 80-72-74z" fill="#103b37"/><circle cx="137" cy="107" r="10" fill="#edf1df"/><path d="M170 115l47 61" stroke="#d6e1c4" stroke-width="7"/><circle cx="204" cy="127" r="10" fill="#fe5d02"/><circle cx="179" cy="169" r="10" fill="#fe5d02"/>',
+ seasonal: '<path d="M183 218V97" stroke="#103b37" stroke-width="9"/><path d="M182 139q-78 0-70-68 76 2 70 68" fill="#9bb985"/><path d="M183 172q78 0 70-68-76 2-70 68" fill="#103b37"/><circle cx="241" cy="64" r="21" fill="#fe5d02"/>',
+ basket: '<path d="M107 116h154l-22 97H129z" fill="#103b37"/><path d="M136 122l30-61m66 61-30-61" fill="none" stroke="#9eb58c" stroke-width="10" stroke-linecap="round"/><path d="M153 148v39m31-39v39m31-39v39" stroke="#d7e1c7" stroke-width="7" stroke-linecap="round"/>',
+ order: '<path d="M118 51h132v177l-22-12-22 12-22-12-22 12-22-12-22 12z" fill="#103b37"/><path d="M143 86h82m-82 25h55" stroke="#c5d6b0" stroke-width="7"/><circle cx="184" cy="163" r="28" fill="#fe5d02"/><path d="M170 163l10 10 19-22" fill="none" stroke="white" stroke-width="5"/>',
+ delivery: '<rect x="94" y="87" width="115" height="99" rx="10" fill="#103b37"/><path d="M209 114h39l29 37v35h-68z" fill="#9bb985"/><path d="M222 125h20l17 24h-37z" fill="#eff3e6"/><circle cx="131" cy="192" r="20" fill="#103b37" stroke="#cad8b7" stroke-width="7"/><circle cx="243" cy="192" r="20" fill="#103b37" stroke="#cad8b7" stroke-width="7"/><path d="M113 113h54" stroke="#fe5d02" stroke-width="7"/>',
+ refund: '<rect x="105" y="92" width="159" height="112" rx="17" fill="#103b37"/><path d="M105 121h159" stroke="#b8cda2" stroke-width="12"/><path d="M162 69a44 44 0 0174 4m0-24v27h-27" stroke="#fe5d02" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M126 172h42" stroke="#b8cda2" stroke-width="7"/>',
+ verify: `<path d="M98 104L184 41l86 63v98H98z" fill="#d5dfc5"/><rect x="119" y="55" width="130" height="127" rx="12" fill="#fffdf7" stroke="#b3c2a4" stroke-width="2"/><path d="M145 79h69M145 94h48" stroke="#cad4bd" stroke-width="4" stroke-linecap="round"/><path d="M98 105l86 57 86-57v99H98z" fill="#a5bc90"/><path d="M98 204l75-58q11-9 22 0l75 58" fill="#bdcea9"/><circle cx="243" cy="92" r="29" fill="#fe5d02"/><path d="M230 92l9 9 17-19" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`,
+ reset: `<path d="M141 113V84a43 43 0 0186 0v29" fill="none" stroke="#9bb289" stroke-width="14"/><rect x="116" y="105" width="136" height="107" rx="23" fill="#103b37"/><circle cx="184" cy="149" r="11" fill="#f0e8ce"/><path d="M184 153v19" stroke="#f0e8ce" stroke-width="7" stroke-linecap="round"/><circle cx="251" cy="112" r="26" fill="#fe5d02"/><path d="M242 113l6 6 12-14" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>`,
+ secure: `<path d="M184 40l77 31v63q0 56-77 89-77-33-77-89V71z" fill="#103b37"/><path d="M184 57l61 25v51q0 44-61 72-61-28-61-72V82z" fill="none" stroke="#8fa880" stroke-width="2"/><circle cx="184" cy="128" r="33" fill="#cad9b3"/><path d="M167 128l12 12 23-25" stroke="#103b37" stroke-width="5" fill="none" stroke-linecap="round"/>`,
+};
+const browser = await chromium.launch();
+const page = await browser.newPage({ viewport: { width: 368, height: 280 }, deviceScaleFactor: 2 });
+for (const [name, motif] of Object.entries(motifs)) {
+ await page.setContent(`<html><body style="margin:0;background:transparent"><svg xmlns="http://www.w3.org/2000/svg" width="368" height="280" viewBox="0 0 368 280"><ellipse cx="184" cy="140" rx="137" ry="117" fill="#f0f3e7"/><ellipse cx="184" cy="225" rx="91" ry="9" fill="#dce5cd"/><g stroke="#98b084" stroke-width="2" fill="none"><path d="M76 205q-18-58-6-103M72 158q-32-8-25-36 26 8 25 36M72 137q24-9 19-32-23 8-19 32M290 211q16-51 9-82M296 173q29-11 22-32-25 8-22 32"/></g>${motif}<circle cx="83" cy="67" r="4" fill="#fe5d02"/><path d="M288 67v12m-6-6h12" stroke="#a3b791" stroke-width="2"/></svg></body></html>`);
+ await page.screenshot({ path: `public/content-pack/assets/${name}.png`, omitBackground: true });
+}
+await browser.close();

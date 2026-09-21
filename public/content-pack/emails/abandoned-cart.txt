@@ -1,0 +1,21 @@
+Subject: Something fresh is waiting in your basket
+
+Pick up where you left off, whenever you’re ready.
+
+Saved for another moment.
+
+Hi {{first_name}}, you left a few good things in your basket. If you’re still planning your next meal, you can return to your picks below.
+
+Return to my basket: {{cart_url}}
+
+{{cart_summary}}. Availability and prices may change; items are not reserved until your order is confirmed.
+
+With care,
+The Farm to Table team
+
+Support: {{support_url}}
+{{business_name}} · {{business_address}}
+Privacy: {{privacy_url}}
+You opted in to Farm to Table updates.
+Unsubscribe: {{unsubscribe_url}}
+Email preferences: {{preferences_url}}

@@ -1,0 +1,21 @@
+Subject: An update on order {{order_number}}
+
+The latest on your farm-fresh delivery.
+
+From the farm to your door.
+
+Hi {{first_name}}, here’s the latest on order {{order_number}}: {{delivery_status}}.
+
+Track my delivery: {{tracking_url}}
+
+Estimated arrival: {{delivery_window}}
+Delivery details: {{delivery_instructions}}
+Store chilled and frozen items promptly after delivery, following the product label.
+
+With care,
+The Farm to Table team
+
+Support: {{support_url}}
+{{business_name}} · {{business_address}}
+Privacy: {{privacy_url}}
+This is a service message about your account or order.

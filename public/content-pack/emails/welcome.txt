@@ -1,0 +1,19 @@
+Subject: Welcome to Farm to Table, {{first_name}}
+
+Good food. Local roots. Your next favourite farm awaits.
+
+A little closer to the source.
+
+Welcome to Farm to Table, {{first_name}}. We’re happy you’re here. Discover seasonal produce, meet the people who grow it, and bring something good to your table.
+
+Explore the marketplace: {{shop_url}}
+
+Start with what’s in season, explore a local farm, or find a new everyday favourite. Your next fresh discovery is waiting.
+
+With care,
+The Farm to Table team
+
+Support: {{support_url}}
+{{business_name}} · {{business_address}}
+Privacy: {{privacy_url}}
+This is a service message about your account or order.

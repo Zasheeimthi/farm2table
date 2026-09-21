@@ -1,0 +1,19 @@
+Subject: Verify your Farm to Table email
+
+One small step before you get started.
+
+Let’s make it official.
+
+Hi {{first_name}}, thanks for joining Farm to Table. Please confirm your email address to finish setting up your account.
+
+Verify my email: {{verification_url}}
+
+This link expires in {{expiry_duration}} and can only be used once. If you didn’t create an account, you can safely ignore this email.
+
+With care,
+The Farm to Table team
+
+Support: {{support_url}}
+{{business_name}} · {{business_address}}
+Privacy: {{privacy_url}}
+This is a service message about your account or order.

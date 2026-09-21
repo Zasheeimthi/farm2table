@@ -1,0 +1,22 @@
+Subject: Refund update for order {{order_number}}
+
+Here are the details of your refund.
+
+Your refund, explained.
+
+Hi {{first_name}}, the refund status for order {{order_number}} is: {{refund_status}}.
+
+View order details: {{order_url}}
+
+Refund amount: {{refund_amount}}
+Refund method: {{refund_method}}
+Reason: {{refund_reason}}
+Expected processing time: {{refund_timeline}}. Your payment provider may take additional time to show the funds.
+
+With care,
+The Farm to Table team
+
+Support: {{support_url}}
+{{business_name}} · {{business_address}}
+Privacy: {{privacy_url}}
+This is a service message about your account or order.

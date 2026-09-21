@@ -1,0 +1,21 @@
+Subject: Fresh this season: {{seasonal_highlight}}
+
+What’s growing, who’s harvesting, and what to cook next.
+
+A taste of the season.
+
+Hi {{first_name}}, this month we’re celebrating {{seasonal_highlight}}. Explore what’s arriving from our farms and discover fresh inspiration for your table.
+
+Discover seasonal picks: {{seasonal_url}}
+
+From the farm: {{farm_story}}. In the kitchen: {{recipe_teaser}}.
+
+With care,
+The Farm to Table team
+
+Support: {{support_url}}
+{{business_name}} · {{business_address}}
+Privacy: {{privacy_url}}
+You opted in to Farm to Table updates.
+Unsubscribe: {{unsubscribe_url}}
+Email preferences: {{preferences_url}}

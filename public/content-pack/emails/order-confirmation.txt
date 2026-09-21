@@ -1,0 +1,26 @@
+Subject: Order {{order_number}} confirmed — thank you!
+
+Your order details, all in one place.
+
+Good things are on their way.
+
+Thanks, {{first_name}}. We’ve confirmed order {{order_number}}. Here’s a summary of what you ordered.
+
+View my order: {{order_url}}
+
+Items: {{order_items_summary}}
+Items subtotal: {{subtotal}}
+Delivery: {{delivery_fee}}
+Discount: {{discount}}
+Total (including applicable tax): {{order_total}}
+Delivery address: {{delivery_address}}
+Estimated delivery: {{delivery_window}}
+Seller: {{seller_name}}
+
+With care,
+The Farm to Table team
+
+Support: {{support_url}}
+{{business_name}} · {{business_address}}
+Privacy: {{privacy_url}}
+This is a service message about your account or order.
