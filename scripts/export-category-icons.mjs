@@ -1,0 +1,8 @@
+import {readFile,mkdir} from 'node:fs/promises';
+import {chromium} from '@playwright/test';
+const source=await readFile('components/category/CategoryArtwork.jsx','utf8');
+const items=[['meat-fish','meat-chicken-fish','#efbda9'],['dairy','dairy-cheese','#f2d38b'],['vegetables','vegetables-roots','#bed59a'],['pantry','pantry','#e3b58e'],['drinks','drinks','#a6d0d7'],['kitchen','to-the-kitchen','#c6c5d9']];
+await mkdir('public/category-icons/png',{recursive:true});await mkdir('public/category-icons/with-circle',{recursive:true});
+const browser=await chromium.launch();const page=await browser.newPage({viewport:{width:512,height:512},deviceScaleFactor:1});
+for(const [key,name,color] of items){const line=source.split('\n').find(l=>l.includes(key+':')||l.includes("'"+key+"':"));if(!line)throw Error(key);const artwork=line.slice(line.indexOf('<>')+2,line.indexOf('</>')).replaceAll('var(--category-accent)',color);for(const circle of [false,true]){await page.setContent(`<html><body style="margin:0;background:transparent;display:grid;place-items:center;width:512px;height:512px"><div style="width:512px;height:512px;display:grid;place-items:center;${circle?'background:rgba(255,255,255,.55);border-radius:50%':''}"><svg xmlns="http://www.w3.org/2000/svg" width="${circle?423:512}" height="${circle?423:512}" viewBox="0 0 84 84" fill="none" stroke="#103b37" color="#103b37" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">${artwork}</svg></div></body></html>`);await page.screenshot({path:`public/category-icons/${circle?'with-circle':'png'}/${name}.png`,omitBackground:true});}}
+await browser.close();console.log('Exported six original icons at 512 × 512, with transparent and circular-background versions.');
