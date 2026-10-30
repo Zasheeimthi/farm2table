@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+const path='public/admin-design.html';
+const source=fs.readFileSync('design/admin-customers.js','utf8').trim();
+new vm.Script(source);
+let html=fs.readFileSync(path,'utf8');
+const start=html.indexOf('function customersView(){');
+const end=html.indexOf('\nfunction ',start+1);
+if(start<0||end<0)throw new Error('Customer view boundary not found');
+html=html.slice(0,start)+source+html.slice(end);
+for(const script of html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g))new vm.Script(script[1]);
+fs.writeFileSync(path,html);
+console.log('Customer view embedded and scripts validated.');

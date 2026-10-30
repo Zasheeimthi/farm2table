@@ -10,11 +10,11 @@ export function FAQSection() {
   const [openQuestion, setOpenQuestion] = useState(0);
   return <section className="faq-section section-block scroll-reveal" aria-labelledby="faq-title">
       <div className="faq-heading">
-        <span className="eyebrow">Customer clarity</span>
-        <h2 id="faq-title">Frequently Asked Questions</h2>
-        <p>Simple answers for ordering fresh local food, choosing farms, and receiving deliveries with confidence.</p>
+        <span className="eyebrow">Bra att veta</span>
+        <h2 id="faq-title">Vanliga frågor och svar</h2>
+        <p>Här hittar du svar om gårdarna, marknadsplatsen och verktygen som gör lokal försäljning enklare.</p>
         <button className="faq-contact" type="button" onClick={() => go('/contact')}>
-          Still have questions? <span>Talk to us <ArrowRightOutlined /></span>
+          Har du fler frågor? <span>Kontakta oss <ArrowRightOutlined /></span>
         </button>
       </div>
       <div className="faq-list">
@@ -35,4 +35,9 @@ export function FAQSection() {
       </div>
     </section>;
 }
-export const faqItems = [['Where does the produce come from?', 'Every item is connected to a named farm, dairy, fishery, or local producer so customers can shop with clear origin details.'], ['Can customers choose a delivery day?', 'You can choose a delivery day and time in the checkout preview. Live availability will be confirmed when ordering is connected.'], ['How are chilled products handled?', 'Dairy, meat, fish, and fresh drinks are packed with cold-chain care in clean reusable delivery boxes.'], ['Can I view farm details before buying?', 'Yes. Farm names open a dedicated farm page with location, practices, product list, and producer story.']];
+export const faqItems = [
+  ['Var kommer maten ifrån?', 'Varje produkt är kopplad till en gård eller producent. På gårdens sida kan du läsa mer om verksamheten, sortimentet och människorna bakom maten.'],
+  ['Hur fungerar det att handla?', 'Välj plats, utforska gårdarna och lägg dina produkter i varukorgen. Kontrollera tillgängliga leveransalternativ och villkor innan du slutför din beställning.'],
+  ['Vad får jag som producent?', 'En egen digital butikslänk och en plats på vår gemensamma marknadsplats. Verktyg för lager, beställningar, betalningar och statistik hjälper dig att samla arbetet och få bättre överblick. Kontakta oss för att komma igång.'],
+  ['Vad innebär förhandsförsäljning och crowdfunding?', 'Låt kunderna vara med från början. Genom förhandsförsäljning kan du ta emot beställningar inför nästa skörd eller slakt. Crowdfunding kan ge kunder möjlighet att stötta en ny satsning. Kontakta oss för att prata om upplägg, villkor och leveransplan.']
+];

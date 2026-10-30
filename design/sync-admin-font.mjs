@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+const htmlFile = new URL('../public/admin-design.html', import.meta.url);
+const faces = [['Regular','100 900','normal'],['Italic','100 900','italic']];
+const css = faces.map(([name,weight,style]) => {
+  const data = fs.readFileSync(new URL(`./fonts/urbanist/${name}.ttf`, import.meta.url)).toString('base64');
+  return `@font-face{font-family:Urbanist;src:url(data:font/ttf;base64,${data}) format('truetype');font-weight:${weight};font-style:${style};font-display:swap}`;
+}).join('\n') + '\nbody,button,input,select,textarea,option,.farm-map{font-family:Urbanist,Arial,sans-serif!important}';
+const sizes = '\nbody{font-size:15px;line-height:1.55}h1{font-size:34px}h2{font-size:22px}.page-head p{font-size:15px}.btn,input,select,textarea,.field,.nav a,td{font-size:14px}.tabs button{font-size:14px}th{font-size:12px}.muted,small,.stat-note{font-size:12px}.stat-label{font-size:14px}.badge{font-size:12px}.customer-table td,.farm-directory-table td{font-size:14px}.customer-table small,.farm-directory-table small{font-size:12px}.totals .row:not(.total){font-size:14px}.totals .row:not(.total)>span:last-child{font-size:16px}.totals small{font-size:12px}@media(max-width:560px){h1{font-size:29px}.tabs button{font-size:13px}.stat-label{font-size:12px}.totals .row:not(.total){font-size:12px}.totals .row:not(.total)>span:last-child{font-size:14px}}';
+const readability = '\nbody{font-weight:500;color:#163e35}.muted,small,.page-head p,.stat-note{color:#52685f;font-weight:500}.detail-body .muted{font-size:14px!important;line-height:1.7;color:#52685f}.detail-body strong{font-size:16px;font-weight:650}.eyebrow{color:#52685f;font-size:12px;font-weight:700;letter-spacing:1.2px}.timeline-step strong{font-size:14px;font-weight:650}.timeline-step small{font-size:13px;line-height:1.6;color:#52685f;font-weight:500}td{font-size:15px;font-weight:500}td strong{font-weight:650}td small,.customer-table small,.farm-directory-table small{font-size:13px;color:#52685f;font-weight:500}th{font-size:12px;font-weight:700;color:#52685f}.btn{font-weight:600}.totals::before{font-size:14px;font-weight:650}.totals .row .muted,.totals small{color:#52685f;font-weight:500}.totals small{font-size:13px}.insight{color:#52685f;font-size:14px}.badge{font-weight:600}@media(max-width:560px){.timeline-step strong{font-size:12px}.timeline-step small{font-size:11px}.timeline{padding-left:10px;padding-right:10px}.totals small{font-size:12px}}';
+let html = fs.readFileSync(htmlFile,'utf8');
+html = html.replace(/<style id="admin-(?:haffer|kanit|urbanist)-font">[\s\S]*?<\/style>\s*/g,'');
+html = html.replace('</head>',()=>`<style id="admin-urbanist-font">${css}${sizes}${readability}</style>\n</head>`);
+fs.writeFileSync(htmlFile,html);
+console.log('Urbanist embedded in standalone admin preview. SIL Open Font License.');

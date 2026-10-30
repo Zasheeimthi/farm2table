@@ -27,34 +27,34 @@ export function HomePage() {
   const market = useMarket();
   const { activeCategory, setActiveCategory, add: onAdd } = market;
   const products = productData;
-  const heroLocation = market.location?.city || 'Choose delivery location';
+  const heroLocation = market.location?.city || 'Välj leveransplats';
   const heroProducts = (activeCategory === 'all' ? products : products.filter(product => product.category === activeCategory)).slice(0, 8);
   const detectLocation = () => market.setLocationOpen(true);
   const searchProducts = () => {
     go(`/farms?search=${encodeURIComponent(heroSearch.trim())}`);
   };
-  return <main>
+  return <main lang="sv">
       <section className="hero-section">
-        <video className="hero-video" autoPlay muted loop playsInline aria-label="European farms and fresh farm produce">
+        <video className="hero-video" autoPlay muted loop playsInline aria-label="Gårdar och lokal mat från producenter">
           <source src="/storefront/mixfarms.mp4" type="video/mp4" />
         </video>
         <div className="hero-content scroll-reveal">
-          <span className="eyebrow">Local farms. Premium produces.</span>
-          <h1>Fresh. Natural.<br /><em>Delivered to you.</em></h1>
-          <p>Discover small-scale, nutritious food sourced directly from farms you can actually know.</p>
+          <span className="eyebrow">Lokal mat. Större möjligheter.</span>
+          <h1>Från din gård<br /><em>till fler bord.</em></h1>
+          <p>Upptäck lokal mat och människorna bakom den. Farm to Table förenar gårdarnas egna digitala butiker med en gemensam marknadsplats.</p>
           <form className="hero-search" onSubmit={event => {
           event.preventDefault();
           searchProducts();
         }}>
             <div className="hero-search-query">
               <SearchOutlined />
-              <input value={heroSearch} onChange={event => setHeroSearch(event.target.value)} placeholder="Search Farms, Categories" aria-label="Search products, farms or categories" />
+              <input value={heroSearch} onChange={event => setHeroSearch(event.target.value)} placeholder="Sök gårdar och kategorier" aria-label="Sök produkter, gårdar eller kategorier" />
             </div>
             <button className="hero-location" type="button" onClick={detectLocation}>
               <EnvironmentOutlined />
               <span>{heroLocation}</span>
             </button>
-            <button className="hero-search-submit" type="submit">Explore <ArrowRightOutlined /></button>
+            <button className="hero-search-submit" type="submit">Utforska <ArrowRightOutlined /></button>
           </form>
         </div>
       </section>
@@ -62,13 +62,13 @@ export function HomePage() {
       <section className="category-discovery" aria-labelledby="category-discovery-title">
         <div className="category-discovery-heading">
           <div>
-            <span>Good food starts here</span>
-            <h2 id="category-discovery-title">Find your farm favourites.</h2>
+            <span>Närproducerat börjar här</span>
+            <h2 id="category-discovery-title">Hitta dina favoriter från gården.</h2>
           </div>
           <button type="button" onClick={() => {
           setActiveCategory('all');
           go('/farms');
-        }}>Explore all farms <ArrowRightOutlined /></button>
+        }}>Utforska alla gårdar <ArrowRightOutlined /></button>
         </div>
         <div className="category-discovery-grid">
           {categoryTabs.slice(1).map((tab, index) => <button className={`category-discovery-card category-tone-${index}`} type="button" key={tab.id} onClick={() => {
@@ -76,7 +76,7 @@ export function HomePage() {
           go(`/farms?category=${tab.id}`);
         }}>
               <span className="category-artwork"><CategoryArtwork category={tab.id} /></span>
-              <span className="category-discovery-label">{tab.label}</span>
+              <span className="category-discovery-label">{({'meat-fish':'Kött, fågel & fisk',dairy:'Mejeri & ost',vegetables:'Grönsaker & rotfrukter',pantry:'Skafferi',drinks:'Drycker',kitchen:'Till köket'})[tab.id] || tab.label}</span>
               <span className="category-discovery-arrow" aria-hidden="true"><ArrowRightOutlined /></span>
             </button>)}
         </div>
@@ -87,12 +87,12 @@ export function HomePage() {
       <section className="market-flow section-block wide">
         <div className="why-panel scroll-reveal">
           <div className="why-image">
-            <img src="/storefront/585.jpg" alt="Farmer holding fresh greens and milk from the farm" />
+            <img src="/storefront/585.jpg" alt="Producent med en korg av gårdens ostar" />
           </div>
           <div className="why-copy">
-            <span className="eyebrow">Local roots. Clean delivery.</span>
-            <h2>Why Choose Farm to Table?</h2>
-            <p>We bring you the best from local farms. Pure, fresh and healthy products for your family.</p>
+            <span className="eyebrow">Enklare försäljning. Starkare kundrelationer.</span>
+            <h2>Varför Farm to Table?</h2>
+            <p>Mer tid för det som verkligen räknas. Samla försäljning, beställningar och kundkontakt på ett ställe – och låt fler upptäcka din gård.</p>
             <div className="why-benefits">
               {marketplaceBenefits.map(([title, text, icon]) => <article key={title}>
                   <span>{icon}</span>
@@ -105,10 +105,10 @@ export function HomePage() {
         <section className="shopping-journey scroll-reveal" aria-labelledby="shopping-journey-title">
           <div className="shopping-journey-heading">
             <div>
-              <span className="shopping-journey-kicker">From their farm to your home</span>
-              <h2 id="shopping-journey-title">How it works<span>.</span></h2>
+              <span className="shopping-journey-kicker">Från gården till ditt bord</span>
+              <h2 id="shopping-journey-title">Så fungerar det<span>.</span></h2>
             </div>
-            <p>Fresh food. Four simple steps.</p>
+            <p>Lokal mat. Fyra enkla steg.</p>
           </div>
           <ol className="shopping-journey-steps">
             {steps.map(([number, title, text, icon]) => <li key={number}>
@@ -125,71 +125,71 @@ export function HomePage() {
 
       <section className="shop-section section-block">
         <div className="center-title scroll-reveal">
-          <h2>Fresh & Clean</h2>
+          <h2>Smaker från våra producenter</h2>
           <CategoryFilter activeCategory={activeCategory} onChange={setActiveCategory} />
         </div>
         <div className="product-grid">
           {heroProducts.map(product => <ProductCard item={product} onAdd={onAdd} key={product.title} />)}
         </div>
         <div className="section-action">
-          <Button type="primary" onClick={() => go(`/products?category=${activeCategory}`)}>View All Products</Button>
+          <Button type="primary" onClick={() => go(`/products?category=${activeCategory}`)}>Visa alla produkter</Button>
         </div>
       </section>
 
       <section id="about" className="farm-story section-block">
         <div className="farm-heading scroll-reveal">
-          <h2>Our<br />Farms</h2>
+          <h2>Våra<br />gårdar</h2>
         </div>
         <div className="farm-copy scroll-reveal">
-          <p>Farm to Table connects homes with growers, dairies, butchers, and fishers who care about every step from field to delivery.</p>
-          <button onClick={() => go('/farms')}>Meet Our Farms</button>
+          <p>Bakom varje gård finns människor, kunskap och en egen berättelse. Lär känna våra lokala producenter och hitta mat med ett tydligt ursprung.</p>
+          <button onClick={() => go('/farms')}>Upptäck våra gårdar</button>
         </div>
         <div className="video-card image-reveal">
-          <img src="/ferme/13305.jpg" alt="A family spending time together at the farm" loading="lazy" />
+          <img src="/ferme/13305.jpg" alt="Barn som möter en kalv på gården" loading="lazy" />
         </div>
       </section>
 
       <section className="care-panel scroll-reveal">
-        <h2>We Care for Nature</h2>
+        <h2>En framtid för lokal mat</h2>
         <div className="care-grid">
           <article>
             <span>01</span>
-            <h3>Rare & pesticide-free</h3>
-            <p>Small suppliers are chosen for clean growing and careful handling.</p>
+            <h3>Närmare producenten</h3>
+            <p>Lär känna människorna bakom maten och deras sätt att arbeta.</p>
           </article>
           <article>
             <span>02</span>
-            <h3>Traceable origins</h3>
-            <p>Each product clearly connects back to a named farm or producer.</p>
+            <h3>Tydligt ursprung</h3>
+            <p>Se vilken gård eller producent som står bakom varje produkt.</p>
           </article>
           <article>
             <span>03</span>
-            <h3>Packed lightly</h3>
-            <p>Fresh deliveries use reusable boxes and simple, responsible packaging.</p>
+            <h3>Starkare tillsammans</h3>
+            <p>Direkta kundrelationer skapar nya möjligheter för lokala verksamheter.</p>
           </article>
         </div>
       </section>
 
       <section className="visit-section section-block">
         <div className="visit-image image-reveal">
-          <img src="/ferme/13305.jpg" alt="Family visiting a farm garden" />
+          <img src="/ferme/13305.jpg" alt="Barn på besök i gårdens grönska" />
         </div>
         <div className="visit-copy family-visit scroll-reveal">
-          <span className="family-visit-kicker">Little adventures. Lasting memories.</span>
-          <h2>Visit with kids<span>.</span></h2>
-          <p>Discover family visits with our farm partners. Contact us to ask about farm walks, meeting growers, and spending a day close to nature.</p>
+          <span className="family-visit-kicker">Nära gården. Nära människorna.</span>
+          <h2>Upptäck livet på gården<span>.</span></h2>
+          <p>Låt nyfikenheten på maten börja där den produceras. Kontakta oss för att fråga vilka gårdar som erbjuder besök och aktiviteter för familjer.</p>
           <div className="family-activities">
-            <article><span aria-hidden="true"><CompassOutlined /></span><h3>Guided walks</h3><p>Meet growers and see the fields.</p></article>
-            <article><span aria-hidden="true"><ShoppingOutlined /></span><h3>Mini harvest</h3><p>Pick seasonal greens with our team.</p></article>
-            <article><span aria-hidden="true"><HeartOutlined /></span><h3>Animal care</h3><p>Learn gentle farm routines up close.</p></article>
+            <article><span aria-hidden="true"><CompassOutlined /></span><h3>Möt producenterna</h3><p>Fråga om gårdens arbete och livet på landet.</p></article>
+            <article><span aria-hidden="true"><ShoppingOutlined /></span><h3>Följ säsongen</h3><p>Upptäck vad som växer och skördas just nu.</p></article>
+            <article><span aria-hidden="true"><HeartOutlined /></span><h3>Lär känna gården</h3><p>Ta del av gårdens berättelse och vardag.</p></article>
           </div>
           <div className="family-visit-actions">
-            <button type="button" onClick={() => go('/contact')}>Plan your visit <ArrowRightOutlined /></button>
+            <button type="button" onClick={() => go('/contact')}>Fråga om gårdsbesök <ArrowRightOutlined /></button>
             {/* <span><CalendarOutlined /> Selected weekends</span> */}
           </div>
         </div>
         <div className="visit-small image-reveal">
-          <img src="/photography/pasture.jpg" alt="Cows grazing in a sunny pasture" loading="lazy" />
+          <img src="/photography/pasture.jpg" alt="Kor som betar i en solig hage" loading="lazy" />
         </div>
       </section>
 

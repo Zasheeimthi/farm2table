@@ -1192,3 +1192,6 @@ body { font-size: var(--text-body); font-weight: 400; line-height: 1.6; }
     font-size: 14px;
   }
 }
+
+/* Supplied brochure logo: white on the existing dark header and footer. */
+.brand-logo-white, .footer-logo-image { filter: brightness(0) invert(1); }

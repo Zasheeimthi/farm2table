@@ -1,0 +1,1051 @@
+⨯ ./app/page.js:1:1
+Error: Module not found: Can't resolve '@/components/home/HomePage'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mHomePage[0m } [36mfrom[0m [32m'@/components/home/HomePage'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mexport[0m [36mconst[0m metadata = { title: [32m'Fresh food from local farms'[0m };
+  [90m3 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mPage[0m() { [36mreturn[0m <[33mHomePage[0m />; }
+  [90m4 |[0m
+
+Import map: aliased to relative './components/home/HomePage' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.js:1:1
+Error: Module not found: Can't resolve '@/components/home/HomePage'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mHomePage[0m } [36mfrom[0m [32m'@/components/home/HomePage'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mexport[0m [36mconst[0m metadata = { title: [32m'Fresh food from local farms'[0m };
+  [90m3 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mPage[0m() { [36mreturn[0m <[33mHomePage[0m />; }
+  [90m4 |[0m
+
+Import map: aliased to relative './components/home/HomePage' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.js:1:1
+Error: Module not found: Can't resolve '@/components/home/HomePage'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mHomePage[0m } [36mfrom[0m [32m'@/components/home/HomePage'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mexport[0m [36mconst[0m metadata = { title: [32m'Fresh food from local farms'[0m };
+  [90m3 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mPage[0m() { [36mreturn[0m <[33mHomePage[0m />; }
+  [90m4 |[0m
+
+Import map: aliased to relative './components/home/HomePage' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.js:1:1
+Error: Module not found: Can't resolve '@/components/home/HomePage'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mHomePage[0m } [36mfrom[0m [32m'@/components/home/HomePage'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mexport[0m [36mconst[0m metadata = { title: [32m'Fresh food from local farms'[0m };
+  [90m3 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mPage[0m() { [36mreturn[0m <[33mHomePage[0m />; }
+  [90m4 |[0m
+
+Import map: aliased to relative './components/home/HomePage' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.js:1:1
+Error: Module not found: Can't resolve '@/components/home/HomePage'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mHomePage[0m } [36mfrom[0m [32m'@/components/home/HomePage'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mexport[0m [36mconst[0m metadata = { title: [32m'Fresh food from local farms'[0m };
+  [90m3 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mPage[0m() { [36mreturn[0m <[33mHomePage[0m />; }
+  [90m4 |[0m
+
+Import map: aliased to relative './components/home/HomePage' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.js:1:1
+Error: Module not found: Can't resolve '@/components/home/HomePage'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mHomePage[0m } [36mfrom[0m [32m'@/components/home/HomePage'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mexport[0m [36mconst[0m metadata = { title: [32m'Fresh food from local farms'[0m };
+  [90m3 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mPage[0m() { [36mreturn[0m <[33mHomePage[0m />; }
+  [90m4 |[0m
+
+Import map: aliased to relative './components/home/HomePage' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.js:1:1
+Error: Module not found: Can't resolve '@/components/home/HomePage'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mHomePage[0m } [36mfrom[0m [32m'@/components/home/HomePage'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mexport[0m [36mconst[0m metadata = { title: [32m'Fresh food from local farms'[0m };
+  [90m3 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mPage[0m() { [36mreturn[0m <[33mHomePage[0m />; }
+  [90m4 |[0m
+
+Import map: aliased to relative './components/home/HomePage' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.js:1:1
+Error: Module not found: Can't resolve '@/components/home/HomePage'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mHomePage[0m } [36mfrom[0m [32m'@/components/home/HomePage'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mexport[0m [36mconst[0m metadata = { title: [32m'Fresh food from local farms'[0m };
+  [90m3 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mPage[0m() { [36mreturn[0m <[33mHomePage[0m />; }
+  [90m4 |[0m
+
+Import map: aliased to relative './components/home/HomePage' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.js:1:1
+Error: Module not found: Can't resolve '@/components/home/HomePage'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mHomePage[0m } [36mfrom[0m [32m'@/components/home/HomePage'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mexport[0m [36mconst[0m metadata = { title: [32m'Fresh food from local farms'[0m };
+  [90m3 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mPage[0m() { [36mreturn[0m <[33mHomePage[0m />; }
+  [90m4 |[0m
+
+Import map: aliased to relative './components/home/HomePage' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.js:1:1
+Error: Module not found: Can't resolve '@/components/home/HomePage'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mHomePage[0m } [36mfrom[0m [32m'@/components/home/HomePage'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mexport[0m [36mconst[0m metadata = { title: [32m'Fresh food from local farms'[0m };
+  [90m3 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mPage[0m() { [36mreturn[0m <[33mHomePage[0m />; }
+  [90m4 |[0m
+
+Import map: aliased to relative './components/home/HomePage' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.js:1:1
+Error: Module not found: Can't resolve '@/components/home/HomePage'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mHomePage[0m } [36mfrom[0m [32m'@/components/home/HomePage'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mexport[0m [36mconst[0m metadata = { title: [32m'Fresh food from local farms'[0m };
+  [90m3 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mPage[0m() { [36mreturn[0m <[33mHomePage[0m />; }
+  [90m4 |[0m
+
+Import map: aliased to relative './components/home/HomePage' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.js:1:1
+Error: Module not found: Can't resolve '@/components/home/HomePage'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mHomePage[0m } [36mfrom[0m [32m'@/components/home/HomePage'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mexport[0m [36mconst[0m metadata = { title: [32m'Fresh food from local farms'[0m };
+  [90m3 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mPage[0m() { [36mreturn[0m <[33mHomePage[0m />; }
+  [90m4 |[0m
+
+Import map: aliased to relative './components/home/HomePage' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.js:1:1
+Error: Module not found: Can't resolve '@/components/home/HomePage'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mHomePage[0m } [36mfrom[0m [32m'@/components/home/HomePage'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mexport[0m [36mconst[0m metadata = { title: [32m'Fresh food from local farms'[0m };
+  [90m3 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mPage[0m() { [36mreturn[0m <[33mHomePage[0m />; }
+  [90m4 |[0m
+
+Import map: aliased to relative './components/home/HomePage' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.js:1:1
+Error: Module not found: Can't resolve '@/components/home/HomePage'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mHomePage[0m } [36mfrom[0m [32m'@/components/home/HomePage'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mexport[0m [36mconst[0m metadata = { title: [32m'Fresh food from local farms'[0m };
+  [90m3 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mPage[0m() { [36mreturn[0m <[33mHomePage[0m />; }
+  [90m4 |[0m
+
+Import map: aliased to relative './components/home/HomePage' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] ./app/page.js:1:1
+Error: Module not found: Can't resolve '@/components/home/HomePage'
+> 1 | import { HomePage } from '@/components/home/HomePage';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | export const metadata = { title: 'Fresh food from local farms' };
+  3 | export default function Page() { return <HomePage />; }
+  4 |
+
+Import map: aliased to relative './components/home/HomePage' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./app/page.js:1:1
+Error: Module not found: Can't resolve '@/components/home/HomePage'
+> 1 | import { HomePage } from '@/components/home/HomePage';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | export const metadata = { title: 'Fresh food from local farms' };
+  3 | export default function Page() { return <HomePage />; }
+  4 |
+
+Import map: aliased to relative './components/home/HomePage' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./app/page.js:1:1
+Error: Module not found: Can't resolve '@/components/home/HomePage'
+> 1 | import { HomePage } from '@/components/home/HomePage';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | export const metadata = { title: 'Fresh food from local farms' };
+  3 | export default function Page() { return <HomePage />; }
+  4 |
+
+Import map: aliased to relative './components/home/HomePage' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./app/page.js:1:1
+Error: Module not found: Can't resolve '@/components/home/HomePage'
+> 1 | import { HomePage } from '@/components/home/HomePage';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | export const metadata = { title: 'Fresh food from local farms' };
+  3 | export default function Page() { return <HomePage />; }
+  4 |
+
+Import map: aliased to relative './components/home/HomePage' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./components/layout/Footer.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 446
+
+Import traces:
+  #1 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #2 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #3 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  #4 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Header.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 862
+
+Import traces:
+  Client Component Browser:
+    ./components/layout/Header.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./components/layout/Header.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Footer.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 446
+
+Import traces:
+  #1 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #2 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #3 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  #4 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Header.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 862
+
+Import traces:
+  Client Component Browser:
+    ./components/layout/Header.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./components/layout/Header.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Footer.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 446
+
+Import traces:
+  #1 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #2 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #3 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  #4 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Header.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 862
+
+Import traces:
+  Client Component Browser:
+    ./components/layout/Header.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./components/layout/Header.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Footer.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 446
+
+Import traces:
+  #1 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #2 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #3 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  #4 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Header.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 862
+
+Import traces:
+  Client Component Browser:
+    ./components/layout/Header.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./components/layout/Header.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Footer.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 446
+
+Import traces:
+  #1 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #2 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #3 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  #4 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Header.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 862
+
+Import traces:
+  Client Component Browser:
+    ./components/layout/Header.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./components/layout/Header.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Footer.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 446
+
+Import traces:
+  #1 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #2 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #3 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  #4 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Header.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 862
+
+Import traces:
+  Client Component Browser:
+    ./components/layout/Header.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./components/layout/Header.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Footer.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 446
+
+Import traces:
+  #1 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #2 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #3 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  #4 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Header.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 862
+
+Import traces:
+  Client Component Browser:
+    ./components/layout/Header.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./components/layout/Header.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Footer.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 446
+
+Import traces:
+  #1 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #2 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #3 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  #4 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Header.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 862
+
+Import traces:
+  Client Component Browser:
+    ./components/layout/Header.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./components/layout/Header.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Footer.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 446
+
+Import traces:
+  #1 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #2 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #3 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  #4 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Header.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 862
+
+Import traces:
+  Client Component Browser:
+    ./components/layout/Header.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./components/layout/Header.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Footer.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 446
+
+Import traces:
+  #1 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #2 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #3 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  #4 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Header.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 862
+
+Import traces:
+  Client Component Browser:
+    ./components/layout/Header.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./components/layout/Header.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Footer.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 446
+
+Import traces:
+  #1 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #2 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #3 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  #4 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Header.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 862
+
+Import traces:
+  Client Component Browser:
+    ./components/layout/Header.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./components/layout/Header.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Footer.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 446
+
+Import traces:
+  #1 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #2 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #3 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  #4 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Header.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 862
+
+Import traces:
+  Client Component Browser:
+    ./components/layout/Header.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./components/layout/Header.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Footer.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 446
+
+Import traces:
+  #1 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #2 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #3 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  #4 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Header.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 862
+
+Import traces:
+  Client Component Browser:
+    ./components/layout/Header.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./components/layout/Header.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Footer.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 446
+
+Import traces:
+  #1 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #2 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #3 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  #4 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Header.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 862
+
+Import traces:
+  Client Component Browser:
+    ./components/layout/Header.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./components/layout/Header.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Footer.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 446
+
+Import traces:
+  #1 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Client Component Browser]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #2 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Client Component SSR]
+    ./components/home/HomePage.jsx [Server Component]
+    ./app/page.js [Server Component]
+
+  #3 [Client Component Browser]:
+    ./components/layout/Footer.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  #4 [Client Component SSR]:
+    ./components/layout/Footer.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] ./components/layout/Header.jsx
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 862
+
+Import traces:
+  Client Component Browser:
+    ./components/layout/Header.jsx [Client Component Browser]
+    ./components/layout/SiteShell.jsx [Client Component Browser]
+    ./app/providers.jsx [Client Component Browser]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./components/layout/Header.jsx [Client Component SSR]
+    ./components/layout/SiteShell.jsx [Client Component SSR]
+    ./app/providers.jsx [Client Component SSR]
+    ./app/providers.jsx [Server Component]
+    ./app/layout.js [Server Component] 
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior

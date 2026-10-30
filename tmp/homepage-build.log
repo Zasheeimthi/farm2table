@@ -1,0 +1,53 @@
+
+> farm-to-table@1.0.0 build
+> next build
+
+▲ Next.js 16.3.5 (Turbopack)
+✓ Running next.config.mjs took 73ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 14.5s
+  Running TypeScript ...
+  Finished TypeScript in 6ms ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/74) ...
+  Generating static pages using 11 workers (18/74) 
+  Generating static pages using 11 workers (36/74) 
+  Generating static pages using 11 workers (55/74) 
+✓ Generating static pages using 11 workers (74/74) in 2.6s
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /account
+├ ○ /auth/forgot-password
+├ ○ /auth/login
+├ ○ /auth/register
+├ ○ /cart
+├ ○ /checkout
+├ ○ /confirmation
+├ ○ /contact
+├   /farm/[slug]
+│ ├ ● /farm/solmarka
+│ ├ ● /farm/hagshult
+│ ├ ● /farm/bjare
+│ └ ● [+5 more paths]
+├ ○ /farms
+├ ○ /orders
+├ ƒ /orders/[orderId]
+├ ○ /payment
+├   /product/[slug]
+│ ├ ● /product/low-pasteurized-whole-milk-1l
+│ ├ ● /product/grassland-yoghurt-1l
+│ ├ ● /product/biodynamic-yoghurt-1l
+│ └ ● [+46 more paths]
+├ ○ /products
+└ ○ /saved
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

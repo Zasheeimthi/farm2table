@@ -11,28 +11,28 @@ export function Reviews() {
     setActiveReview(current => (current + direction + reviews.length) % reviews.length);
   };
   return <section className="reviews-section">
-      <h2 className="scroll-reveal">Real Reviews From Real Customers</h2>
+      <h2 className="scroll-reveal">Röster om lokal mat</h2>
       <div className="reviews-carousel scroll-reveal">
         <article className="review-score-card">
-          <span className="eyebrow">Verified buyers</span>
+          <span className="eyebrow">Exempelomdömen</span>
           <strong>4.9</strong>
           <div><StarFilled /><StarFilled /><StarFilled /><StarFilled /><StarFilled /></div>
-          <p>Based on 3,442 fresh delivery reviews.</p>
+          <p>Illustration av kundomdömen. Betyget är exempeldata.</p>
         </article>
         <article className="review-feature-card">
           <div className="review-topline">
             <span><StarFilled /><StarFilled /><StarFilled /><StarFilled /><StarFilled /></span>
-            <small>3 days ago</small>
+            <small>Exempel</small>
           </div>
           <h3>{title}</h3>
           <p>{text}</p>
           <em>{name}</em>
-          <div className="review-controls" aria-label="Review carousel controls">
-            <button type="button" onClick={() => moveReview(-1)} aria-label="Previous review"><ArrowLeftOutlined /></button>
+          <div className="review-controls" aria-label="Välj omdöme">
+            <button type="button" onClick={() => moveReview(-1)} aria-label="Föregående omdöme"><ArrowLeftOutlined /></button>
             <div>
-              {reviews.map((review, index) => <button className={index === activeReview ? 'active' : ''} type="button" aria-label={`Show review ${index + 1}`} onClick={() => setActiveReview(index)} key={review[0]} />)}
+              {reviews.map((review, index) => <button className={index === activeReview ? 'active' : ''} type="button" aria-label={`Visa omdöme ${index + 1}`} onClick={() => setActiveReview(index)} key={review[0]} />)}
             </div>
-            <button type="button" onClick={() => moveReview(1)} aria-label="Next review"><ArrowRightOutlined /></button>
+            <button type="button" onClick={() => moveReview(1)} aria-label="Nästa omdöme"><ArrowRightOutlined /></button>
           </div>
         </article>
         <div className="review-mini-stack">
@@ -44,4 +44,4 @@ export function Reviews() {
       </div>
     </section>;
 }
-export const reviews = [['Excellent quality', 'Everything arrived cold, clean, and beautifully packed.', 'MS'], ['Trusted local farms', 'I love seeing which farm each product comes from.', 'Sarah Smith'], ['Fresh and reliable', 'The vegetables and dairy feel premium every week.', 'John K']];
+export const reviews = [['Fin kvalitet', 'Allt kom fram omsorgsfullt packat och var enkelt att ta hand om.', 'MS'], ['Nära lokala gårdar', 'Jag uppskattar att kunna se vilken gård varje produkt kommer från.', 'Sarah Smith'], ['Smaker att återvända till', 'Det är roligt att upptäcka grönsaker och mejeriprodukter från gårdarna.', 'John K']];
